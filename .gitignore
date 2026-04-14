@@ -1,0 +1,21 @@
+# Video files (too large for GitHub)
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Archives & docs
+*.zip
+*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Other projects
+marketingskills-main/
+marketingskills-main.zip
+
+# Misc images not part of site
+Untitled-2.jpg
+comp-1_BB9UoJnB.mp4

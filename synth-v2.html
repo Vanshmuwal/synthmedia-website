@@ -1,0 +1,2321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SYNTH. Media — AI Video Production</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23000'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='800' font-size='18' letter-spacing='-1' fill='%23fff'>S.</text></svg>"/>
+<meta name="description" content="SYNTH. Media creates scroll-stopping AI videos for creators and brands — cinematic quality, 7-day delivery, starting at $100. Powered by Sora, Kling & Veo."/>
+<link rel="canonical" href="https://synth-media.vercel.app/"/>
+<meta property="og:title" content="Scroll-Stopping AI Videos. Delivered in 7 Days. | SYNTH. Media"/>
+<meta property="og:description" content="Cinematic AI video production for creators and brands. Starting at $100."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"SYNTH. Media","description":"AI-powered cinematic video production agency","url":"https://synth-media.vercel.app","founder":[{"@type":"Person","name":"Vansh"},{"@type":"Person","name":"Prabodh"}],"serviceType":"Video Production","areaServed":"Worldwide"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function(){
+    // ── REPLACE with your EmailJS Public Key ──
+    emailjs.init({ publicKey: "DkX9x1MtntGfC_wGW" });
+  })();
+</script>
+
+<style>
+/* 
+   TOKENS
+ */
+:root {
+  --bg:        #000000;
+  --bg2:       #0a0a0a;
+  --bg3:       #111111;
+  --bg4:       #161616;
+  --border:    rgba(255,255,255,0.07);
+  --border2:   rgba(255,255,255,0.12);
+  --text:      #ffffff;
+  --muted:     rgba(255,255,255,0.45);
+  --muted2:    rgba(255,255,255,0.25);
+  --green:     #ffffff;
+  --green-glo: rgba(255,255,255,0.12);
+  --green-dim: rgba(255,255,255,0.06);
+  --card:      rgba(255,255,255,0.03);
+  --card2:     rgba(255,255,255,0.05);
+  --r-pill:    1000px;
+  --r-card:    20px;
+  --r-card2:   14px;
+  --px:        clamp(20px,5vw,80px);
+}
+
+/* 
+   RESET
+ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;outline:none}
+ul{list-style:none}
+img{display:block;max-width:100%}
+
+/* 
+   TYPOGRAPHY
+ */
+.hg{font-family:'Host Grotesk',sans-serif}
+h1,h2,h3,h4{font-family:'Host Grotesk',sans-serif;font-weight:700;letter-spacing:0.01em;line-height:1.05}
+.display{font-family:'Host Grotesk',sans-serif;font-weight:700;letter-spacing:0.01em;line-height:1.05}
+
+/* 
+   ANNOUNCE BAR
+ */
+.announce{
+  background:linear-gradient(90deg,#1a1a1a 0%,#0d0d0d 100%);
+  border-bottom:1px solid rgba(255,255,255,0.25);
+  text-align:center;
+  padding:10px 20px;
+  font-size:12px;
+  font-weight:500;
+  color:rgba(255,255,255,0.7);
+  letter-spacing:0.01em;
+}
+.announce span{color:var(--green);font-weight:600}
+
+/* 
+   NAV
+ */
+nav{
+  position:sticky;top:0;z-index:900;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--px);
+  height:62px;
+  background:rgba(0,0,0,0.75);
+  backdrop-filter:blur(18px) saturate(180%);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:18px;font-weight:800;
+  letter-spacing:-0.02em;
+  color:#fff;
+}
+.nav-logo span{color:var(--green)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{
+  font-size:13px;font-weight:500;
+  color:var(--muted);
+  transition:color .18s;
+}
+.nav-links a:hover{color:#fff}
+.nav-cta{
+  background:#ffffff;
+  color:#000000;
+  font-size:13px;font-weight:600;
+  padding:9px 22px;
+  border-radius:var(--r-pill);
+  border:none;
+  transition:opacity .18s;
+  display:flex;align-items:center;gap:6px;
+}
+.nav-cta::before{
+  content:'•';
+  color:rgba(255,255,255,0.7);
+  font-size:9px;
+}
+.nav-cta:hover{opacity:.85}
+.nav-mobile-btn{display:none;background:transparent;border:none;color:#fff;font-size:22px;padding:4px}
+
+/* 
+   HERO
+ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:80px var(--px) 60px;
+  overflow:hidden;
+  background:#000;
+}
+
+/* ── planet / moon scene ── */
+.hero-planet-wrap{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
+/* giant sphere — very wide for a gentle arc, only top peeks above bottom */
+.hero-planet{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  width:200vw;
+  aspect-ratio:2/1;
+  bottom:-80vw;
+  border-radius:50%;
+  background:
+    radial-gradient(ellipse 50% 20% at 50% 1%, rgba(255,255,255,0.04) 0%, transparent 100%),
+    radial-gradient(ellipse 65% 45% at 50% 0%, #2e2e2e 0%, #222 6%, #181818 16%, #0e0e0e 35%, #060606 60%, #000 100%);
+  /* wide, gentle fade so the rim melts into black */
+  mask-image:radial-gradient(ellipse 60% 30% at 50% 0%, black 30%, rgba(0,0,0,0.4) 55%, transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 60% 30% at 50% 0%, black 30%, rgba(0,0,0,0.4) 55%, transparent 100%);
+}
+/* wide atmospheric fog spreading upward from the rim */
+.hero-planet::after{
+  content:'';
+  position:absolute;
+  top:-350px;left:50%;
+  transform:translateX(-50%);
+  width:85%;height:380px;
+  background:radial-gradient(ellipse 100% 100% at 50% 100%,
+    rgba(200,200,200,0.14) 0%,
+    rgba(160,160,160,0.06) 35%,
+    rgba(120,120,120,0.02) 60%,
+    transparent 85%);
+  filter:blur(50px);
+  animation:haloPulse 10s ease-in-out infinite;
+}
+/* separate glow layer for the soft box-shadow haze */
+.hero-planet-glow{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  width:200vw;
+  aspect-ratio:2/1;
+  bottom:-80vw;
+  border-radius:50%;
+  box-shadow:
+    0 -60px 180px rgba(255,255,255,0.08),
+    0 -20px 70px rgba(255,255,255,0.05);
+  animation:glowPulse 10s ease-in-out infinite;
+}
+@keyframes haloPulse{
+  0%,100%{opacity:0.6}
+  50%{opacity:1}
+}
+@keyframes glowPulse{
+  0%,100%{
+    box-shadow:
+      0 -60px 180px rgba(255,255,255,0.06),
+      0 -20px 70px rgba(255,255,255,0.03);
+  }
+  50%{
+    box-shadow:
+      0 -60px 200px rgba(255,255,255,0.11),
+      0 -20px 90px rgba(255,255,255,0.06);
+  }
+}
+
+/* star field canvas */
+#stars{
+  position:absolute;inset:0;
+  z-index:0;
+  pointer-events:none;
+  width:100%;height:100%;
+}
+
+/* orbital rings */
+.ring{
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.055);
+  pointer-events:none;
+}
+.ring-1{width:700px;height:700px;top:50%;left:50%;transform:translate(-50%,-50%);animation:orbit1 30s linear infinite}
+.ring-2{width:1000px;height:1000px;top:50%;left:50%;transform:translate(-50%,-50%);animation:orbit1 45s linear infinite reverse;border-color:rgba(255,255,255,0.03)}
+.ring-3{width:1350px;height:1350px;top:50%;left:50%;transform:translate(-50%,-50%);animation:orbit1 60s linear infinite;border-color:rgba(255,255,255,0.018)}
+/* cursor magic layers */
+#cursor-glow{
+  position:absolute;pointer-events:none;z-index:0;
+  top:0;left:0;width:100%;height:100%;
+}
+#cursor-particles{
+  position:absolute;pointer-events:none;z-index:1;
+  top:0;left:0;width:100%;height:100%;
+}
+@keyframes orbit1{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+.hero-inner{position:relative;z-index:2;max-width:760px;width:100%}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(34,197,94,0.08);
+  border:1px solid rgba(34,197,94,0.35);
+  border-radius:var(--r-pill);
+  padding:6px 18px;
+  font-size:12px;font-weight:500;
+  color:#22c55e;
+  margin-bottom:28px;
+  backdrop-filter:blur(10px);
+}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hero-h1{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:clamp(30px,4.5vw,56px);
+  font-weight:700;
+  letter-spacing:-0.02em;
+  line-height:1.055;
+  color:#fff;
+  margin-bottom:28px;
+}
+.hero-h1 em{font-style:normal;color:var(--green)}
+.hero-sub{
+  font-size:clamp(14px,2vw,17px);
+  color:var(--muted);
+  line-height:1.7;
+  margin-bottom:44px;
+  max-width:500px;
+  margin-left:auto;margin-right:auto;
+  font-weight:400;
+}
+.hero-btns{
+  display:flex;align-items:center;justify-content:center;
+  gap:12px;flex-wrap:wrap;
+  margin-bottom:64px;
+}
+.btn-outline-white{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;
+  border:1px solid var(--border2);
+  color:#fff;
+  font-size:14px;font-weight:500;
+  padding:13px 28px;
+  border-radius:var(--r-pill);
+  transition:border-color .2s,background .2s;
+  backdrop-filter:blur(10px);
+}
+.btn-outline-white:hover{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.05)}
+.btn-green{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#ffffff;
+  color:#000000;
+  font-size:14px;font-weight:600;
+  padding:13px 28px;
+  border-radius:var(--r-pill);
+  transition:opacity .2s;
+}
+.btn-green:hover{opacity:.85}
+
+/* floating UI cards */
+.hero-cards{
+  position:relative;width:100%;max-width:860px;
+  margin:0 auto;
+  height:320px;
+  z-index:2;
+}
+.hero-card{
+  position:absolute;
+  background:rgba(18,18,18,0.92);
+  border:1px solid rgba(255,255,255,0.09);
+  border-radius:16px;
+  backdrop-filter:blur(20px);
+  box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.04);
+  overflow:hidden;
+}
+/* main center card */
+.hc-main{
+  left:50%;transform:translateX(-50%);
+  width:min(480px,90vw);
+  top:0;
+}
+/* left small card */
+.hc-left{
+  left:0;top:40px;
+  width:180px;
+  transform:rotate(-4deg);
+  display:none;
+}
+/* right small card */
+.hc-right{
+  right:0;top:60px;
+  width:160px;
+  transform:rotate(3deg);
+  display:none;
+}
+@media(min-width:700px){.hc-left,.hc-right{display:block}}
+
+.hc-bar{
+  background:rgba(255,255,255,0.04);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  padding:10px 16px;
+  display:flex;align-items:center;gap:6px;
+}
+.hc-dot{width:8px;height:8px;border-radius:50%}
+.hc-title{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:11px;font-weight:600;
+  color:rgba(255,255,255,.4);
+  margin-left:4px;letter-spacing:.02em;
+}
+.hc-body{padding:18px}
+.hc-greeting{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:15px;font-weight:600;
+  color:#fff;letter-spacing:-0.02em;
+  margin-bottom:14px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.hc-live{
+  font-size:10px;font-weight:600;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.3);
+  color:var(--green);
+  padding:3px 10px;
+  border-radius:var(--r-pill);
+  display:flex;align-items:center;gap:5px;
+}
+.hc-live::before{content:'•';font-size:14px;animation:blink 1.4s infinite}
+.hc-stats{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:10px;margin-bottom:14px;
+}
+.hc-stat{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:10px;
+  padding:12px 10px;
+  text-align:center;
+}
+.hc-stat-val{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:20px;font-weight:700;
+  letter-spacing:-0.02em;
+  color:#fff;margin-bottom:2px;
+}
+.hc-stat-lbl{font-size:9px;color:rgba(255,255,255,.35);font-weight:500;text-transform:uppercase;letter-spacing:.05em}
+.hc-stat-up{font-size:9px;color:var(--green);font-weight:600;margin-top:3px}
+.hc-active{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:10px;
+  padding:10px 14px;
+  font-size:10px;
+  color:rgba(255,255,255,.35);
+  font-weight:500;letter-spacing:.03em;text-transform:uppercase;
+  margin-bottom:10px;
+}
+.hc-bar-chart{
+  display:flex;align-items:flex-end;
+  gap:5px;height:56px;
+  padding:8px 14px;
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.04);
+  border-radius:10px;
+}
+.hc-bar-item{
+  flex:1;border-radius:3px 3px 0 0;
+  background:rgba(255,255,255,.08);
+  transition:background .2s;
+}
+.hc-bar-item.hi{background:var(--green);opacity:.7}
+
+/* small card styles */
+.hc-sm-body{padding:14px}
+.hc-sm-label{
+  font-size:9px;color:var(--muted);
+  font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  margin-bottom:8px;
+}
+.hc-sm-val{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:26px;font-weight:700;letter-spacing:-0.02em;
+  color:#fff;margin-bottom:4px;
+}
+.hc-sm-sub{font-size:10px;color:var(--green);font-weight:600}
+.hc-sm-row{
+  display:flex;align-items:center;gap:6px;
+  padding:7px 0;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  font-size:10px;color:var(--muted);font-weight:500;
+}
+.hc-sm-row:last-child{border-bottom:none}
+.hc-sm-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* 
+   SECTION SHARED
+ */
+.sec{padding:100px var(--px)}
+.sec-dark{background:var(--bg)}
+.sec-mid{background:var(--bg3)}
+.sec-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+  border-radius:var(--r-pill);
+  padding:5px 14px;
+  font-size:11px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:20px;
+}
+.sec-h2{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:clamp(32px,5vw,58px);
+  font-weight:700;
+  letter-spacing:-0.02em;line-height:1.05;
+  color:#fff;
+  margin-bottom:16px;
+}
+.sec-sub{
+  font-size:15px;color:var(--muted);
+  line-height:1.72;max-width:480px;
+}
+.sec-head{margin-bottom:64px}
+.sec-head.center{text-align:center}
+.sec-head.center .sec-sub{margin:0 auto}
+
+/* 
+   TOOLS BAR
+ */
+.tools-bar{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:var(--bg2);
+  padding:20px 0;
+  display:flex;align-items:center;gap:0;overflow:hidden;
+}
+.tools-label{
+  font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted2);white-space:nowrap;padding:0 24px 0 var(--px);flex-shrink:0;
+  border-right:1px solid var(--border);
+}
+.tools-track-wrap{
+  flex:1;overflow:hidden;position:relative;
+}
+.tools-track-wrap::before,.tools-track-wrap::after{
+  content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;
+}
+.tools-track-wrap::before{left:0;background:linear-gradient(to right,var(--bg2),transparent)}
+.tools-track-wrap::after{right:0;background:linear-gradient(to left,var(--bg2),transparent)}
+.tools-track{
+  display:flex;align-items:center;gap:0;
+  width:max-content;
+  animation:toolsScroll 35s linear infinite;
+}
+.tools-track:hover{animation-play-state:paused}
+.tool-pill{margin-right:12px}
+@keyframes toolsScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+.tool-pill{
+  display:flex;align-items:center;gap:8px;
+  background:var(--card2);
+  border:1px solid var(--border);
+  border-radius:var(--r-pill);
+  padding:8px 18px;
+  font-size:12px;font-weight:600;
+  color:rgba(255,255,255,.6);
+  white-space:nowrap;flex-shrink:0;
+  transition:border-color .2s,color .2s;
+}
+.tool-pill:hover{border-color:var(--green);color:#fff}
+.tool-icon{width:18px;height:18px;object-fit:contain;display:block;flex-shrink:0;border-radius:3px;filter:brightness(0) invert(1);opacity:.7}
+.tool-pill:hover .tool-icon{opacity:1}
+
+/* 
+   PROBLEM SECTION
+ */
+.problem-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+  gap:14px;
+  margin-top:60px;
+}
+.prob-card{
+  background:rgba(255,255,255,0.025);
+  border:1px solid var(--border);
+  border-radius:var(--r-card);
+  padding:32px 28px;
+  transition:border-color .22s,background .22s;
+  position:relative;overflow:hidden;
+}
+.prob-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
+}
+.prob-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,.14)}
+.prob-icon{font-size:28px;margin-bottom:18px}
+.prob-title{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:18px;font-weight:700;
+  letter-spacing:-0.02em;color:#fff;
+  margin-bottom:10px;
+}
+.prob-body{font-size:13px;color:var(--muted);line-height:1.68}
+
+/* 
+   FEATURES / BENEFITS
+ */
+.feat-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:100px;align-items:center;
+}
+.feat-layout.rev{direction:rtl}
+.feat-layout.rev>*{direction:ltr}
+.feat-visual{
+  background:rgba(255,255,255,0.025);
+  border:1px solid var(--border);
+  border-radius:var(--r-card);
+  padding:40px;
+  min-height:380px;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+  position:relative;overflow:hidden;
+}
+.feat-visual::after{
+  content:'';position:absolute;
+  bottom:-80px;right:-80px;
+  width:250px;height:250px;
+  background:radial-gradient(circle,var(--green-glo) 0%,transparent 65%);
+  pointer-events:none;
+}
+.feat-visual-top{margin-bottom:auto}
+.feat-v-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--green-dim);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:var(--r-pill);
+  padding:5px 14px;
+  font-size:11px;font-weight:600;
+  color:var(--green);
+  margin-bottom:20px;
+}
+.feat-v-num{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:72px;font-weight:800;
+  letter-spacing:-0.02em;line-height:1;
+  color:#fff;margin-bottom:8px;
+}
+.feat-v-label{font-size:14px;color:var(--muted);font-weight:500}
+.feat-v-row{
+  display:flex;gap:10px;flex-wrap:wrap;margin-top:30px;
+}
+.feat-v-chip{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:var(--r-pill);
+  padding:7px 16px;
+  font-size:12px;color:rgba(255,255,255,.55);
+}
+.feat-content{}
+.feat-num{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:.08em;
+  color:var(--green);margin-bottom:16px;text-transform:uppercase;
+}
+.feat-h3{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:clamp(26px,3.5vw,40px);
+  font-weight:700;letter-spacing:-0.02em;line-height:1.05;
+  color:#fff;margin-bottom:18px;
+}
+.feat-body{font-size:15px;color:var(--muted);line-height:1.72;margin-bottom:28px}
+.feat-points{display:flex;flex-direction:column;gap:12px}
+.feat-pt{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:13px;color:rgba(255,255,255,.6);
+  line-height:1.6;
+}
+.feat-pt-icon{
+  width:22px;height:22px;border-radius:6px;
+  background:var(--green-dim);border:1px solid rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;color:var(--green);
+  flex-shrink:0;margin-top:1px;
+}
+
+/* 
+   PORTFOLIO GRID
+ */
+/* ── portfolio collage carousel ── */
+.port-carousel{
+  margin-top:60px;
+  display:flex;flex-direction:column;gap:12px;
+  overflow:hidden;
+  /* fade edges */
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,black 6%,black 94%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,black 6%,black 94%,transparent 100%);
+}
+.port-row{
+  display:flex;gap:12px;
+  width:max-content;
+}
+.port-row-1{animation:portLeft 40s linear infinite}
+.port-row-2{animation:portRight 50s linear infinite}
+@keyframes portLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes portRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.port-carousel:hover .port-row{animation-play-state:paused}
+
+
+.pvc{
+  height:260px;
+  flex-shrink:0;
+  border-radius:16px;
+  overflow:hidden;
+  position:relative;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,0.06);
+  transition:border-color .2s,transform .2s;
+}
+.pvc:hover{border-color:rgba(255,255,255,0.18);transform:scale(1.02)}
+.pvc.wide{width:calc(260px * 16 / 9)} /* ~463px */
+.pvc.tall{width:calc(260px * 9 / 16)} /* ~146px */
+.pvc video{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+}
+.pvc::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(0,0,0,0.15);
+  transition:background .2s;
+  z-index:1;
+}
+.pvc:hover::after{background:rgba(0,0,0,0)}
+
+/* 
+   PROCESS
+ */
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+  margin-top:60px;
+}
+.proc-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r-card);
+  padding:32px 26px;
+  position:relative;
+  transition:border-color .2s;
+}
+.proc-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--green),transparent);
+  opacity:0;transition:opacity .2s;
+}
+.proc-card:hover{border-color:rgba(255,255,255,.14)}
+.proc-card:hover::before{opacity:.5}
+.proc-step{
+  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--green);margin-bottom:16px;
+}
+.proc-icon{font-size:28px;margin-bottom:16px}
+.proc-title{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:16px;font-weight:700;
+  letter-spacing:-0.02em;color:#fff;margin-bottom:8px;
+}
+.proc-body{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* 
+   METRICS STRIP
+ */
+.metrics-strip{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:1px;
+  border:1px solid var(--border);
+  border-radius:var(--r-card);
+  overflow:hidden;
+  background:var(--border);
+}
+.metric{
+  background:var(--bg3);
+  padding:32px 24px;
+  text-align:center;
+  transition:background .2s;
+}
+.metric:hover{background:rgba(255,255,255,.04)}
+.metric-val{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:clamp(34px,5vw,54px);
+  font-weight:800;letter-spacing:-0.02em;
+  color:#fff;line-height:1;margin-bottom:6px;
+}
+.metric-val span{color:var(--green)}
+.metric-lbl{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.01em}
+
+/* 
+   PRICING
+ */
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:14px;
+  margin-top:60px;
+}
+.pr-card{
+  background:rgba(255,255,255,.025);
+  border:1px solid var(--border);
+  border-radius:var(--r-card);
+  padding:36px 30px;
+  position:relative;
+  transition:border-color .22s;
+}
+.pr-card:hover{border-color:rgba(255,255,255,.16)}
+.pr-card.featured{
+  border-color:rgba(255,255,255,.4);
+  background:rgba(255,255,255,.06);
+}
+.pop-badge{
+  position:absolute;top:-13px;left:50%;
+  transform:translateX(-50%);
+  background:#ffffff;
+  color:#000000;
+  font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  padding:5px 18px;border-radius:var(--r-pill);white-space:nowrap;
+}
+.pr-name{
+  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted2);margin-bottom:14px;
+}
+.pr-price{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:60px;font-weight:800;letter-spacing:-0.02em;line-height:1;
+  color:#fff;margin-bottom:6px;
+}
+.pr-price sub{font-size:16px;font-weight:400;color:var(--muted2);letter-spacing:0;vertical-align:middle}
+.pr-best{
+  font-size:12px;color:var(--muted);
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:10px;padding:6px 12px;
+  display:inline-block;margin:14px 0 24px;
+}
+.pr-best strong{color:rgba(255,255,255,.6)}
+.pr-div{height:1px;background:rgba(255,255,255,.06);margin:20px 0}
+.pr-feats{margin-bottom:28px}
+.pr-feat{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:13px;color:var(--muted);
+  padding:9px 0;border-bottom:1px solid rgba(255,255,255,.03);
+}
+.pr-feat:last-child{border-bottom:none}
+.pr-feat .ck{color:var(--green);flex-shrink:0;margin-top:1px}
+.pr-btn{
+  width:100%;font-size:14px;font-weight:600;
+  padding:14px;border-radius:var(--r-pill);
+  transition:opacity .18s,background .2s,color .2s;
+}
+.pr-btn-g{background:#ffffff;color:#000000;border:none}
+.pr-btn-g:hover{opacity:.85}
+.pr-btn-o{
+  background:transparent;color:rgba(255,255,255,.6);
+  border:1px solid rgba(255,255,255,.14);
+}
+.pr-btn-o:hover{border-color:var(--green);color:var(--green)}
+.pr-guarantee{
+  margin-top:32px;text-align:center;font-size:13px;
+  color:var(--muted2);display:flex;align-items:center;
+  justify-content:center;gap:8px;
+}
+
+/* 
+   TESTIMONIALS
+ */
+.testi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:14px;margin-top:60px;
+}
+.tc{
+  background:rgba(255,255,255,.025);
+  border:1px solid var(--border);
+  border-radius:var(--r-card);
+  padding:30px;
+  transition:border-color .22s,transform .22s;
+}
+.tc:hover{border-color:rgba(255,255,255,.14);transform:translateY(-4px)}
+.tc-stars{color:#f59e0b;font-size:13px;letter-spacing:2px;margin-bottom:16px}
+.tc-quote{
+  font-size:15px;color:rgba(255,255,255,.75);
+  line-height:1.72;font-style:italic;
+  margin-bottom:20px;letter-spacing:-0.02em;
+}
+.tc-result{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+  border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;
+  color:var(--green);display:flex;align-items:center;gap:6px;margin-bottom:22px;
+}
+.tc-author{display:flex;align-items:center;gap:12px}
+.tc-av{
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:700;color:#fff;flex-shrink:0;
+}
+.av1{background:linear-gradient(135deg,#7c3aed,#4f46e5)}
+.av2{background:linear-gradient(135deg,#db2777,#9333ea)}
+.av3{background:linear-gradient(135deg,#444,#888)}
+.tc-name{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:14px;font-weight:700;letter-spacing:-0.02em;color:#fff;
+}
+.tc-role{font-size:12px;color:var(--muted2)}
+
+/* 
+   ANCHOR / LOSS AVERSION
+ */
+.loss-box{
+  background:rgba(255,71,87,.05);
+  border:1px solid rgba(255,71,87,.18);
+  border-radius:var(--r-card);
+  padding:40px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:32px;align-items:center;
+  margin:60px 0;
+}
+.loss-h3{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:clamp(22px,3vw,32px);
+  font-weight:700;letter-spacing:-0.02em;
+  color:#fff;margin-bottom:10px;
+}
+.loss-body{font-size:14px;color:var(--muted);line-height:1.65}
+.loss-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#ffffff;color:#000000;
+  font-size:14px;font-weight:600;
+  padding:14px 28px;border-radius:var(--r-pill);
+  white-space:nowrap;transition:opacity .2s;
+}
+.loss-cta:hover{opacity:.85}
+
+/* 
+   FAQ
+ */
+.faq-layout{
+  display:grid;grid-template-columns:1fr 1.6fr;
+  gap:80px;align-items:start;
+}
+.faq-sticky{position:sticky;top:84px}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-btn{
+  width:100%;text-align:left;background:transparent;
+  border:none;padding:22px 0;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.faq-q{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:15px;font-weight:600;letter-spacing:-0.02em;
+  color:rgba(255,255,255,.8);line-height:1.3;
+}
+.faq-icon{
+  width:28px;height:28px;border-radius:50%;
+  background:rgba(255,255,255,.05);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:18px;flex-shrink:0;
+  transition:transform .28s,background .2s,border-color .2s;
+}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:#ffffff;color:#000000;border-color:#ffffff}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-ans{max-height:320px}
+.faq-ans-inner{
+  padding:0 0 22px;font-size:14px;
+  color:var(--muted);line-height:1.72;
+}
+
+/* 
+   LEAD MAGNET
+ */
+.lm-inner{max-width:600px;margin:0 auto;text-align:center}
+.lm-badge{
+  display:inline-block;
+  background:var(--green-dim);border:1px solid rgba(255,255,255,.2);
+  color:var(--green);font-size:10px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:5px 16px;border-radius:var(--r-pill);margin-bottom:22px;
+}
+.lm-h2{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:clamp(28px,4vw,46px);
+  font-weight:700;letter-spacing:-0.02em;line-height:1.05;
+  color:#fff;margin-bottom:14px;
+}
+.lm-sub{font-size:15px;color:var(--muted);margin-bottom:32px;line-height:1.65}
+.lm-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:32px}
+.lm-chip{
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+  border-radius:var(--r-pill);padding:7px 16px;
+  font-size:13px;color:var(--muted);
+  display:flex;align-items:center;gap:6px;
+}
+.lm-chip .ck{color:var(--green)}
+.lm-form{display:flex;gap:10px;max-width:460px;margin:0 auto;flex-wrap:wrap}
+.lm-input{
+  flex:1;min-width:200px;
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--border2);
+  border-radius:var(--r-pill);
+  padding:14px 24px;font-size:14px;
+  font-family:inherit;color:#fff;
+  outline:none;transition:border-color .2s;
+}
+.lm-input:focus{border-color:var(--green)}
+.lm-input::placeholder{color:var(--muted2)}
+.lm-note{font-size:11px;color:var(--muted2);margin-top:14px}
+#lm-ok{display:none;margin-top:16px;color:var(--green);font-weight:600;font-size:15px}
+
+/* 
+   FINAL CTA
+ */
+.final{
+  background:var(--bg);
+  padding:120px var(--px);
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.final::before{
+  content:'';position:absolute;
+  top:-100px;left:50%;transform:translateX(-50%);
+  width:800px;height:600px;
+  background:radial-gradient(ellipse,rgba(255,255,255,.07) 0%,transparent 55%);
+  pointer-events:none;
+}
+.final-ring{
+  position:absolute;
+  border-radius:50%;border:1px solid rgba(255,255,255,.04);
+  pointer-events:none;
+}
+.final-ring-1{width:400px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.final-ring-2{width:650px;height:650px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(255,255,255,.025)}
+.final-scarcity{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,71,87,.08);border:1px solid rgba(255,71,87,.22);
+  color:#ff4d4d;font-size:11px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:6px 16px;border-radius:var(--r-pill);margin-bottom:32px;
+}
+.rdot{width:6px;height:6px;border-radius:50%;background:#ff4d4d;animation:blink 1.5s infinite}
+.final-h2{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:clamp(36px,6vw,72px);
+  font-weight:800;letter-spacing:-0.02em;line-height:.9;
+  color:#fff;margin-bottom:22px;
+}
+.final-sub{font-size:16px;color:var(--muted);margin-bottom:44px;line-height:1.65}
+
+/* 
+   FOOTER
+ */
+footer{
+  background:var(--bg2);
+  border-top:1px solid var(--border);
+  padding:60px var(--px) 36px;
+}
+.footer-top{
+  display:flex;justify-content:space-between;
+  align-items:flex-start;flex-wrap:wrap;gap:40px;
+  margin-bottom:60px;
+}
+.footer-brand{}
+.footer-logo{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:20px;font-weight:800;letter-spacing:-0.02em;
+  color:#fff;margin-bottom:10px;
+}
+.footer-logo span{color:var(--green)}
+.footer-tagline{font-size:13px;color:var(--muted);line-height:1.6;max-width:260px}
+.footer-links{
+  display:flex;gap:60px;flex-wrap:wrap;
+}
+.footer-col h4{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted2);margin-bottom:16px;
+}
+.footer-col a{
+  display:block;font-size:13px;color:var(--muted);
+  margin-bottom:10px;transition:color .18s;
+}
+.footer-col a:hover{color:#fff}
+.footer-bottom{
+  border-top:1px solid var(--border);
+  padding-top:28px;
+  display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:12px;
+}
+.footer-copy{font-size:12px;color:var(--muted2)}
+.footer-made{font-size:12px;color:var(--muted2);display:flex;align-items:center;gap:6px}
+.footer-made span{color:var(--green)}
+
+/* 
+   BOOKING MODAL
+ */
+.modal-overlay{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(0,0,0,.88);backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;
+  transition:opacity .25s;
+}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{
+  background:var(--bg3);
+  border:1px solid var(--border2);
+  border-radius:var(--r-card);
+  padding:28px 28px 20px;
+  width:min(540px,94vw);
+  max-height:92vh;
+  overflow-y:auto;
+  position:relative;
+  transform:translateY(20px);
+  transition:transform .25s;
+}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-close{
+  position:absolute;top:16px;right:16px;
+  background:rgba(255,255,255,.07);border:1px solid var(--border);
+  width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;color:var(--muted);
+  cursor:pointer;transition:background .18s;
+}
+.modal-close:hover{background:rgba(255,255,255,.12)}
+.modal-h3{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:26px;font-weight:700;
+  letter-spacing:-0.02em;color:#fff;margin-bottom:8px;
+}
+.modal-sub{font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.6}
+.modal-cal{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);
+  border-radius:14px;padding:24px;
+  text-align:center;
+  font-size:14px;color:var(--muted);
+}
+.modal-cal p{margin-bottom:16px}
+.modal-spots{
+  margin-top:20px;font-size:12px;
+  color:#ff9100;display:flex;
+  align-items:center;justify-content:center;gap:6px;
+}
+
+/* 
+   SCROLL REVEAL
+ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* 
+   RESPONSIVE
+ */
+@media(max-width:900px){
+  .feat-layout{grid-template-columns:1fr;gap:40px}
+  .feat-layout.rev{direction:ltr}
+  .faq-layout{grid-template-columns:1fr;gap:40px}
+  .faq-sticky{position:static}
+  .loss-box{grid-template-columns:1fr;text-align:center}
+}
+@media(max-width:700px){
+  .nav-links{display:none}
+  .nav-mobile-btn{display:block}
+  .hero-cards{height:auto}
+  .hc-main{position:relative;left:auto;transform:none;width:100%}
+}
+@media(max-width:500px){
+  .footer-links{gap:32px}
+  .footer-top{flex-direction:column}
+}
+@media(max-width:600px){
+  .modal{padding:20px 16px 16px}
+  .modal-h3{font-size:18px;margin-bottom:4px}
+  .modal-sub{font-size:13px;margin-bottom:14px}
+  .modal-spots{margin-top:8px}
+}
+
+/* LOSS AVERSION SLIDE POPUP */
+#loss-popup{
+  position:fixed;bottom:28px;right:28px;z-index:900;
+  width:min(400px,calc(100vw - 40px));
+  background:#1a0a0a;
+  border:1px solid rgba(255,71,87,.35);
+  border-radius:18px;
+  padding:24px 24px 20px;
+  box-shadow:0 8px 48px rgba(0,0,0,.7),0 0 0 1px rgba(255,71,87,.1);
+  transform:translateY(120px);
+  opacity:0;
+  pointer-events:none;
+  transition:transform .45s cubic-bezier(.22,1,.36,1), opacity .35s ease;
+}
+#loss-popup.show{
+  transform:translateY(0);
+  opacity:1;
+  pointer-events:all;
+}
+.loss-popup-close{
+  position:absolute;top:12px;right:14px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:var(--muted);cursor:pointer;
+  transition:background .18s;line-height:1;
+}
+.loss-popup-close:hover{background:rgba(255,255,255,.14)}
+.loss-popup-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:.06em;
+  color:#ff4d4d;text-transform:uppercase;margin-bottom:10px;
+}
+.loss-popup-h3{
+  font-family:'Host Grotesk',sans-serif;
+  font-size:17px;font-weight:700;letter-spacing:-0.01em;
+  color:#fff;line-height:1.4;margin-bottom:10px;
+}
+.loss-popup-body{
+  font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:18px;
+}
+.loss-popup-cta{
+  display:inline-flex;align-items:center;
+  background:#fff;color:#000;
+  font-size:13px;font-weight:700;
+  padding:11px 22px;border-radius:100px;
+  border:none;cursor:pointer;transition:opacity .2s;
+  white-space:nowrap;
+}
+.loss-popup-cta:hover{opacity:.85}
+@media(max-width:500px){
+  #loss-popup{bottom:16px;right:16px;padding:20px 18px 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCE BAR -->
+<div class="announce">
+  <span style="background:#ff4d4d;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:var(--r-pill);letter-spacing:.04em;margin-right:10px">Limited</span>
+  Only &nbsp;<strong style="color:#fff">3 client slots</strong>&nbsp; available this month —&nbsp; <a onclick="openModal()" style="color:#ff4d4d;text-decoration:underline;text-decoration-color:#ff4d4d;text-underline-offset:3px;cursor:pointer;font-weight:600">claim your spot →</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">SYNTH<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openModal()">Book a Call</button>
+  <button class="nav-mobile-btn" onclick="openModal()"></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-planet-wrap">
+    <div class="hero-planet"></div>
+    <div class="hero-planet-glow"></div>
+  </div>
+  <canvas id="stars"></canvas>
+  <canvas id="cursor-glow"></canvas>
+  <canvas id="cursor-particles"></canvas>
+
+  <div class="hero-inner reveal">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      AI Video Production Studio
+    </div>
+    <h1 class="hero-h1">AI Videos That<br><em>Stop the Scroll</em></h1>
+    <p class="hero-sub">While your competitors post 3 videos a week, you're stuck waiting <span style="color:#ff4d4d;font-weight:600">6 weeks</span> for one. SYNTH. fixes that — cinematic AI videos delivered in <span style="color:#fff;font-weight:600">7 days</span>, starting at $100.</p>
+    <div class="hero-btns">
+      <button class="btn-green" onclick="openModal()">Book a Free Strategy Call →</button>
+      <a href="#portfolio" class="btn-outline-white">See Our Work</a>
+    </div>
+    <div style="margin:22px auto 32px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,0.38);font-weight:500;">
+        <span style="color:#f59e0b;letter-spacing:1px">★★★★★</span> 4.9 from 80+ creators
+      </div>
+      <div style="width:1px;height:16px;background:rgba(255,255,255,0.12)"></div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.38);font-weight:500;"> Money-back guarantee</div>
+      <div style="width:1px;height:16px;background:rgba(255,255,255,0.12)"></div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.38);font-weight:500;"> 7-day delivery</div>
+    </div>
+  </div>
+
+  <!-- Floating UI Cards -->
+  <div class="hero-cards reveal">
+    <!-- left small -->
+    <div class="hero-card hc-left">
+      <div class="hc-bar">
+        <div class="hc-dot" style="background:#ff5f57"></div>
+        <div class="hc-dot" style="background:#febc2e"></div>
+        <div class="hc-dot" style="background:#28c840"></div>
+        <span class="hc-title">Delivery</span>
+      </div>
+      <div class="hc-sm-body">
+        <div class="hc-sm-label">Avg. Turnaround</div>
+        <div class="hc-sm-val">7</div>
+        <div class="hc-sm-sub">↑ Days. Every time.</div>
+        <div class="hc-sm-row"><div class="hc-sm-dot" style="background:var(--green)"></div>Brief → Script</div>
+        <div class="hc-sm-row"><div class="hc-sm-dot" style="background:#f59e0b"></div>Script → Draft</div>
+        <div class="hc-sm-row"><div class="hc-sm-dot" style="background:rgba(255,255,255,.3)"></div>Draft → Final</div>
+      </div>
+    </div>
+
+    <!-- center main -->
+    <div class="hero-card hc-main">
+      <div class="hc-bar">
+        <div class="hc-dot" style="background:#ff5f57"></div>
+        <div class="hc-dot" style="background:#febc2e"></div>
+        <div class="hc-dot" style="background:#28c840"></div>
+        <span class="hc-title">SYNTH. — Campaign Dashboard</span>
+      </div>
+      <div class="hc-body">
+        <div class="hc-greeting">
+          Welcome back, Vansh
+          <div class="hc-live">Live</div>
+        </div>
+        <div class="hc-stats">
+          <div class="hc-stat">
+            <div class="hc-stat-val">98.4%</div>
+            <div class="hc-stat-lbl">On-Time</div>
+            <div class="hc-stat-up">↑ 2.1%</div>
+          </div>
+          <div class="hc-stat">
+            <div class="hc-stat-val">6.7M</div>
+            <div class="hc-stat-lbl">Views</div>
+            <div class="hc-stat-up">↑ 5.2x</div>
+          </div>
+          <div class="hc-stat">
+            <div class="hc-stat-val">$24.8K</div>
+            <div class="hc-stat-lbl">Revenue</div>
+            <div class="hc-stat-up">↑ this mo.</div>
+          </div>
+        </div>
+        <div class="hc-active">Active Project · Brand Reel Delivery</div>
+        <div class="hc-bar-chart">
+          <div class="hc-bar-item" style="height:30%"></div>
+          <div class="hc-bar-item" style="height:50%"></div>
+          <div class="hc-bar-item hi" style="height:80%"></div>
+          <div class="hc-bar-item" style="height:60%"></div>
+          <div class="hc-bar-item hi" style="height:90%"></div>
+          <div class="hc-bar-item" style="height:70%"></div>
+          <div class="hc-bar-item hi" style="height:100%"></div>
+          <div class="hc-bar-item" style="height:75%"></div>
+          <div class="hc-bar-item" style="height:55%"></div>
+          <div class="hc-bar-item hi" style="height:85%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- right small -->
+    <div class="hero-card hc-right">
+      <div class="hc-bar">
+        <div class="hc-dot" style="background:#ff5f57"></div>
+        <div class="hc-dot" style="background:#febc2e"></div>
+        <div class="hc-dot" style="background:#28c840"></div>
+        <span class="hc-title">Engagement</span>
+      </div>
+      <div class="hc-sm-body">
+        <div class="hc-sm-label">Watch Rate</div>
+        <div class="hc-sm-val">73%</div>
+        <div class="hc-sm-sub">↑ vs 42% industry avg</div>
+        <div class="hc-sm-row"><div class="hc-sm-dot" style="background:var(--green)"></div>Shares 18K</div>
+        <div class="hc-sm-row"><div class="hc-sm-dot" style="background:#f59e0b"></div>Saves 9.3K</div>
+        <div class="hc-sm-row"><div class="hc-sm-dot" style="background:#6366f1"></div>Comments 4K</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS BAR -->
+<div class="tools-bar">
+  <span class="tools-label">Powered by</span>
+  <div class="tools-track-wrap">
+    <div class="tools-track">
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/sora.png" alt="Sora">Sora</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/kling.png" alt="Kling">Kling</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/gemini.png" alt="Gemini">Gemini</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/runway.png" alt="Runway">Runway</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/elevenlabs.png" alt="ElevenLabs">ElevenLabs</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/pika.png" alt="Pika">Pika</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/suno.png" alt="Suno">Suno</div>
+      <div class="tool-pill"><svg class="tool-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="22" fill="#c8ff00"/><path fill="#111" d="M28 42 C28 34 34 28 40 32 C46 36 44 46 40 52 C36 58 34 62 38 64 C42 66 48 60 52 54 C48 58 50 66 56 68 C62 70 68 64 70 56 C72 48 68 44 64 46" stroke="#111" stroke-width="7" stroke-linecap="round" fill="none"/></svg>Higgsfield</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/midjourney.png" alt="Midjourney">Midjourney</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/claude.png" alt="Claude">Claude</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/vercel.png" alt="Vercel">Vercel</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/n8n.png" alt="n8n">n8n</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/openai.png" alt="GPT">GPT</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/luma.png" alt="LumaLabs" onerror="this.src='https://unpkg.com/@lobehub/icons-static-png@latest/dark/lumalabs.png'">LumaLabs</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/github.png" alt="GitHub">GitHub</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://cdn.simpleicons.org/netlify/00c7b7" alt="Netlify">Netlify</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/apify.png" alt="Apify" onerror="this.src='https://apify.com/favicon.ico'">Apify</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/openclaw.png" alt="OpenClaw" onerror="this.style.display='none'">OpenClaw</div>
+      <!-- duplicate for seamless loop -->
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/sora.png" alt="Sora">Sora</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/kling.png" alt="Kling">Kling</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/gemini.png" alt="Gemini">Gemini</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/runway.png" alt="Runway">Runway</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/elevenlabs.png" alt="ElevenLabs">ElevenLabs</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/pika.png" alt="Pika">Pika</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/suno.png" alt="Suno">Suno</div>
+      <div class="tool-pill"><svg class="tool-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="22" fill="#c8ff00"/><path fill="#111" d="M28 42 C28 34 34 28 40 32 C46 36 44 46 40 52 C36 58 34 62 38 64 C42 66 48 60 52 54 C48 58 50 66 56 68 C62 70 68 64 70 56 C72 48 68 44 64 46" stroke="#111" stroke-width="7" stroke-linecap="round" fill="none"/></svg>Higgsfield</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/midjourney.png" alt="Midjourney">Midjourney</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/claude.png" alt="Claude">Claude</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/vercel.png" alt="Vercel">Vercel</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/n8n.png" alt="n8n">n8n</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/openai.png" alt="GPT">GPT</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/luma.png" alt="LumaLabs" onerror="this.src='https://unpkg.com/@lobehub/icons-static-png@latest/dark/lumalabs.png'">LumaLabs</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/github.png" alt="GitHub">GitHub</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://cdn.simpleicons.org/netlify/00c7b7" alt="Netlify">Netlify</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/apify.png" alt="Apify" onerror="this.src='https://apify.com/favicon.ico'">Apify</div>
+      <div class="tool-pill"><img class="tool-icon" src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/openclaw.png" alt="OpenClaw" onerror="this.style.display='none'">OpenClaw</div>
+    </div>
+  </div>
+</div>
+
+<!-- METRICS STRIP -->
+<div class="sec sec-dark" style="padding-top:80px;padding-bottom:80px">
+  <div class="metrics-strip reveal">
+    <div class="metric">
+      <div class="metric-val">7<span>days</span></div>
+      <div class="metric-lbl">Avg. Delivery Time</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val">120<span>+</span></div>
+      <div class="metric-lbl">Videos Delivered</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val">6.7<span>M</span></div>
+      <div class="metric-lbl">Views Generated for Clients</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val">73<span>%</span></div>
+      <div class="metric-lbl">Avg. Watch-Through Rate</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val">4.9<span></span></div>
+      <div class="metric-lbl">Client Satisfaction</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="sec sec-mid" id="features">
+  <div class="sec-head center reveal">
+    <div class="sec-badge"> The Problem</div>
+    <h2 class="sec-h2">You're losing to creators<br>who post more, faster</h2>
+    <p class="sec-sub">Every week you wait for a video, someone else is capturing your audience. The creators winning right now aren't more talented — they just move faster.</p>
+  </div>
+  <div class="problem-grid">
+    <div class="prob-card reveal">
+      <div class="prob-icon"></div>
+      <div class="prob-title">Costs <span style="color:#ff4d4d">$5K–$50K</span> per video</div>
+      <div class="prob-body">Studios charge agency rates for a single video. Most creators can't afford consistent cinematic content — so they settle for mediocre.</div>
+    </div>
+    <div class="prob-card reveal">
+      <div class="prob-icon"></div>
+      <div class="prob-title">Takes <span style="color:#ff4d4d">4–8 weeks</span> to deliver</div>
+      <div class="prob-body">By the time the video is ready, the trend has passed. Speed is the new superpower in content marketing.</div>
+    </div>
+    <div class="prob-card reveal">
+      <div class="prob-icon"></div>
+      <div class="prob-title">Unpredictable quality</div>
+      <div class="prob-body">Freelancers miss briefs. Agencies over-promise. You never know what you're getting until the deadline has already passed.</div>
+    </div>
+    <div class="prob-card reveal">
+      <div class="prob-icon"></div>
+      <div class="prob-title"><span style="color:#ff4d4d">Low-quality = low performance</span></div>
+      <div class="prob-body">Average content gets average results. The algorithm rewards watch time — which only comes from cinematic, scroll-stopping videos.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 1 -->
+<section class="sec sec-dark" id="work">
+  <div class="feat-layout reveal">
+    <div class="feat-visual">
+      <div>
+        <div class="feat-v-badge"> AI-Powered</div>
+        <div class="feat-v-num">7</div>
+        <div class="feat-v-label">Day delivery. Guaranteed.</div>
+      </div>
+      <div class="feat-v-row">
+        <div class="feat-v-chip">Brief → Script</div>
+        <div class="feat-v-chip">Storyboard</div>
+        <div class="feat-v-chip">AI Render</div>
+        <div class="feat-v-chip">Final Edit</div>
+        <div class="feat-v-chip">Delivery </div>
+      </div>
+    </div>
+    <div class="feat-content">
+      <div class="feat-num">01 — Speed</div>
+      <h3 class="feat-h3">Cinematic quality.<br>In 7 days, not 7 weeks.</h3>
+      <p class="feat-body">We've rebuilt the entire video production workflow with AI at every step — from scriptwriting to final color grade. What used to take months now takes days, without sacrificing quality.</p>
+      <div class="feat-points">
+        <div class="feat-pt"><div class="feat-pt-icon"></div>AI-assisted scriptwriting and storyboarding included</div>
+        <div class="feat-pt"><div class="feat-pt-icon"></div>Sora, Kling & Veo for ultra-realistic generative video</div>
+        <div class="feat-pt"><div class="feat-pt-icon"></div>ElevenLabs voiceover + Suno music, fully licensed</div>
+        <div class="feat-pt"><div class="feat-pt-icon"></div>Two revision rounds baked into every package</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 2 -->
+<section class="sec sec-mid">
+  <div class="feat-layout rev reveal">
+    <div class="feat-visual">
+      <div>
+        <div class="feat-v-badge">↑ Performance</div>
+        <div class="feat-v-num">73%</div>
+        <div class="feat-v-label">Watch-through rate. (Industry avg: 42%)</div>
+      </div>
+      <div class="feat-v-row">
+        <div class="feat-v-chip">Hook-first structure</div>
+        <div class="feat-v-chip">Pattern interrupts</div>
+        <div class="feat-v-chip">Retention pacing</div>
+      </div>
+    </div>
+    <div class="feat-content">
+      <div class="feat-num">02 — Performance</div>
+      <h3 class="feat-h3">Built to perform,<br>not just look good.</h3>
+      <p class="feat-body">Every video is engineered with behavioral science — hooks, pattern interrupts, and retention pacing that keep viewers watching and sharing.</p>
+      <div class="feat-points">
+        <div class="feat-pt"><div class="feat-pt-icon"></div>Hook-first scripting for 3-second viewer capture</div>
+        <div class="feat-pt"><div class="feat-pt-icon"></div>Platform-native formatting (Reels, TikTok, YouTube)</div>
+        <div class="feat-pt"><div class="feat-pt-icon"></div>Watch-time optimization built into every cut</div>
+        <div class="feat-pt"><div class="feat-pt-icon"></div>SEO-optimized captions and metadata included</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 3 -->
+<section class="sec sec-dark">
+  <div class="feat-layout reveal">
+    <div class="feat-visual">
+      <div>
+        <div class="feat-v-badge"> ROI</div>
+        <div class="feat-v-num">$100</div>
+        <div class="feat-v-label">Starting price. Studio quality without studio cost.</div>
+      </div>
+      <div class="feat-v-row">
+        <div class="feat-v-chip">Starter $100</div>
+        <div class="feat-v-chip">Creator $250</div>
+        <div class="feat-v-chip">Brand $500+</div>
+      </div>
+    </div>
+    <div class="feat-content">
+      <div class="feat-num">03 — Value</div>
+      <h3 class="feat-h3">Agency quality.<br>Fraction of the cost.</h3>
+      <p class="feat-body">Traditional studios charge <span style="color:#ff4d4d;font-weight:600">$5K–$50K</span> for a single video. We deliver the same cinematic quality for a fraction of that — because AI does the heavy lifting.</p>
+      <div class="feat-points">
+        <div class="feat-pt"><div class="feat-pt-icon"></div>Transparent flat-rate pricing — no hourly billing surprises</div>
+        <div class="feat-pt"><div class="feat-pt-icon"></div>Pay once, own the video files forever</div>
+        <div class="feat-pt"><div class="feat-pt-icon"></div>Volume discounts for ongoing content partnerships</div>
+        <div class="feat-pt"><div class="feat-pt-icon"></div>Satisfaction guarantee — revise until you love it</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="sec sec-mid" id="portfolio">
+  <div class="sec-head reveal">
+    <div class="sec-badge"> Portfolio</div>
+    <h2 class="sec-h2">Work that speaks<br>for itself</h2>
+    <p class="sec-sub">A sample of the cinematic AI videos we've produced for creators and brands.</p>
+  </div>
+  <div class="port-carousel">
+    <!-- Row 1 → left (duplicated for seamless loop) -->
+    <div class="port-row port-row-1">
+      <div class="pvc wide"><video src="work1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall" ><video src="work3.mp4" muted loop playsinline preload="metadata"></video></div>
+      <div class="pvc wide"><video src="synth4.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="hf1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="synth10.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="caredit.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="synth3.mp4" muted loop playsinline preload="none"></video></div>
+      <!-- duplicate set -->
+      <div class="pvc wide"><video src="work1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall" ><video src="work3.mp4" muted loop playsinline preload="metadata"></video></div>
+      <div class="pvc wide"><video src="synth4.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="hf1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="synth10.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="caredit.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="synth3.mp4" muted loop playsinline preload="none"></video></div>
+    </div>
+    <!-- Row 2 → right (duplicated for seamless loop) -->
+    <div class="port-row port-row-2">
+      <div class="pvc wide"><video src="work2.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall" ><video src="work4.mp4" muted loop playsinline preload="metadata"></video></div>
+      <div class="pvc wide"><video src="comp1b.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="synth8f1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="synth4.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="comp1c.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="comp1.mp4" muted loop playsinline preload="none"></video></div>
+      <!-- duplicate set -->
+      <div class="pvc wide"><video src="work2.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall" ><video src="work4.mp4" muted loop playsinline preload="metadata"></video></div>
+      <div class="pvc wide"><video src="comp1b.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="synth8f1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="synth4.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="comp1c.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="comp1.mp4" muted loop playsinline preload="none"></video></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec sec-dark" id="process">
+  <div class="sec-head center reveal">
+    <div class="sec-badge"> How It Works</div>
+    <h2 class="sec-h2">From brief to<br>viral in 4 steps</h2>
+    <p class="sec-sub">A streamlined process designed for speed, quality, and zero surprises.</p>
+  </div>
+  <div class="process-grid">
+    <div class="proc-card reveal">
+      <div class="proc-step">Step 01</div>
+      <div class="proc-icon"></div>
+      <div class="proc-title">Strategy Brief</div>
+      <div class="proc-body">You fill out our creative brief. We align on goals, audience, platform, and desired outcome in a 30-min strategy call.</div>
+    </div>
+    <div class="proc-card reveal">
+      <div class="proc-step">Step 02</div>
+      <div class="proc-icon"></div>
+      <div class="proc-title">Script & Storyboard</div>
+      <div class="proc-body">Our team writes a performance-optimized script and visual storyboard. You approve before we touch a pixel.</div>
+    </div>
+    <div class="proc-card reveal">
+      <div class="proc-step">Step 03</div>
+      <div class="proc-icon"></div>
+      <div class="proc-title">AI Production</div>
+      <div class="proc-body">We generate your video using Sora, Kling, or Veo — combined with voiceover, music, and color grading for a cinematic finish.</div>
+    </div>
+    <div class="proc-card reveal">
+      <div class="proc-step">Step 04</div>
+      <div class="proc-icon"></div>
+      <div class="proc-title">Deliver & Iterate</div>
+      <div class="proc-body">You receive your final files within 7 days. Two revision rounds included. We don't close the project until you're thrilled.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section class="sec sec-dark" id="pricing">
+  <div class="sec-head center reveal">
+    <div class="sec-badge">$ Pricing</div>
+    <h2 class="sec-h2">Simple, transparent<br>pricing</h2>
+    <p class="sec-sub">No hourly billing. No scope creep. Flat-rate packages that scale with your content goals.</p>
+  </div>
+
+  <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:14px 20px;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);margin-bottom:44px;max-width:700px;margin-left:auto;margin-right:auto;" class="reveal">
+    <span style="color:var(--green);font-size:18px"></span>
+    Traditional video agencies charge <strong style="color:#ff4d4d">$5,000–$50,000</strong> for similar quality. Our AI workflow cuts that by <strong style="color:#ff4d4d">95%</strong> — same cinematic output, fraction of the cost.
+  </div>
+
+  <div class="pricing-grid">
+    <div class="pr-card reveal">
+      <div class="pr-name">Starter</div>
+      <div class="pr-price">$100<sub>/video</sub></div>
+      <div class="pr-best">Best for: <strong>Creators testing AI video</strong></div>
+      <div class="pr-div"></div>
+      <div class="pr-feats">
+        <div class="pr-feat"><span class="ck"></span>1 × 30–60 sec AI video</div>
+        <div class="pr-feat"><span class="ck"></span>Script + storyboard</div>
+        <div class="pr-feat"><span class="ck"></span>1 revision round</div>
+        <div class="pr-feat"><span class="ck"></span>Platform-native format</div>
+        <div class="pr-feat"><span class="ck"></span>Delivery in 7 days</div>
+      </div>
+      <button class="pr-btn pr-btn-o" onclick="openModal()">Get Started</button>
+    </div>
+
+    <div class="pr-card featured reveal">
+      <div class="pop-badge"> Most Popular</div>
+      <div class="pr-name">Creator</div>
+      <div class="pr-price">$250<sub>/video</sub></div>
+      <div class="pr-best">Best for: <strong>Creators scaling content</strong></div>
+      <div class="pr-div"></div>
+      <div class="pr-feats">
+        <div class="pr-feat"><span class="ck"></span>1 × 60–90 sec cinematic video</div>
+        <div class="pr-feat"><span class="ck"></span>Performance-optimized script</div>
+        <div class="pr-feat"><span class="ck"></span>2 revision rounds</div>
+        <div class="pr-feat"><span class="ck"></span>ElevenLabs voiceover included</div>
+        <div class="pr-feat"><span class="ck"></span>Licensed background music</div>
+        <div class="pr-feat"><span class="ck"></span>Captions + thumbnail</div>
+        <div class="pr-feat"><span class="ck"></span>Delivery in 7 days</div>
+      </div>
+      <button class="pr-btn pr-btn-g" onclick="openModal()">Book Now — Limited Spots</button>
+    </div>
+
+    <div class="pr-card reveal">
+      <div class="pr-name">Brand</div>
+      <div class="pr-price">$500<sub>+/video</sub></div>
+      <div class="pr-best">Best for: <strong>Brands & agencies</strong></div>
+      <div class="pr-div"></div>
+      <div class="pr-feats">
+        <div class="pr-feat"><span class="ck"></span>Custom-length cinematic video</div>
+        <div class="pr-feat"><span class="ck"></span>Brand strategy session included</div>
+        <div class="pr-feat"><span class="ck"></span>Unlimited revision rounds</div>
+        <div class="pr-feat"><span class="ck"></span>Multi-format delivery (all platforms)</div>
+        <div class="pr-feat"><span class="ck"></span>Priority 5-day delivery option</div>
+        <div class="pr-feat"><span class="ck"></span>Full file ownership + license</div>
+        <div class="pr-feat"><span class="ck"></span>Dedicated account manager</div>
+      </div>
+      <button class="pr-btn pr-btn-o" onclick="openModal()">Get a Custom Quote</button>
+    </div>
+  </div>
+
+  <div class="pr-guarantee reveal" style="flex-direction:column;gap:14px;margin-top:40px;">
+    <div style="display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:rgba(255,255,255,0.7);"> 100% Satisfaction Guarantee</div>
+    <div style="font-size:13px;color:rgba(255,255,255,0.35);max-width:480px;text-align:center;line-height:1.7;">We revise until you love it. If after all revision rounds you're still not happy, we'll redo the video from scratch or issue a full refund. No questions, no holdups. We've never had to give one — but the option is yours.</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec sec-mid">
+  <div class="sec-head center reveal">
+    <div class="sec-badge"> Social Proof</div>
+    <h2 class="sec-h2">Creators who made<br>the switch</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="tc reveal">
+      <div class="tc-stars"></div>
+      <div class="tc-quote">"I paid $250. The video hit <span style="color:#fff;font-weight:600">1.1M views</span> in 4 days. My DMs were flooded with brand deal inquiries for the first time ever. SYNTH. completely changed my trajectory."</div>
+      <div class="tc-result"> 1.1M views · 340% follower growth</div>
+      <div class="tc-author">
+        <div class="tc-av av1">A</div>
+        <div>
+          <div class="tc-name">Alex Rivera</div>
+          <div class="tc-role">Tech Creator · 2.1M Subscribers</div>
+        </div>
+      </div>
+    </div>
+    <div class="tc reveal">
+      <div class="tc-stars"></div>
+      <div class="tc-quote">"We replaced a <span style="color:#ff4d4d;font-weight:600">$8,000/month</span> video team with SYNTH. at $500/video. Output went from 1 video a month to 6. Our Instagram went from 12K to <span style="color:#fff;font-weight:600">89K</span> in 90 days."</div>
+      <div class="tc-result"> 12K → 89K followers in 90 days</div>
+      <div class="tc-author">
+        <div class="tc-av av2">S</div>
+        <div>
+          <div class="tc-name">Sofia Chen</div>
+          <div class="tc-role">Brand Strategist · NY</div>
+        </div>
+      </div>
+    </div>
+    <div class="tc reveal">
+      <div class="tc-stars"></div>
+      <div class="tc-quote">"My last 3 SYNTH. videos averaged <span style="color:#fff;font-weight:600">73% watch-through</span> — my old studio videos were at <span style="color:#ff4d4d;font-weight:600">28%</span>. The hook structure alone is worth the price. Pure ROI."</div>
+      <div class="tc-result"> 73% watch-through vs <span style="color:#ff4d4d">28% before</span></div>
+      <div class="tc-author">
+        <div class="tc-av av3">M</div>
+        <div>
+          <div class="tc-name">Marcus Johnson</div>
+          <div class="tc-role">Fitness Creator · 890K Followers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-dark" id="faq">
+  <div class="faq-layout">
+    <div class="faq-sticky reveal">
+      <div class="sec-badge">? FAQ</div>
+      <h2 class="sec-h2" style="font-size:clamp(28px,3.5vw,44px)">Everything<br>you want<br>to know</h2>
+      <p class="sec-sub" style="margin-top:16px">Still have questions? Book a free 30-min strategy call and we'll walk you through everything.</p>
+      <button class="btn-green" style="margin-top:28px" onclick="openModal()">Book a Free Call →</button>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item open">
+        <button class="faq-btn">
+          <span class="faq-q">What AI tools do you use to make videos?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-ans"><div class="faq-ans-inner">We use OpenAI's Sora for photorealistic video, Kling for dynamic motion sequences, and Google's Veo 2 for cinematic wide shots. Depending on your brief, we select the best tool for your specific creative direction. All workflows also include ElevenLabs for voiceover and Suno for licensed background music.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">
+          <span class="faq-q">How is AI video different from traditional production?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-ans"><div class="faq-ans-inner">Traditional production requires a crew, location, equipment, and weeks of post-production. AI video compresses all of that into days, with no physical constraints. You can set your video on Mars, in 1920s Paris, or in a neon-lit cyberpunk city — at no extra cost. The only limitation is imagination.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">
+          <span class="faq-q">Will viewers know it's AI-generated?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-ans"><div class="faq-ans-inner">With Sora and Veo 2, the output is genuinely cinematic — most viewers cannot distinguish it from traditional production. We also apply professional color grading and editing to every video. Many of our clients actually lead with "made with AI" as a differentiator, because audiences find it fascinating.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">
+          <span class="faq-q">How many revisions do I get?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-ans"><div class="faq-ans-inner">Starter includes 1 revision round. Creator includes 2 rounds. Brand includes unlimited revisions. We define a "revision" as a meaningful directional change, not individual small tweaks. Our goal is for you to love the final video — we won't close a project until you're satisfied.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">
+          <span class="faq-q">Do you own the rights to my videos?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-ans"><div class="faq-ans-inner">No — you own 100% of the final files. You get the full video in all platform formats, plus all source files on the Brand plan. The music is licensed for commercial use. There are no ongoing licensing fees or revenue splits. It's your content, forever.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">
+          <span class="faq-q">What if I'm not happy with the result?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-ans"><div class="faq-ans-inner">We offer a 100% satisfaction guarantee. If after your included revision rounds you're still not happy, we'll either re-do the video from scratch or issue a full refund — no questions asked. We've never had to issue a refund, but the option exists for your peace of mind.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">
+          <span class="faq-q">How is this different from hiring a freelancer on Fiverr?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-ans"><div class="faq-ans-inner">Fiverr freelancers use stock footage, templates, and basic editing tools. SYNTH. uses Sora, Kling, and Veo 2 — the most advanced generative AI models in the world — to create genuinely unique visuals that don't exist anywhere else. We also include performance-optimised scriptwriting, professional voiceover, and licensed music. The output is in a different category entirely.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">
+          <span class="faq-q">Can I see examples before I commit?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-ans"><div class="faq-ans-inner">Yes — book a free strategy call and we'll walk you through our portfolio including videos from your specific niche. We'll also show you a rough concept for your first video before you pay a single dollar. No commitment required at that stage.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNET -->
+<section class="sec sec-mid">
+  <div class="lm-inner reveal">
+    <div class="lm-badge"> Free Resource</div>
+    <h2 class="lm-h2">Get our AI Video<br>Playbook — free</h2>
+    <p class="lm-sub">The exact 7-step production process we use to create scroll-stopping AI videos for creators and brands. 100% free, no fluff.</p>
+    <div class="lm-chips">
+      <div class="lm-chip"><span class="ck"></span>Hook framework</div>
+      <div class="lm-chip"><span class="ck"></span>AI tool selection guide</div>
+      <div class="lm-chip"><span class="ck"></span>Watch-time optimization</div>
+      <div class="lm-chip"><span class="ck"></span>Platform-specific tips</div>
+    </div>
+    <form class="lm-form" onsubmit="handleLM(event)">
+      <input class="lm-input" type="email" placeholder="your@email.com" required/>
+      <button class="btn-green" type="submit">Get Free Playbook</button>
+    </form>
+    <div class="lm-note">No spam. Unsubscribe anytime. 847 creators already have it.</div>
+    <div id="lm-ok"> Check your inbox — playbook is on its way!</div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="final-ring final-ring-1"></div>
+  <div class="final-ring final-ring-2"></div>
+  <div class="final-scarcity"><span class="rdot"></span>Only 3 client spots remaining in April</div>
+  <h2 class="final-h2 display reveal">Your next viral video<br>is <em style="font-style:normal;color:var(--green)">7 days away</em></h2>
+  <p class="final-sub reveal">Every week you wait is a week your competitor is posting. Book your free 30-min strategy call — we'll identify your highest-potential video concept and show you exactly what it'll look like. Zero commitment.</p>
+  <div class="hero-btns reveal">
+    <button class="btn-green" onclick="openModal()" style="font-size:15px;padding:15px 34px">Book Your Free Call →</button>
+    <a href="mailto:synthmedia01@gmail.com" class="btn-outline-white">synthmedia01@gmail.com</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">SYNTH<span>.</span> Media</div>
+      <p class="footer-tagline">AI-powered cinematic video production for creators and brands. Delivered in 7 days.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#features">AI Video Production</a>
+        <a href="#portfolio">Brand Films</a>
+        <a href="#pricing">Creator Packages</a>
+        <a href="#process">Our Process</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About SYNTH.</a>
+        <a href="#">Founders</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="#">Twitter / X</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 SYNTH. Media. All rights reserved.</div>
+    <div class="footer-made">Built by <span>Vansh & Prabodh</span> · Powered by AI </div>
+  </div>
+</footer>
+
+<!-- LOSS AVERSION SLIDE POPUP -->
+<div id="loss-popup">
+  <button class="loss-popup-close" onclick="closeLossPopup()" aria-label="Close">×</button>
+  <p class="loss-popup-eyebrow">⚠ Don't wait on this</p>
+  <h3 class="loss-popup-h3">Every week you delay costs you an audience <span style="color:#ff4d4d">you'll never win back.</span></h3>
+  <p class="loss-popup-body">The creator posting <em>this week</em> owns that audience forever. First-mover advantage in your niche is worth more than any production budget.</p>
+  <button class="loss-popup-cta" onclick="openModal()">Start Your First Video →</button>
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModalOut(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <h3 class="modal-h3">Book Your Free Strategy Call</h3>
+    <p class="modal-sub">30 minutes. No pitch, no pressure. Just a clear video strategy for your brand.</p>
+    <div id="cal-container" style="min-width:280px;height:min(620px,60vh);border-radius:12px;overflow:hidden;"></div>
+    <div class="modal-spots" style="margin-top:12px"> Only 3 spots available this month</div>
+  </div>
+</div>
+
+<script>
+/*  AMBIENT STAR FIELD + CURSOR SPOTLIGHT  */
+(function(){
+  const c=document.getElementById('stars'),ctx=c.getContext('2d');
+  let W,H,stars=[];
+  let mx=-9999,my=-9999;
+  const R=250; // spotlight radius px
+
+  function resize(){
+    const hero=c.parentElement;
+    W=c.width=hero.offsetWidth||window.innerWidth;
+    H=c.height=hero.offsetHeight||window.innerHeight;
+    stars=[];
+    const n=Math.floor((W*H)/4000);
+    for(let i=0;i<n;i++){
+      // bias y toward upper 70% (above the planet)
+      const y=Math.random()*H*0.85;
+      const r=Math.random()*1.6+0.2;
+      // ambient brightness — larger stars and those near the bottom glow brighter
+      const ambientBase=Math.random()*0.10+0.02;
+      const nearPlanetBoost=(y/H)*0.12; // brighter closer to planet
+      const sizeBoost=r>1.0 ? 0.08 : 0;
+      stars.push({
+        x:Math.random()*W, y:y,
+        r:r,
+        maxO:Math.random()*.85+.15,
+        ambient:Math.min(ambientBase+nearPlanetBoost+sizeBoost, 0.4),
+        cur:0,
+        speed:Math.random()*.0003+.00008,
+        phase:Math.random()*Math.PI*2
+      });
+    }
+  }
+
+  function draw(t){
+    ctx.clearRect(0,0,W,H);
+    stars.forEach(s=>{
+      // ambient twinkle — always visible
+      const twinkle=Math.sin(t*s.speed*60+s.phase)*0.15+0.85;
+      const ambientO=s.ambient*twinkle;
+
+      // cursor spotlight boost
+      const dx=s.x-mx, dy=s.y-my;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      const lit=dist<R ? s.maxO*(1-dist/R)*(1-dist/R)*0.3 : 0;
+      s.cur+=(lit-s.cur)*0.25;
+
+      const o=Math.min(ambientO+s.cur, 1);
+
+      if(o>.008){
+        ctx.beginPath();
+        ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+        ctx.fillStyle=`rgba(255,255,255,${o})`;
+        ctx.fill();
+        // soft glow halo on brighter stars
+        if(o>.25&&s.r>0.9){
+          ctx.beginPath();
+          ctx.arc(s.x,s.y,s.r*3,0,Math.PI*2);
+          ctx.fillStyle=`rgba(255,255,255,${o*.06})`;
+          ctx.fill();
+        }
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+
+  document.addEventListener('mousemove',e=>{
+    const rect=c.getBoundingClientRect();
+    mx=e.clientX-rect.left;
+    my=e.clientY-rect.top;
+  });
+  document.addEventListener('mouseleave',()=>{mx=-9999;my=-9999});
+
+  window.addEventListener('load',()=>{resize();requestAnimationFrame(draw)});
+  window.addEventListener('resize',resize);
+})();
+
+/*  SCROLL REVEAL  */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/*  FAQ  */
+document.querySelectorAll('.faq-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  });
+});
+
+/*  MODAL  */
+function openModal(){
+  document.getElementById('modal').classList.add('open');
+  const CAL_URL='https://calendly.com/synthmedia01/30min?hide_gdpr_banner=1&background_color=0a0a0a&text_color=ffffff&primary_color=ffffff';
+  const container=document.getElementById('cal-container');
+  if(container._loaded) return;
+  container._loaded=true;
+  function initCal(){
+    Calendly.initInlineWidget({url:CAL_URL, parentElement:container});
+  }
+  if(window.Calendly){
+    initCal();
+  } else {
+    const s=document.createElement('script');
+    s.src='https://assets.calendly.com/assets/external/widget.js';
+    s.onload=initCal;
+    document.head.appendChild(s);
+  }
+}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+function closeModalOut(e){if(e.target===document.getElementById('modal'))closeModal()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+/* LOSS POPUP — triggers after #process scrolls past */
+(function(){
+  const popup = document.getElementById('loss-popup');
+  const trigger = document.getElementById('process');
+  if(!popup || !trigger) return;
+  let shown = false;
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting && !shown){
+        shown = true;
+        popup.classList.add('show');
+        obs.disconnect();
+      }
+    });
+  },{threshold:0.15});
+  obs.observe(trigger);
+})();
+function closeLossPopup(){
+  document.getElementById('loss-popup').classList.remove('show');
+}
+
+/*  LEAD MAGNET  */
+function handleLM(e){
+  e.preventDefault();
+  const email = e.target.querySelector('input[type=email]').value;
+  const btn   = e.target.querySelector('button[type=submit]');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  emailjs.send(
+    'service_5hfvbpp',
+    'template_5zfxyks',
+    {
+      to_email:    email,
+      playbook_url:'https://synth-v2-deploy.vercel.app/playbook.html',
+      from_name:   'SYNTH. Media'
+    }
+  ).then(function(){
+    e.target.style.display='none';
+    const ok = document.getElementById('lm-ok');
+    ok.textContent = '✓ Check your inbox — playbook is on its way!';
+    ok.style.display='block';
+  }).catch(function(err){
+    console.error('EmailJS error:', err);
+    btn.textContent = 'Get Free Playbook';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again.');
+  });
+}
+
+
+/* 
+   MAGICAL CURSOR SYSTEM
+ */
+(function(){
+  const hero   = document.querySelector('.hero');
+  const glowC  = document.getElementById('cursor-glow');
+  const partC  = document.getElementById('cursor-particles');
+  const gCtx   = glowC.getContext('2d');
+  const pCtx   = partC.getContext('2d');
+
+  let W=0,H=0;
+  // raw mouse target
+  let tx=-9999,ty=-9999;
+  // smooth positions (multiple layers at different lag)
+  let g1x=0,g1y=0;   // primary glow  — fast
+  let g2x=0,g2y=0;   // secondary     — medium
+  let g3x=0,g3y=0;   // outer halo    — slow / dreamy
+  let vx=0,vy=0;      // velocity for stretch
+  let prevX=0,prevY=0;
+  let entered=false;
+  let breathe=0;      // pulsing phase
+  let particles=[];
+
+  function resize(){
+    W=glowC.width=partC.width=hero.offsetWidth||window.innerWidth;
+    H=glowC.height=partC.height=hero.offsetHeight||window.innerHeight;
+    if(!entered){g1x=g2x=g3x=W/2;g1y=g2y=g3y=H/2;}
+  }
+
+  //  particle factory
+  function spawnParticle(x,y){
+    const angle=Math.random()*Math.PI*2;
+    const speed=Math.random()*1.2+.3;
+    particles.push({
+      x,y,
+      vx:Math.cos(angle)*speed,
+      vy:Math.sin(angle)*speed,
+      r:Math.random()*1.8+.4,
+      life:1,
+      decay:Math.random()*.022+.012,
+      hue:Math.random()*40+100,  // green-ish range
+      sparkle:Math.random()>.55  // 4-point star
+    });
+  }
+
+  //  draw 4-point sparkle
+  function drawSparkle(ctx,x,y,r,o){
+    ctx.save();
+    ctx.globalAlpha=o;
+    ctx.fillStyle='#fff';
+    ctx.translate(x,y);
+    // 4 spikes
+    for(let i=0;i<4;i++){
+      ctx.rotate(Math.PI/2);
+      ctx.beginPath();
+      ctx.moveTo(0,0);
+      ctx.quadraticCurveTo(r*.28,r*.28,0,r);
+      ctx.quadraticCurveTo(-r*.28,r*.28,0,0);
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  function lerp(a,b,t){return a+(b-a)*t}
+
+  function frame(ts){
+    breathe=ts*.0008;
+    const pulse=Math.sin(breathe)*0.12+1; // gentle 12% size pulse
+
+    // velocity (for streak)
+    vx=lerp(vx,(tx-prevX)*.3,0.15);
+    vy=lerp(vy,(ty-prevY)*.3,0.15);
+    prevX=g1x; prevY=g1y;
+
+    // multi-speed lerp layers
+    g1x=lerp(g1x,tx,.25);  g1y=lerp(g1y,ty,.25);
+    g2x=lerp(g2x,tx,.16);  g2y=lerp(g2y,ty,.16);
+    g3x=lerp(g3x,tx,.09);  g3y=lerp(g3y,ty,.09);
+
+    // spawn particles along trail
+    if(entered&&tx>-1000){
+      const dx=g1x-prevX, dy=g1y-prevY;
+      if(Math.hypot(dx,dy)>2){
+        const n=1;
+        for(let i=0;i<n;i++) spawnParticle(
+          g1x+(Math.random()-.5)*18,
+          g1y+(Math.random()-.5)*18
+        );
+      }
+    }
+
+    //  GLOW CANVAS 
+    gCtx.clearRect(0,0,W,H);
+    if(entered){
+      // velocity stretch factor
+      const speed=Math.hypot(vx,vy);
+      const stretch=1+speed*.04;
+      const angle=Math.atan2(vy,vx);
+
+      //  layer 3: dreamy outer halo (slowest)
+      drawGlow(gCtx,g3x,g3y,560*pulse*1.1,
+        [[0,'rgba(255,255,255,0.02)'],[.45,'rgba(255,255,255,0.007)'],[1,'transparent']],
+        angle,stretch*1.02);
+
+      //  layer 2: mid corona (medium)
+      drawGlow(gCtx,g2x,g2y,340*pulse,
+        [[0,'rgba(255,255,255,0.05)'],[.4,'rgba(255,255,255,0.018)'],[1,'transparent']],
+        angle,stretch);
+
+      //  layer 1: hot core (fast)
+      drawGlow(gCtx,g1x,g1y,180*pulse,
+        [[0,'rgba(255,255,255,0.08)'],[.25,'rgba(255,255,255,0.05)'],[.6,'rgba(255,255,255,0.015)'],[1,'transparent']],
+        angle,stretch*.97);
+
+      //  tiny bright center flare
+      drawGlow(gCtx,g1x,g1y,38*pulse,
+        [[0,'rgba(255,255,255,0.22)'],[.5,'rgba(255,255,255,0.08)'],[1,'transparent']],
+        angle,1);
+    }
+
+    //  PARTICLE CANVAS 
+    pCtx.clearRect(0,0,W,H);
+    particles=particles.filter(p=>{
+      p.x+=p.vx; p.y+=p.vy;
+      p.vy-=.012; // gentle float up
+      p.life-=p.decay;
+      if(p.life<=0)return false;
+      const o=p.life;
+      if(p.sparkle&&p.r>1.2){
+        drawSparkle(pCtx,p.x,p.y,p.r*2.2,o*.9);
+      } else {
+        // glowing dot
+        const g=pCtx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3);
+        g.addColorStop(0,`rgba(255,255,255,${o*.85})`);
+        g.addColorStop(.5,`rgba(255,255,255,${o*.3})`);
+        g.addColorStop(1,'transparent');
+        pCtx.beginPath();
+        pCtx.arc(p.x,p.y,p.r*3,0,Math.PI*2);
+        pCtx.fillStyle=g;
+        pCtx.fill();
+      }
+      return true;
+    });
+
+    requestAnimationFrame(frame);
+  }
+
+  // helper: draw elliptical radial gradient (for stretch effect)
+  function drawGlow(ctx,x,y,r,stops,angle,stretch){
+    ctx.save();
+    ctx.translate(x,y);
+    ctx.rotate(angle);
+    ctx.scale(stretch,1/stretch);
+    const g=ctx.createRadialGradient(0,0,0,0,0,r);
+    stops.forEach(([s,c])=>g.addColorStop(s,c));
+    ctx.beginPath();
+    ctx.arc(0,0,r,0,Math.PI*2);
+    ctx.fillStyle=g;
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // events
+  document.addEventListener('mousemove',e=>{
+    const rect=hero.getBoundingClientRect();
+    tx=e.clientX-rect.left;
+    ty=e.clientY-rect.top;
+    if(!entered){
+      g1x=g2x=g3x=tx;
+      g1y=g2y=g3y=ty;
+      entered=true;
+    }
+  });
+  document.addEventListener('mouseleave',()=>{
+    tx=-9999;ty=-9999;entered=false;
+  });
+
+  window.addEventListener('load',()=>{resize();requestAnimationFrame(frame)});
+  window.addEventListener('resize',resize);
+})();
+</script>
+<!-- STICKY BOTTOM BAR -->
+<div id="sticky-bar" style="
+  position:fixed;bottom:0;left:0;right:0;z-index:800;
+  background:rgba(10,10,10,0.92);backdrop-filter:blur(16px);
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding:14px 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;
+  transform:translateY(100%);transition:transform .4s ease;
+">
+  <div style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:500;">
+    <span style="color:#fff;font-weight:700">SYNTH. Media</span> — AI Video in 7 Days · Starting at $100
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <span style="font-size:11px;color:#ff4d4d;font-weight:600;display:flex;align-items:center;gap:5px;"><span style="width:5px;height:5px;border-radius:50%;background:#ff4d4d;display:inline-block;animation:blink 1.5s infinite"></span>3 spots left</span>
+    <button onclick="openModal()" style="
+      background:#ffffff;color:#000000;
+      font-size:13px;font-weight:700;
+      padding:10px 22px;border-radius:100px;border:none;cursor:pointer;
+      font-family:inherit;white-space:nowrap;
+      transition:opacity .18s;
+    " onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Book Free Call →</button>
+  </div>
+</div>
+<script>
+(function(){
+  const bar=document.getElementById('sticky-bar');
+  let shown=false;
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>500&&!shown){bar.style.transform='translateY(0)';shown=true;}
+    else if(window.scrollY<200&&shown){bar.style.transform='translateY(100%)';shown=false;}
+  });
+})();
+</script>
+
+<script>
+/* Portfolio carousel — lazy play only visible videos */
+(function(){
+  const carousel = document.querySelector('.port-carousel');
+  if(!carousel) return;
+
+  function allVids(){ return Array.from(carousel.querySelectorAll('video')); }
+
+  // Only play videos actually visible in viewport
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      const vid = e.target.querySelector('video');
+      if(!vid || vid._hovering) return;
+      if(e.isIntersecting){ vid.muted=true; vid.play().catch(()=>{}); }
+      else { vid.pause(); }
+    });
+  },{threshold:0.1});
+
+  window.addEventListener('load',()=>{
+    carousel.querySelectorAll('.pvc').forEach(card=>io.observe(card));
+  });
+
+  // Hover: pause all, play hovered with sound
+  carousel.addEventListener('mouseenter', function(e){
+    const card = e.target.closest('.pvc');
+    if(!card) return;
+    const hov = card.querySelector('video');
+    if(!hov) return;
+    allVids().forEach(v=>{ if(v!==hov){ v.pause(); } });
+    hov._hovering = true;
+    hov.muted = false;
+    hov.volume = 1;
+    hov.play().catch(()=>{ hov.muted=true; hov.play(); });
+  }, true);
+
+  // Mouseleave: resume all visible, muted
+  carousel.addEventListener('mouseleave', function(e){
+    const card = e.target.closest('.pvc');
+    if(!card) return;
+    const hov = card.querySelector('video');
+    if(hov){ hov._hovering=false; hov.muted=true; }
+    allVids().forEach(v=>{ v.muted=true; v.play().catch(()=>{}); });
+  }, true);
+})();
+</script>
+</body>
+</html>
