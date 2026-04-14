@@ -7,9 +7,15 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23000'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='800' font-size='18' letter-spacing='-1' fill='%23fff'>S.</text></svg>"/>
 <meta name="description" content="SYNTH. Media creates scroll-stopping AI videos for creators and brands — cinematic quality, 7-day delivery, starting at $100. Powered by Sora, Kling & Veo."/>
 <link rel="canonical" href="https://synth-media.vercel.app/"/>
-<meta property="og:title" content="Scroll-Stopping AI Videos. Delivered in 7 Days. | SYNTH. Media"/>
-<meta property="og:description" content="Cinematic AI video production for creators and brands. Starting at $100."/>
+<meta property="og:title" content="Stop the Scroll with AI-Powered Video | SYNTH. Media"/>
+<meta property="og:description" content="We create scroll-stopping AI videos for creators and brands — cinematic quality, 7-day delivery, starting at $100. Powered by Sora, Kling &amp; Veo."/>
 <meta property="og:type" content="website"/>
+<meta property="og:image" content="https://synthmedia.vercel.app/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:url" content="https://synthmedia.vercel.app/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://synthmedia.vercel.app/og-image.png"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"SYNTH. Media","description":"AI-powered cinematic video production agency","url":"https://synth-media.vercel.app","founder":[{"@type":"Person","name":"Vansh"},{"@type":"Person","name":"Prabodh"}],"serviceType":"Video Production","areaServed":"Worldwide"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -130,7 +136,48 @@ nav{
   font-size:9px;
 }
 .nav-cta:hover{opacity:.85}
-.nav-mobile-btn{display:none;background:transparent;border:none;color:#fff;font-size:22px;padding:4px}
+.nav-mobile-btn{
+  display:none;background:transparent;border:none;
+  color:#fff;padding:6px;cursor:pointer;
+  flex-direction:column;gap:5px;justify-content:center;align-items:center;
+  width:36px;height:36px;
+}
+.nav-mobile-btn span{
+  display:block;width:22px;height:2px;
+  background:#fff;border-radius:2px;
+  transition:transform .3s, opacity .3s;
+}
+.nav-mobile-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-mobile-btn.open span:nth-child(2){opacity:0}
+.nav-mobile-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{
+  display:none;
+  position:fixed;top:60px;left:0;right:0;z-index:998;
+  background:rgba(10,10,15,.97);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:0;
+  max-height:0;overflow:hidden;
+  transition:max-height .35s cubic-bezier(.22,1,.36,1), padding .35s;
+}
+.mobile-menu.open{max-height:400px;padding:16px 0 24px}
+.mobile-menu a{
+  display:block;padding:14px 28px;
+  font-size:15px;font-weight:500;color:var(--muted);
+  transition:color .18s;
+  border:none;
+}
+.mobile-menu a:hover{color:#fff}
+.mobile-menu-cta{
+  margin:12px 24px 0;
+  display:block;text-align:center;
+  background:#fff;color:#000;
+  font-size:14px;font-weight:700;
+  padding:13px 24px;border-radius:100px;
+  border:none;cursor:pointer;transition:opacity .2s;
+  width:calc(100% - 48px);
+}
+.mobile-menu-cta:hover{opacity:.85}
 
 /* 
    HERO
@@ -1127,7 +1174,9 @@ footer{
 }
 @media(max-width:700px){
   .nav-links{display:none}
-  .nav-mobile-btn{display:block}
+  .nav-cta{display:none}
+  .nav-mobile-btn{display:flex}
+  .mobile-menu{display:block}
   .hero-cards{height:auto}
   .hc-main{position:relative;left:auto;transform:none;width:100%}
 }
@@ -1215,8 +1264,18 @@ footer{
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <button class="nav-cta" onclick="openModal()">Book a Call</button>
-  <button class="nav-mobile-btn" onclick="openModal()"></button>
+  <button class="nav-mobile-btn" id="hamburger" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#features" onclick="closeMobileMenu()">Features</a>
+  <a href="#portfolio" onclick="closeMobileMenu()">Work</a>
+  <a href="#process" onclick="closeMobileMenu()">Process</a>
+  <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <button class="mobile-menu-cta" onclick="closeMobileMenu();openModal()">Book a Free Call →</button>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1536,41 +1595,45 @@ footer{
     <p class="sec-sub">A sample of the cinematic AI videos we've produced for creators and brands.</p>
   </div>
   <div class="port-carousel">
-    <!-- Row 1 → left (duplicated for seamless loop) -->
+    <!-- Row 1 → left -->
     <div class="port-row port-row-1">
-      <div class="pvc wide"><video src="work1.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall" ><video src="work3.mp4" muted loop playsinline preload="metadata"></video></div>
-      <div class="pvc wide"><video src="synth4.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="hf1.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="synth10.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="caredit.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="synth3.mp4" muted loop playsinline preload="none"></video></div>
-      <!-- duplicate set -->
-      <div class="pvc wide"><video src="work1.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall" ><video src="work3.mp4" muted loop playsinline preload="metadata"></video></div>
-      <div class="pvc wide"><video src="synth4.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="hf1.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="synth10.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="caredit.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="synth3.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="p_wide1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall2.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall3.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="p_wide2.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall4.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall5.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall6.mp4" muted loop playsinline preload="none"></video></div>
+      <!-- duplicate -->
+      <div class="pvc tall"><video src="p_tall1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="p_wide1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall2.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall3.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="p_wide2.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall4.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall5.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall6.mp4" muted loop playsinline preload="none"></video></div>
     </div>
-    <!-- Row 2 → right (duplicated for seamless loop) -->
+    <!-- Row 2 → right -->
     <div class="port-row port-row-2">
-      <div class="pvc wide"><video src="work2.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall" ><video src="work4.mp4" muted loop playsinline preload="metadata"></video></div>
-      <div class="pvc wide"><video src="comp1b.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="synth8f1.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="synth4.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="comp1c.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="comp1.mp4" muted loop playsinline preload="none"></video></div>
-      <!-- duplicate set -->
-      <div class="pvc wide"><video src="work2.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall" ><video src="work4.mp4" muted loop playsinline preload="metadata"></video></div>
-      <div class="pvc wide"><video src="comp1b.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="synth8f1.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="synth4.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="comp1c.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="comp1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall7.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="p_wide3.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall8.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall9.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="p_wide4.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall10.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall11.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall12.mp4" muted loop playsinline preload="none"></video></div>
+      <!-- duplicate -->
+      <div class="pvc tall"><video src="p_tall7.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="p_wide3.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall8.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall9.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="p_wide4.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall10.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall11.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="p_tall12.mp4" muted loop playsinline preload="none"></video></div>
     </div>
   </div>
 </section>
@@ -1850,16 +1913,16 @@ footer{
       <div class="footer-col">
         <h4>Company</h4>
         <a href="#">About SYNTH.</a>
-        <a href="#">Founders</a>
+        <a href="https://www.instagram.com/vansh__m__/" target="_blank" rel="noopener">Founders</a>
         <a href="#">Careers</a>
         <a href="#">Press</a>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
-        <a href="#">Twitter / X</a>
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">YouTube</a>
+        <a href="https://www.threads.com/@synthmedia.in" target="_blank" rel="noopener">Threads</a>
+        <a href="https://www.instagram.com/synthmedia.in/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/synthmedialabs" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.youtube.com/@SynthMedia01" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
   </div>
@@ -2004,6 +2067,18 @@ function openModal(){
 function closeModal(){document.getElementById('modal').classList.remove('open')}
 function closeModalOut(e){if(e.target===document.getElementById('modal'))closeModal()}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+/* MOBILE MENU */
+function toggleMobileMenu(){
+  const btn=document.getElementById('hamburger');
+  const menu=document.getElementById('mobile-menu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+function closeMobileMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobile-menu').classList.remove('open');
+}
 
 /* LOSS POPUP — triggers after #process scrolls past */
 (function(){

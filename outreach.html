@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Outreach Dashboard — SYNTH. Media</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23000'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='800' font-size='18' letter-spacing='-1' fill='%23fff'>S.</text></svg>"/>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#000;color:#fff;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1px solid rgba(255,255,255,0.07);position:sticky;top:0;background:rgba(0,0,0,0.9);backdrop-filter:blur(12px);z-index:100}
+.nav-logo{font-family:'Host Grotesk',sans-serif;font-weight:800;font-size:18px;letter-spacing:-0.5px}
+.nav-logo span{color:rgba(255,255,255,0.4)}
+.nav-back{font-size:13px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-back:hover{color:#fff}
+
+/* HERO */
+.hero{padding:60px 40px 40px;max-width:1300px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:6px 14px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:24px}
+.badge-dot{width:6px;height:6px;background:#1DB954;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.hero h1{font-family:'Host Grotesk',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.05;letter-spacing:-0.02em;margin-bottom:16px}
+.hero h1 span{color:rgba(255,255,255,0.35)}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.6;margin-bottom:36px}
+
+/* STATS ROW */
+.stats{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.stat{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:20px 28px;min-width:140px}
+.stat-num{font-family:'Host Grotesk',sans-serif;font-size:32px;font-weight:800;line-height:1;margin-bottom:4px}
+.stat-label{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4)}
+.stat-num.green{color:#1DB954}
+
+/* FILTERS */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.filter-btn{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:7px 16px;font-size:12px;font-weight:500;color:rgba(255,255,255,0.6);cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+.filter-btn:hover,.filter-btn.active{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.25);color:#fff}
+.filter-btn.active{background:#1DB954;border-color:#1DB954;color:#000;font-weight:600}
+
+/* TABLE */
+.table-wrap{max-width:1300px;margin:0 auto;padding:0 40px 80px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead tr{border-bottom:1px solid rgba(255,255,255,0.1)}
+thead th{padding:12px 16px;text-align:left;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);white-space:nowrap}
+tbody tr{border-bottom:1px solid rgba(255,255,255,0.04);transition:background .15s}
+tbody tr:hover{background:rgba(255,255,255,0.025)}
+td{padding:20px 16px;vertical-align:top}
+
+/* COMPANY CELL */
+.company-name{font-family:'Host Grotesk',sans-serif;font-weight:700;font-size:15px;margin-bottom:4px}
+.company-contact{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.4}
+
+/* LINKEDIN CELL */
+.li-link{display:inline-flex;align-items:center;gap:6px;background:rgba(10,102,194,0.12);border:1px solid rgba(10,102,194,0.25);border-radius:8px;padding:5px 10px;font-size:11px;color:#5ba3e0;margin-bottom:5px;white-space:nowrap;transition:all .2s}
+.li-link:hover{background:rgba(10,102,194,0.22);color:#7db8e8}
+.li-icon{width:13px;height:13px;flex-shrink:0}
+
+/* SIGNAL CELL */
+.signal-text{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;max-width:260px}
+
+/* MESSAGE CELL */
+.msg-box{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:14px;font-size:12px;line-height:1.7;color:rgba(255,255,255,0.7);white-space:pre-wrap;max-width:340px;position:relative}
+.msg-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:8px}
+.copy-btn{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.08);border:none;border-radius:6px;padding:4px 8px;font-size:10px;color:rgba(255,255,255,0.5);cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
+.copy-btn:hover{background:rgba(255,255,255,0.15);color:#fff}
+.copy-btn.copied{background:rgba(29,185,84,0.2);color:#1DB954}
+
+/* STATUS */
+.status-badge{display:inline-flex;align-items:center;gap:6px;border-radius:100px;padding:5px 12px;font-size:11px;font-weight:600}
+.status-new{background:rgba(29,185,84,0.1);border:1px solid rgba(29,185,84,0.25);color:#1DB954}
+.status-sent{background:rgba(255,193,7,0.1);border:1px solid rgba(255,193,7,0.25);color:#ffc107}
+.status-replied{background:rgba(13,202,240,0.1);border:1px solid rgba(13,202,240,0.25);color:#0dcaf0}
+.status-select{background:transparent;border:none;font-size:11px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;outline:none;-webkit-appearance:none}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav,.hero,.table-wrap{padding-left:20px;padding-right:20px}
+  .hero h1{font-size:28px}
+  .stats{gap:12px}
+  .stat{padding:14px 18px;min-width:110px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">SYNTH<span>.</span> Media</div>
+  <a href="/" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to site
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <span class="badge-dot"></span>
+    LinkedIn Ad Library · Last 30 Days · US
+  </div>
+  <h1>Outreach <span>Dashboard</span></h1>
+  <p class="hero-sub">Companies actively running LinkedIn ads — verified marketing budget, warm signal for AI video production outreach.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num green">8</div><div class="stat-label">Prospects</div></div>
+    <div class="stat"><div class="stat-num">$100</div><div class="stat-label">Entry Price</div></div>
+    <div class="stat"><div class="stat-num">73%</div><div class="stat-label">Watch-Through</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Day Delivery</div></div>
+  </div>
+
+  <div class="table-wrap" style="padding:0;max-width:100%">
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterAll()">All (8)</button>
+      <button class="filter-btn" onclick="filterStatus('new')">🟢 New</button>
+      <button class="filter-btn" onclick="filterStatus('sent')">🟡 Day 1 Sent</button>
+      <button class="filter-btn" onclick="filterStatus('replied')">🔵 Replied</button>
+    </div>
+  </div>
+</div>
+
+<!-- TABLE -->
+<div class="table-wrap">
+  <table id="outreach-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Company</th>
+        <th>LinkedIn</th>
+        <th>Ad Signal</th>
+        <th>Day 1 — Outreach Message</th>
+        <th>Day 2 — Follow-Up</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+</div>
+
+<script>
+const prospects = [
+  {
+    company: "Plutus Media",
+    contact: "Mohammed A.D.\nCo-Founder & CEO",
+    linkedin: [
+      { label: "Mohammed A.D.", url: "https://linkedin.com/in/mohammed-ad" },
+      { label: "Plutus Media", url: "https://linkedin.com/company/plutus-media" }
+    ],
+    signal: "Running ads about building a $100M AI empire. They're in AI content/media — exactly the audience that gets the value of AI-produced video. High budget, high sophistication.",
+    day1: `Subject: your LinkedIn ad
+
+Saw your ad about the $100M AI empire — solid hook.
+
+We run SYNTH. Media — we produce cinematic AI videos for brands like yours in 7 days, starting at $100. 73% avg watch-through (industry avg is 42%).
+
+If you're running paid campaigns, scroll-stopping video is the #1 lever right now. Worth a quick look? synthmedia.vercel.app
+
+— Vansh`,
+    day2: `Hey Mohammed — following up from yesterday.
+
+One thing I didn't mention: we're capped at 3 client slots this month (quality control). Two are already taken.
+
+If Plutus Media's content calendar needs a video boost, happy to prioritize you. Just reply 'yes' and I'll send over a quick brief form.
+
+— Vansh, SYNTH. Media`,
+    status: "new"
+  },
+  {
+    company: "BIScience",
+    contact: "Jacob Tucker\n(Featured in ads)",
+    linkedin: [
+      { label: "BIScience", url: "https://linkedin.com/company/biscience" }
+    ],
+    signal: "Running multiple ads about ad intelligence & competitor visibility. A company selling to marketers understands ROI deeply — they'll respond to data-backed video pitches.",
+    day1: `Subject: video for your ad funnel
+
+Noticed BIScience running several LinkedIn ads around Adclarity — smart positioning.
+
+One thing that tends to sharply improve ad performance at that stage: a 30–60 sec scroll-stopping video instead of static creative.
+
+We deliver cinematic AI videos in 7 days from $100. Our clients average 73% watch-through. Would a sample concept be useful to see?
+
+— Vansh, SYNTH. Media
+synthmedia.vercel.app`,
+    day2: `Hey — quick add to my note yesterday.
+
+Since you're in the ad-intelligence space, you'd probably appreciate this: video ads have a 48% lower CPM than image ads on LinkedIn right now.
+
+If your current creative is static, switching to video could cut your ad spend meaningfully. We handle the whole thing — script to final file — in a week.
+
+Happy to do a free concept sketch if you're curious.
+
+— Vansh`,
+    status: "new"
+  },
+  {
+    company: "Alison.ai",
+    contact: "Marketing Team\nAI Creative Analytics",
+    linkedin: [
+      { label: "Alison.ai", url: "https://linkedin.com/company/alison-ai" }
+    ],
+    signal: "Running ads about Meta creative performance. They literally measure what makes video ads work — perfect client who understands creative ROI better than anyone.",
+    day1: `Subject: video creative for Alison
+
+Love what Alison is doing on the creative analytics side — you're probably sitting on more insight about what makes video convert than most agencies.
+
+Curious: is your own ad creative as optimized as the data you surface for clients?
+
+We produce AI-generated cinematic videos in 7 days from $100 — built specifically to perform on paid social. Given your analytical lens, I think you'd appreciate seeing the process.
+
+Worth a look? synthmedia.vercel.app
+
+— Vansh, SYNTH. Media`,
+    day2: `Hey — one more thought after yesterday's note.
+
+You could use one of our videos as a test creative in your own Alison dashboard — live proof of what AI-produced content actually scores.
+
+Would make for a great internal case study too. Want me to send a sample concept tailored to your brand?
+
+— Vansh`,
+    status: "new"
+  },
+  {
+    company: "CommunicateOnline",
+    contact: "Creative / Marketing Team",
+    linkedin: [
+      { label: "CommunicateOnline", url: "https://linkedin.com/company/communicateonline" }
+    ],
+    signal: "Running ads critiquing luxury brands' Ramadan creativity gap. They're a creative agency with high standards — likely outsource production or upsell video to clients.",
+    day1: `Subject: video production partner?
+
+Saw your Ramadan creative ad — sharp take. You clearly have high standards for what 'good creative' means.
+
+We're an AI video production studio — 7-day delivery, cinematic quality, starting at $100. A few agencies we work with use us as their production arm for client video work (saves them the studio overhead).
+
+Could be worth a conversation if you're scaling client video output.
+synthmedia.vercel.app
+
+— Vansh, SYNTH. Media`,
+    day2: `Hey — following up quickly.
+
+To make it concrete: if you have a client campaign coming up that needs video, we can white-label the production. You pitch, we produce, you deliver under your brand.
+
+7 days, starting at $100 per video. No studio overhead for you.
+
+Interested in the model?
+
+— Vansh`,
+    status: "new"
+  },
+  {
+    company: "MARKETIXA",
+    contact: "LinkedIn Ads Agency\nFounder / Team",
+    linkedin: [
+      { label: "MARKETIXA", url: "https://linkedin.com/company/marketixa" }
+    ],
+    signal: "Running 8+ LinkedIn ads offering free ad audits. A LinkedIn Ads agency actively prospecting — their clients need better creative. White-label video production opportunity.",
+    day1: `Subject: white-label video for your clients
+
+Noticed MARKETIXA running a strong volume of LinkedIn ads — respect the consistency.
+
+Quick question: when your clients' ad creative underperforms, do you have a video production partner you hand off to?
+
+We do AI cinematic video in 7 days from $100. Several LinkedIn agencies use us as a white-label production arm — they sell the video, we build it.
+
+Worth exploring? synthmedia.vercel.app
+
+— Vansh, SYNTH. Media`,
+    day2: `Hey — adding a little context to yesterday.
+
+The model is simple: you identify the client need, we deliver the video under a white-label arrangement, you keep the margin. No production overhead, no hiring.
+
+If you have even one client asking for video this month, happy to do the first one at cost so you can see the quality.
+
+— Vansh`,
+    status: "new"
+  },
+  {
+    company: "Wild Geese Media",
+    contact: "Ivan Tobias\nFounder",
+    linkedin: [
+      { label: "Ivan Tobias", url: "https://linkedin.com/in/ivan-tobias" },
+      { label: "Wild Geese Media", url: "https://linkedin.com/company/wild-geese-media" }
+    ],
+    signal: "Running ads positioning YouTube as a revenue system. A media-first founder who deeply understands video ROI — needs production for himself or clients.",
+    day1: `Subject: video production for your clients
+
+Ivan — saw your YouTube revenue system ad. You get something most people don't: distribution without great video is just noise.
+
+We build scroll-stopping AI videos in 7 days from $100. If your clients need a consistent supply of high-quality video to fuel that YouTube flywheel, we might be a useful partner.
+
+Worth 5 minutes to look? synthmedia.vercel.app
+
+— Vansh, SYNTH. Media`,
+    day2: `Hey Ivan — one follow-up thought.
+
+If you're teaching clients to build on YouTube, the #1 friction is usually production speed and cost. We solve both — cinematic quality, 7-day turnaround, $100 entry point.
+
+Could even bundle us into your program as a recommended production partner. Happy to offer your clients a discount. Worth a chat?
+
+— Vansh`,
+    status: "new"
+  },
+  {
+    company: "Merchynt",
+    contact: "Justin Silverman\nFounder / CEO",
+    linkedin: [
+      { label: "Justin Silverman", url: "https://linkedin.com/in/justinsilverman" },
+      { label: "Merchynt", url: "https://linkedin.com/company/merchynt" }
+    ],
+    signal: "Running ads for Paige platform (SMS + SEO for SMBs). A SaaS founder running paid acquisition — video ads typically reduce CAC significantly vs static.",
+    day1: `Subject: cut your ad CAC with video
+
+Justin — noticed you running paid ads for Paige. SMB SaaS acquisition is brutal right now.
+
+One move that consistently drops CAC: swapping static creative for short-form video. We produce AI cinematic videos in 7 days from $100 — our clients average 73% watch-through vs 42% industry average.
+
+If you're testing creative variations anyway, video is worth a run.
+synthmedia.vercel.app
+
+— Vansh, SYNTH. Media`,
+    day2: `Hey Justin — quick follow-up.
+
+To make it easy to test: we can produce a 30-sec explainer for Paige for $100, delivered in 7 days. Run it against your current static creative and see what happens to CTR.
+
+Worst case you spend $100 and learn something. Best case you find a new acquisition channel.
+
+Want to try it?
+
+— Vansh`,
+    status: "new"
+  },
+  {
+    company: "Collectly",
+    contact: "Marketing Team\nPatient Finance SaaS",
+    linkedin: [
+      { label: "Collectly", url: "https://linkedin.com/company/collectly" }
+    ],
+    signal: "Running multiple LinkedIn ads for patient financial experience. Healthcare SaaS with active paid budget — complex product that needs 'show don't tell' video to convert.",
+    day1: `Subject: explainer video for Collectly
+
+Saw Collectly running LinkedIn ads around patient financial experience — impressive that you're making a complex topic feel approachable in ad copy.
+
+A short AI-produced explainer video could do a lot of heavy lifting in that funnel — especially for a product that needs a bit of 'show don't tell.'
+
+We deliver cinematic AI videos in 7 days from $100. Might be worth a look: synthmedia.vercel.app
+
+— Vansh, SYNTH. Media`,
+    day2: `Hey — following up on my note yesterday.
+
+Specifically for SaaS products in regulated industries (like healthcare finance), video tends to outperform static because it can demonstrate the product experience without requiring a demo booking.
+
+Happy to mock up a concept for Collectly at no cost so you can see what it'd look like. Just say the word.
+
+— Vansh`,
+    status: "new"
+  }
+];
+
+const statusMap = {
+  new: { label: "🟢 New", cls: "status-new" },
+  sent: { label: "🟡 Day 1 Sent", cls: "status-sent" },
+  replied: { label: "🔵 Replied", cls: "status-replied" }
+};
+
+let statuses = prospects.map(p => p.status);
+
+function renderTable(filter = null) {
+  const tbody = document.getElementById('table-body');
+  tbody.innerHTML = '';
+  prospects.forEach((p, i) => {
+    if (filter && statuses[i] !== filter) return;
+    const tr = document.createElement('tr');
+    tr.dataset.idx = i;
+    tr.innerHTML = `
+      <td style="color:rgba(255,255,255,0.25);font-size:12px;font-weight:600">${i+1}</td>
+      <td>
+        <div class="company-name">${p.company}</div>
+        <div class="company-contact">${p.contact.replace(/\n/g,'<br>')}</div>
+      </td>
+      <td style="min-width:160px">
+        ${p.linkedin.map(l => `<a href="${l.url}" target="_blank" class="li-link">
+          <svg class="li-icon" viewBox="0 0 24 24" fill="#5ba3e0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          ${l.label}
+        </a>`).join('')}
+      </td>
+      <td><div class="signal-text">${p.signal}</div></td>
+      <td style="min-width:320px">
+        <div class="msg-label">Day 1 Message</div>
+        <div class="msg-box" style="position:relative">
+          <button class="copy-btn" onclick="copyMsg(this, ${i}, 'day1')">Copy</button>
+          ${p.day1.replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+        </div>
+      </td>
+      <td style="min-width:300px">
+        <div class="msg-label">Day 2 Follow-Up</div>
+        <div class="msg-box" style="position:relative">
+          <button class="copy-btn" onclick="copyMsg(this, ${i}, 'day2')">Copy</button>
+          ${p.day2.replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+        </div>
+      </td>
+      <td>
+        <select class="status-badge ${statusMap[statuses[i]].cls} status-select" onchange="updateStatus(${i}, this.value)" style="color:inherit;padding:5px 12px;border-radius:100px;border:1px solid">
+          <option value="new" ${statuses[i]==='new'?'selected':''}>🟢 New</option>
+          <option value="sent" ${statuses[i]==='sent'?'selected':''}>🟡 Day 1 Sent</option>
+          <option value="replied" ${statuses[i]==='replied'?'selected':''}>🔵 Replied</option>
+        </select>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function copyMsg(btn, idx, field) {
+  navigator.clipboard.writeText(prospects[idx][field]).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+function updateStatus(idx, val) {
+  statuses[idx] = val;
+  renderTable(window._activeFilter || null);
+}
+
+function filterAll() {
+  window._activeFilter = null;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.filter-btn')[0].classList.add('active');
+  renderTable(null);
+}
+
+function filterStatus(s) {
+  window._activeFilter = s;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderTable(s);
+}
+
+renderTable();
+</script>
+</body>
+</html>
