@@ -57,15 +57,15 @@ class MetaAdsSource:
         }
         try:
             resp = self.session.get(META_AD_LIBRARY_URL, params=params, timeout=15)
-            resp.raise_for_status()
+            if not resp.ok:
+                error_data = resp.json().get("error", {})
+                raise ValueError(f"Meta API error {resp.status_code}: {error_data.get('message', resp.text[:200])}")
             data = resp.json()
             return data.get("data", [])
-        except requests.exceptions.HTTPError as e:
-            if resp.status_code == 401:
-                raise ValueError("Invalid Meta access token. Please check your META_ACCESS_TOKEN.") from e
-            return []
-        except Exception:
-            return []
+        except ValueError:
+            raise
+        except Exception as e:
+            raise ValueError(f"Meta API request failed: {str(e)}") from e
 
     def _parse_ad(self, ad: dict, search_term: str) -> dict:
         """Normalize a raw ad record into a trend signal."""

@@ -257,6 +257,8 @@ if fetch_btn:
             st.rerun()
         except Exception as e:
             st.error(f"Error during fetch: {e}")
+            import traceback
+            st.code(traceback.format_exc())
 
 
 # ── No Data State ──────────────────────────────────────────────────────────
@@ -526,9 +528,19 @@ with st.expander("📊 Full Trend Data Table", expanded=False):
 # ── Errors Panel ──────────────────────────────────────────────────────────
 errors = results.get("errors", {})
 if errors:
-    with st.expander("⚠️ Source Errors", expanded=False):
+    with st.expander("⚠️ Source Errors", expanded=True):
         for source, err in errors.items():
             st.error(f"**{source}**: {err}")
+
+# ── Debug Panel ────────────────────────────────────────────────────────────
+with st.expander("🔍 Debug Info", expanded=False):
+    st.json({
+        "sources_status": results.get("sources_status", []),
+        "errors": results.get("errors", {}),
+        "total_signals": results.get("total_signals_processed", 0),
+        "trending_now_count": len(results.get("trending_now", [])),
+        "upcoming_count": len(results.get("upcoming", [])),
+    })
 
 
 # ── Auto-Refresh ───────────────────────────────────────────────────────────
