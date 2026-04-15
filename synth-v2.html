@@ -1473,25 +1473,25 @@ footer{
 
 <!-- METRICS STRIP -->
 <div class="sec sec-dark" style="padding-top:80px;padding-bottom:80px">
-  <div class="metrics-strip reveal">
+  <div class="metrics-strip reveal" id="metricsStrip">
     <div class="metric">
-      <div class="metric-val">48<span>hrs</span></div>
+      <div class="metric-val"><span class="count-num" data-target="48" data-decimals="0">0</span><span>hrs</span></div>
       <div class="metric-lbl">Avg. Delivery Time</div>
     </div>
     <div class="metric">
-      <div class="metric-val">120<span>+</span></div>
+      <div class="metric-val"><span class="count-num" data-target="120" data-decimals="0">0</span><span>+</span></div>
       <div class="metric-lbl">Videos Delivered</div>
     </div>
     <div class="metric">
-      <div class="metric-val">6.7<span>M</span></div>
+      <div class="metric-val"><span class="count-num" data-target="6.7" data-decimals="1">0</span><span>M</span></div>
       <div class="metric-lbl">Views Generated for Clients</div>
     </div>
     <div class="metric">
-      <div class="metric-val">73<span>%</span></div>
+      <div class="metric-val"><span class="count-num" data-target="73" data-decimals="0">0</span><span>%</span></div>
       <div class="metric-lbl">Avg. Watch-Through Rate</div>
     </div>
     <div class="metric">
-      <div class="metric-val">4.9<span></span></div>
+      <div class="metric-val"><span class="count-num" data-target="4.9" data-decimals="1">0</span><span></span></div>
       <div class="metric-lbl">Client Satisfaction</div>
     </div>
   </div>
@@ -2064,6 +2064,33 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* COUNTER ANIMATION */
+function animateCounter(el){
+  const target=parseFloat(el.dataset.target);
+  const decimals=parseInt(el.dataset.decimals)||0;
+  const duration=1800;
+  const start=performance.now();
+  function step(now){
+    const t=Math.min((now-start)/duration,1);
+    const ease=1-Math.pow(1-t,3);
+    const val=target*ease;
+    el.textContent=decimals>0?val.toFixed(decimals):Math.floor(val);
+    if(t<1)requestAnimationFrame(step);
+    else el.textContent=decimals>0?target.toFixed(decimals):target;
+  }
+  requestAnimationFrame(step);
+}
+const counterObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.count-num').forEach(animateCounter);
+      counterObs.unobserve(e.target);
+    }
+  });
+},{threshold:.3});
+const metricsStrip=document.getElementById('metricsStrip');
+if(metricsStrip)counterObs.observe(metricsStrip);
 
 /*  FAQ  */
 document.querySelectorAll('.faq-btn').forEach(btn=>{
