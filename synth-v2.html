@@ -344,16 +344,30 @@ nav{
 .btn-outline-white:hover{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.05)}
 .btn-green{
   display:inline-flex;align-items:center;gap:8px;
-  background:#ffffff;
+  background:linear-gradient(90deg,#16a34a 0%,#22c55e 35%,#86efac 55%,#22c55e 70%,#16a34a 100%);
+  background-size:200% auto;
   color:#000000;
   font-size:14px;font-weight:600;
   padding:13px 28px;
   border-radius:var(--r-pill);
+  animation:goldshine 2.5s linear infinite;
   transition:opacity .2s;
 }
 .btn-green:hover{opacity:.85}
 
 /* floating UI cards */
+@keyframes floatMain{
+  0%,100%{transform:translateX(-50%) translateY(0px)}
+  50%{transform:translateX(-50%) translateY(-12px)}
+}
+@keyframes floatLeft{
+  0%,100%{transform:rotate(-4deg) translateY(0px)}
+  50%{transform:rotate(-4deg) translateY(-9px)}
+}
+@keyframes floatRight{
+  0%,100%{transform:rotate(3deg) translateY(0px)}
+  50%{transform:rotate(3deg) translateY(-11px)}
+}
 .hero-cards{
   position:relative;width:100%;max-width:860px;
   margin:0 auto;
@@ -374,12 +388,14 @@ nav{
   left:50%;transform:translateX(-50%);
   width:min(480px,90vw);
   top:0;
+  animation:floatMain 5s ease-in-out infinite;
 }
 /* left small card */
 .hc-left{
   left:0;top:40px;
   width:180px;
   transform:rotate(-4deg);
+  animation:floatLeft 6s ease-in-out infinite 1s;
   display:none;
 }
 /* right small card */
@@ -388,6 +404,7 @@ nav{
   width:160px;
   transform:rotate(3deg);
   display:none;
+  animation:floatRight 5.5s ease-in-out infinite 2s;
 }
 @media(min-width:700px){.hc-left,.hc-right{display:block}}
 
