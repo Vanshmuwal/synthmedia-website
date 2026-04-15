@@ -11,83 +11,57 @@
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:#000;color:#fff;-webkit-font-smoothing:antialiased;min-height:100vh}
 a{text-decoration:none;color:inherit}
-
-/* NAV */
-.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1px solid rgba(255,255,255,0.07);position:sticky;top:0;background:rgba(0,0,0,0.9);backdrop-filter:blur(12px);z-index:100}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1px solid rgba(255,255,255,0.07);position:sticky;top:0;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);z-index:100}
 .nav-logo{font-family:'Host Grotesk',sans-serif;font-weight:800;font-size:18px;letter-spacing:-0.5px}
-.nav-logo span{color:rgba(255,255,255,0.4)}
+.nav-logo span{color:rgba(255,255,255,0.35)}
 .nav-back{font-size:13px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:6px;transition:color .2s}
 .nav-back:hover{color:#fff}
-
-/* HERO */
-.hero{padding:60px 40px 40px;max-width:1300px;margin:0 auto}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:6px 14px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:24px}
+.hero{padding:52px 40px 32px;max-width:1400px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:6px 14px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:20px}
 .badge-dot{width:6px;height:6px;background:#1DB954;border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
-.hero h1{font-family:'Host Grotesk',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.05;letter-spacing:-0.02em;margin-bottom:16px}
-.hero h1 span{color:rgba(255,255,255,0.35)}
-.hero-sub{font-size:15px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.6;margin-bottom:36px}
-
-/* STATS ROW */
-.stats{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:48px}
-.stat{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:20px 28px;min-width:140px}
-.stat-num{font-family:'Host Grotesk',sans-serif;font-size:32px;font-weight:800;line-height:1;margin-bottom:4px}
-.stat-label{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4)}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.hero h1{font-family:'Host Grotesk',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.05;letter-spacing:-0.02em;margin-bottom:12px}
+.hero h1 span{color:rgba(255,255,255,0.3)}
+.hero-sub{font-size:14px;color:rgba(255,255,255,0.45);max-width:560px;line-height:1.6;margin-bottom:32px}
+.stats{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+.stat{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 24px;min-width:120px}
+.stat-num{font-family:'Host Grotesk',sans-serif;font-size:28px;font-weight:800;line-height:1;margin-bottom:3px}
 .stat-num.green{color:#1DB954}
-
-/* FILTERS */
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
-.filter-btn{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:7px 16px;font-size:12px;font-weight:500;color:rgba(255,255,255,0.6);cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
-.filter-btn:hover,.filter-btn.active{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.25);color:#fff}
+.stat-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:24px}
+.filter-btn{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:500;color:rgba(255,255,255,0.55);cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+.filter-btn:hover,.filter-btn.active{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:#fff}
 .filter-btn.active{background:#1DB954;border-color:#1DB954;color:#000;font-weight:600}
-
-/* TABLE */
-.table-wrap{max-width:1300px;margin:0 auto;padding:0 40px 80px;overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:13px}
-thead tr{border-bottom:1px solid rgba(255,255,255,0.1)}
-thead th{padding:12px 16px;text-align:left;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);white-space:nowrap}
-tbody tr{border-bottom:1px solid rgba(255,255,255,0.04);transition:background .15s}
-tbody tr:hover{background:rgba(255,255,255,0.025)}
-td{padding:20px 16px;vertical-align:top}
-
-/* COMPANY CELL */
-.company-name{font-family:'Host Grotesk',sans-serif;font-weight:700;font-size:15px;margin-bottom:4px}
-.company-contact{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.4}
-
-/* LINKEDIN CELL */
-.li-link{display:inline-flex;align-items:center;gap:6px;background:rgba(10,102,194,0.12);border:1px solid rgba(10,102,194,0.25);border-radius:8px;padding:5px 10px;font-size:11px;color:#5ba3e0;margin-bottom:5px;white-space:nowrap;transition:all .2s}
-.li-link:hover{background:rgba(10,102,194,0.22);color:#7db8e8}
-.li-icon{width:13px;height:13px;flex-shrink:0}
-
-/* SIGNAL CELL */
-.signal-text{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;max-width:260px}
-
-/* MESSAGE CELL */
-.msg-box{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:14px;font-size:12px;line-height:1.7;color:rgba(255,255,255,0.7);white-space:pre-wrap;max-width:340px;position:relative}
-.msg-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:8px}
-.copy-btn{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.08);border:none;border-radius:6px;padding:4px 8px;font-size:10px;color:rgba(255,255,255,0.5);cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
-.copy-btn:hover{background:rgba(255,255,255,0.15);color:#fff}
-.copy-btn.copied{background:rgba(29,185,84,0.2);color:#1DB954}
-
-/* STATUS */
-.status-badge{display:inline-flex;align-items:center;gap:6px;border-radius:100px;padding:5px 12px;font-size:11px;font-weight:600}
-.status-new{background:rgba(29,185,84,0.1);border:1px solid rgba(29,185,84,0.25);color:#1DB954}
-.status-sent{background:rgba(255,193,7,0.1);border:1px solid rgba(255,193,7,0.25);color:#ffc107}
-.status-replied{background:rgba(13,202,240,0.1);border:1px solid rgba(13,202,240,0.25);color:#0dcaf0}
-.status-select{background:transparent;border:none;font-size:11px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;outline:none;-webkit-appearance:none}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .nav,.hero,.table-wrap{padding-left:20px;padding-right:20px}
-  .hero h1{font-size:28px}
-  .stats{gap:12px}
-  .stat{padding:14px 18px;min-width:110px}
-}
+.search-box{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:7px 14px;font-size:12px;color:#fff;font-family:'Inter',sans-serif;outline:none;width:220px;transition:border-color .2s}
+.search-box::placeholder{color:rgba(255,255,255,0.3)}
+.search-box:focus{border-color:rgba(255,255,255,0.25)}
+.table-wrap{max-width:1400px;margin:0 auto;padding:0 40px 80px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+thead tr{border-bottom:1px solid rgba(255,255,255,0.08)}
+thead th{padding:10px 14px;text-align:left;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.3);white-space:nowrap}
+tbody tr{border-bottom:1px solid rgba(255,255,255,0.035);transition:background .15s;cursor:default}
+tbody tr:hover{background:rgba(255,255,255,0.02)}
+td{padding:18px 14px;vertical-align:top}
+.num{color:rgba(255,255,255,0.2);font-size:11px;font-weight:700;min-width:28px}
+.company-name{font-family:'Host Grotesk',sans-serif;font-weight:700;font-size:14px;margin-bottom:3px}
+.company-type{font-size:10px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:3px}
+.company-contact{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.4}
+.li-link{display:inline-flex;align-items:center;gap:5px;background:rgba(10,102,194,0.1);border:1px solid rgba(10,102,194,0.2);border-radius:7px;padding:4px 9px;font-size:11px;color:#5ba3e0;white-space:nowrap;transition:all .2s;margin-bottom:4px}
+.li-link:hover{background:rgba(10,102,194,0.2);color:#7db8e8}
+.li-icon{width:12px;height:12px;flex-shrink:0}
+.signal-text{font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.6;max-width:230px}
+.msg-wrap{min-width:300px;max-width:340px}
+.msg-label{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:6px}
+.msg-box{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:12px;font-size:11.5px;line-height:1.65;color:rgba(255,255,255,0.65);white-space:pre-wrap;position:relative}
+.copy-btn{position:absolute;top:8px;right:8px;background:rgba(255,255,255,0.07);border:none;border-radius:5px;padding:3px 7px;font-size:10px;color:rgba(255,255,255,0.4);cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
+.copy-btn:hover{background:rgba(255,255,255,0.14);color:#fff}
+.copy-btn.copied{background:rgba(29,185,84,0.18);color:#1DB954}
+.status-select{background:transparent;border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:4px 10px;font-size:11px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;outline:none;color:rgba(255,255,255,0.6);-webkit-appearance:none;min-width:120px}
+.empty-state{text-align:center;padding:60px 20px;color:rgba(255,255,255,0.3);font-size:14px}
+@media(max-width:768px){.nav,.hero,.table-wrap{padding-left:16px;padding-right:16px}.hero h1{font-size:26px}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav class="nav">
   <div class="nav-logo">SYNTH<span>.</span> Media</div>
   <a href="/" class="nav-back">
@@ -95,353 +69,124 @@ td{padding:20px 16px;vertical-align:top}
     Back to site
   </a>
 </nav>
-
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">
-    <span class="badge-dot"></span>
-    LinkedIn Ad Library · Last 30 Days · US
-  </div>
+  <div class="hero-badge"><span class="badge-dot"></span>LinkedIn Ad Library · Last 30 Days · US</div>
   <h1>Outreach <span>Dashboard</span></h1>
-  <p class="hero-sub">Companies actively running LinkedIn ads — verified marketing budget, warm signal for AI video production outreach.</p>
-
+  <p class="hero-sub">100 companies actively running LinkedIn ads — verified marketing budget, warm signal for AI video production outreach.</p>
   <div class="stats">
-    <div class="stat"><div class="stat-num green">8</div><div class="stat-label">Prospects</div></div>
+    <div class="stat"><div class="stat-num green" id="count">100</div><div class="stat-label">Prospects</div></div>
     <div class="stat"><div class="stat-num">$100</div><div class="stat-label">Entry Price</div></div>
     <div class="stat"><div class="stat-num">73%</div><div class="stat-label">Watch-Through</div></div>
-    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Day Delivery</div></div>
+    <div class="stat"><div class="stat-num">48</div><div class="stat-label">Hr Delivery</div></div>
   </div>
-
-  <div class="table-wrap" style="padding:0;max-width:100%">
-    <div class="filters">
-      <button class="filter-btn active" onclick="filterAll()">All (8)</button>
-      <button class="filter-btn" onclick="filterStatus('new')">🟢 New</button>
-      <button class="filter-btn" onclick="filterStatus('sent')">🟡 Day 1 Sent</button>
-      <button class="filter-btn" onclick="filterStatus('replied')">🔵 Replied</button>
-    </div>
+  <div class="controls">
+    <input class="search-box" type="text" placeholder="Search companies..." oninput="applyFilters()" id="search-input"/>
+    <button class="filter-btn active" onclick="setFilter('all',this)">All (100)</button>
+    <button class="filter-btn" onclick="setFilter('new',this)">🟢 New</button>
+    <button class="filter-btn" onclick="setFilter('sent',this)">🟡 Day 1 Sent</button>
+    <button class="filter-btn" onclick="setFilter('replied',this)">🔵 Replied</button>
+    <button class="filter-btn" onclick="setFilter('noreply',this)">🔴 No Reply</button>
   </div>
 </div>
-
-<!-- TABLE -->
 <div class="table-wrap">
-  <table id="outreach-table">
+  <table>
     <thead>
       <tr>
-        <th>#</th>
-        <th>Company</th>
-        <th>LinkedIn</th>
-        <th>Ad Signal</th>
-        <th>Day 1 — Outreach Message</th>
-        <th>Day 2 — Follow-Up</th>
-        <th>Status</th>
+        <th>#</th><th>Company</th><th>LinkedIn</th><th>Why They Fit</th>
+        <th>Day 1 — Outreach Message</th><th>Day 2 — Follow-Up</th><th>Status</th>
       </tr>
     </thead>
-    <tbody id="table-body"></tbody>
+    <tbody id="tbody"></tbody>
   </table>
+  <div id="empty" class="empty-state" style="display:none">No results found</div>
 </div>
-
 <script>
-const prospects = [
-  {
-    company: "Plutus Media",
-    contact: "Mohammed A.D.\nCo-Founder & CEO",
-    linkedin: [
-      { label: "Mohammed A.D.", url: "https://linkedin.com/in/mohammed-ad" },
-      { label: "Plutus Media", url: "https://linkedin.com/company/plutus-media" }
-    ],
-    signal: "Running ads about building a $100M AI empire. They're in AI content/media — exactly the audience that gets the value of AI-produced video. High budget, high sophistication.",
-    day1: `Subject: your LinkedIn ad
-
-Saw your ad about the $100M AI empire — solid hook.
-
-We run SYNTH. Media — we produce cinematic AI videos for brands like yours in 7 days, starting at $100. 73% avg watch-through (industry avg is 42%).
-
-If you're running paid campaigns, scroll-stopping video is the #1 lever right now. Worth a quick look? synthmedia.vercel.app
-
-— Vansh`,
-    day2: `Hey Mohammed — following up from yesterday.
-
-One thing I didn't mention: we're capped at 3 client slots this month (quality control). Two are already taken.
-
-If Plutus Media's content calendar needs a video boost, happy to prioritize you. Just reply 'yes' and I'll send over a quick brief form.
-
-— Vansh, SYNTH. Media`,
-    status: "new"
-  },
-  {
-    company: "BIScience",
-    contact: "Jacob Tucker\n(Featured in ads)",
-    linkedin: [
-      { label: "BIScience", url: "https://linkedin.com/company/biscience" }
-    ],
-    signal: "Running multiple ads about ad intelligence & competitor visibility. A company selling to marketers understands ROI deeply — they'll respond to data-backed video pitches.",
-    day1: `Subject: video for your ad funnel
-
-Noticed BIScience running several LinkedIn ads around Adclarity — smart positioning.
-
-One thing that tends to sharply improve ad performance at that stage: a 30–60 sec scroll-stopping video instead of static creative.
-
-We deliver cinematic AI videos in 7 days from $100. Our clients average 73% watch-through. Would a sample concept be useful to see?
-
-— Vansh, SYNTH. Media
-synthmedia.vercel.app`,
-    day2: `Hey — quick add to my note yesterday.
-
-Since you're in the ad-intelligence space, you'd probably appreciate this: video ads have a 48% lower CPM than image ads on LinkedIn right now.
-
-If your current creative is static, switching to video could cut your ad spend meaningfully. We handle the whole thing — script to final file — in a week.
-
-Happy to do a free concept sketch if you're curious.
-
-— Vansh`,
-    status: "new"
-  },
-  {
-    company: "Alison.ai",
-    contact: "Marketing Team\nAI Creative Analytics",
-    linkedin: [
-      { label: "Alison.ai", url: "https://linkedin.com/company/alison-ai" }
-    ],
-    signal: "Running ads about Meta creative performance. They literally measure what makes video ads work — perfect client who understands creative ROI better than anyone.",
-    day1: `Subject: video creative for Alison
-
-Love what Alison is doing on the creative analytics side — you're probably sitting on more insight about what makes video convert than most agencies.
-
-Curious: is your own ad creative as optimized as the data you surface for clients?
-
-We produce AI-generated cinematic videos in 7 days from $100 — built specifically to perform on paid social. Given your analytical lens, I think you'd appreciate seeing the process.
-
-Worth a look? synthmedia.vercel.app
-
-— Vansh, SYNTH. Media`,
-    day2: `Hey — one more thought after yesterday's note.
-
-You could use one of our videos as a test creative in your own Alison dashboard — live proof of what AI-produced content actually scores.
-
-Would make for a great internal case study too. Want me to send a sample concept tailored to your brand?
-
-— Vansh`,
-    status: "new"
-  },
-  {
-    company: "CommunicateOnline",
-    contact: "Creative / Marketing Team",
-    linkedin: [
-      { label: "CommunicateOnline", url: "https://linkedin.com/company/communicateonline" }
-    ],
-    signal: "Running ads critiquing luxury brands' Ramadan creativity gap. They're a creative agency with high standards — likely outsource production or upsell video to clients.",
-    day1: `Subject: video production partner?
-
-Saw your Ramadan creative ad — sharp take. You clearly have high standards for what 'good creative' means.
-
-We're an AI video production studio — 7-day delivery, cinematic quality, starting at $100. A few agencies we work with use us as their production arm for client video work (saves them the studio overhead).
-
-Could be worth a conversation if you're scaling client video output.
-synthmedia.vercel.app
-
-— Vansh, SYNTH. Media`,
-    day2: `Hey — following up quickly.
-
-To make it concrete: if you have a client campaign coming up that needs video, we can white-label the production. You pitch, we produce, you deliver under your brand.
-
-7 days, starting at $100 per video. No studio overhead for you.
-
-Interested in the model?
-
-— Vansh`,
-    status: "new"
-  },
-  {
-    company: "MARKETIXA",
-    contact: "LinkedIn Ads Agency\nFounder / Team",
-    linkedin: [
-      { label: "MARKETIXA", url: "https://linkedin.com/company/marketixa" }
-    ],
-    signal: "Running 8+ LinkedIn ads offering free ad audits. A LinkedIn Ads agency actively prospecting — their clients need better creative. White-label video production opportunity.",
-    day1: `Subject: white-label video for your clients
-
-Noticed MARKETIXA running a strong volume of LinkedIn ads — respect the consistency.
-
-Quick question: when your clients' ad creative underperforms, do you have a video production partner you hand off to?
-
-We do AI cinematic video in 7 days from $100. Several LinkedIn agencies use us as a white-label production arm — they sell the video, we build it.
-
-Worth exploring? synthmedia.vercel.app
-
-— Vansh, SYNTH. Media`,
-    day2: `Hey — adding a little context to yesterday.
-
-The model is simple: you identify the client need, we deliver the video under a white-label arrangement, you keep the margin. No production overhead, no hiring.
-
-If you have even one client asking for video this month, happy to do the first one at cost so you can see the quality.
-
-— Vansh`,
-    status: "new"
-  },
-  {
-    company: "Wild Geese Media",
-    contact: "Ivan Tobias\nFounder",
-    linkedin: [
-      { label: "Ivan Tobias", url: "https://linkedin.com/in/ivan-tobias" },
-      { label: "Wild Geese Media", url: "https://linkedin.com/company/wild-geese-media" }
-    ],
-    signal: "Running ads positioning YouTube as a revenue system. A media-first founder who deeply understands video ROI — needs production for himself or clients.",
-    day1: `Subject: video production for your clients
-
-Ivan — saw your YouTube revenue system ad. You get something most people don't: distribution without great video is just noise.
-
-We build scroll-stopping AI videos in 7 days from $100. If your clients need a consistent supply of high-quality video to fuel that YouTube flywheel, we might be a useful partner.
-
-Worth 5 minutes to look? synthmedia.vercel.app
-
-— Vansh, SYNTH. Media`,
-    day2: `Hey Ivan — one follow-up thought.
-
-If you're teaching clients to build on YouTube, the #1 friction is usually production speed and cost. We solve both — cinematic quality, 7-day turnaround, $100 entry point.
-
-Could even bundle us into your program as a recommended production partner. Happy to offer your clients a discount. Worth a chat?
-
-— Vansh`,
-    status: "new"
-  },
-  {
-    company: "Merchynt",
-    contact: "Justin Silverman\nFounder / CEO",
-    linkedin: [
-      { label: "Justin Silverman", url: "https://linkedin.com/in/justinsilverman" },
-      { label: "Merchynt", url: "https://linkedin.com/company/merchynt" }
-    ],
-    signal: "Running ads for Paige platform (SMS + SEO for SMBs). A SaaS founder running paid acquisition — video ads typically reduce CAC significantly vs static.",
-    day1: `Subject: cut your ad CAC with video
-
-Justin — noticed you running paid ads for Paige. SMB SaaS acquisition is brutal right now.
-
-One move that consistently drops CAC: swapping static creative for short-form video. We produce AI cinematic videos in 7 days from $100 — our clients average 73% watch-through vs 42% industry average.
-
-If you're testing creative variations anyway, video is worth a run.
-synthmedia.vercel.app
-
-— Vansh, SYNTH. Media`,
-    day2: `Hey Justin — quick follow-up.
-
-To make it easy to test: we can produce a 30-sec explainer for Paige for $100, delivered in 7 days. Run it against your current static creative and see what happens to CTR.
-
-Worst case you spend $100 and learn something. Best case you find a new acquisition channel.
-
-Want to try it?
-
-— Vansh`,
-    status: "new"
-  },
-  {
-    company: "Collectly",
-    contact: "Marketing Team\nPatient Finance SaaS",
-    linkedin: [
-      { label: "Collectly", url: "https://linkedin.com/company/collectly" }
-    ],
-    signal: "Running multiple LinkedIn ads for patient financial experience. Healthcare SaaS with active paid budget — complex product that needs 'show don't tell' video to convert.",
-    day1: `Subject: explainer video for Collectly
-
-Saw Collectly running LinkedIn ads around patient financial experience — impressive that you're making a complex topic feel approachable in ad copy.
-
-A short AI-produced explainer video could do a lot of heavy lifting in that funnel — especially for a product that needs a bit of 'show don't tell.'
-
-We deliver cinematic AI videos in 7 days from $100. Might be worth a look: synthmedia.vercel.app
-
-— Vansh, SYNTH. Media`,
-    day2: `Hey — following up on my note yesterday.
-
-Specifically for SaaS products in regulated industries (like healthcare finance), video tends to outperform static because it can demonstrate the product experience without requiring a demo booking.
-
-Happy to mock up a concept for Collectly at no cost so you can see what it'd look like. Just say the word.
-
-— Vansh`,
-    status: "new"
-  }
-];
-
-const statusMap = {
-  new: { label: "🟢 New", cls: "status-new" },
-  sent: { label: "🟡 Day 1 Sent", cls: "status-sent" },
-  replied: { label: "🔵 Replied", cls: "status-replied" }
-};
-
-let statuses = prospects.map(p => p.status);
-
-function renderTable(filter = null) {
-  const tbody = document.getElementById('table-body');
-  tbody.innerHTML = '';
-  prospects.forEach((p, i) => {
-    if (filter && statuses[i] !== filter) return;
-    const tr = document.createElement('tr');
-    tr.dataset.idx = i;
-    tr.innerHTML = `
-      <td style="color:rgba(255,255,255,0.25);font-size:12px;font-weight:600">${i+1}</td>
-      <td>
-        <div class="company-name">${p.company}</div>
-        <div class="company-contact">${p.contact.replace(/\n/g,'<br>')}</div>
-      </td>
-      <td style="min-width:160px">
-        ${p.linkedin.map(l => `<a href="${l.url}" target="_blank" class="li-link">
-          <svg class="li-icon" viewBox="0 0 24 24" fill="#5ba3e0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          ${l.label}
-        </a>`).join('')}
-      </td>
-      <td><div class="signal-text">${p.signal}</div></td>
-      <td style="min-width:320px">
-        <div class="msg-label">Day 1 Message</div>
-        <div class="msg-box" style="position:relative">
-          <button class="copy-btn" onclick="copyMsg(this, ${i}, 'day1')">Copy</button>
-          ${p.day1.replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-        </div>
-      </td>
-      <td style="min-width:300px">
-        <div class="msg-label">Day 2 Follow-Up</div>
-        <div class="msg-box" style="position:relative">
-          <button class="copy-btn" onclick="copyMsg(this, ${i}, 'day2')">Copy</button>
-          ${p.day2.replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-        </div>
-      </td>
-      <td>
-        <select class="status-badge ${statusMap[statuses[i]].cls} status-select" onchange="updateStatus(${i}, this.value)" style="color:inherit;padding:5px 12px;border-radius:100px;border:1px solid">
-          <option value="new" ${statuses[i]==='new'?'selected':''}>🟢 New</option>
-          <option value="sent" ${statuses[i]==='sent'?'selected':''}>🟡 Day 1 Sent</option>
-          <option value="replied" ${statuses[i]==='replied'?'selected':''}>🔵 Replied</option>
-        </select>
-      </td>
-    `;
-    tbody.appendChild(tr);
-  });
+const DATA = [{"id": 1, "company": "MARKETIXA", "contact": "Founder / Team", "type": "LinkedIn Ads Agency", "linkedin": "linkedin.com/company/marketixa", "signal": "Running 8+ LinkedIn ads offering free ad audits \u2014 their clients need better video creative.", "day1": "Subject: white-label video for your clients\n\nNoticed MARKETIXA running a strong volume of LinkedIn ads \u2014 respect the consistency.\n\nQuick question: when your clients' ad creative underperforms, do you have a video production partner you hand off to?\n\nWe do AI cinematic video in 48 hours from $100. Several LinkedIn agencies use us as a white-label arm \u2014 they sell the video, we build it.\n\nWorth exploring? synthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 adding context to yesterday.\n\nSimple model: you identify the client need, we deliver the video, you keep the margin. No overhead.\n\nIf you have one client asking for video this month, happy to do the first one at cost so you can see the quality.\n\n\u2014 Vansh"}, {"id": 2, "company": "Impactable", "contact": "Justin Rowe, Founder", "type": "B2B LinkedIn Ads Agency", "linkedin": "linkedin.com/company/impactable", "signal": "Running LinkedIn ads for their B2B ad agency \u2014 actively prospecting clients who need LinkedIn creative.", "day1": "Subject: video creative for your clients\n\nJustin \u2014 saw Impactable running ads. B2B LinkedIn creative that converts is tough without solid video.\n\nWe produce AI cinematic videos in 48 hours from $100. A few B2B agencies use us as their video production arm \u2014 white-label, no overhead.\n\nWorth a look? synthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey Justin \u2014 one more thought.\n\nFor B2B specifically, video ads on LinkedIn drive 30% lower CPL than static. If your clients aren't running video yet, that's a clear upsell opportunity for you.\n\nHappy to do a free concept for one of your clients to show the quality. \u2014 Vansh"}, {"id": 3, "company": "Vaquero Advertising", "contact": "Creative Team", "type": "Hispanic Market Ad Agency", "linkedin": "linkedin.com/company/vaquero-advertising", "signal": "Running ads about multicultural marketing \u2014 they sell creative services and likely produce video for clients.", "day1": "Subject: video production partner?\n\nSaw Vaquero Advertising running ads around multicultural marketing \u2014 strong positioning.\n\nWe're an AI video production studio \u2014 cinematic quality, 48-hour delivery, from $100. A few agencies use us as their outsourced production arm for client work.\n\nIf video is part of your client offering, worth a conversation. synthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 quick follow-up.\n\nTo make it concrete: we can white-label all production. You pitch, we produce, you deliver under your brand. $100/video, 48 hours.\n\nInterested? \u2014 Vansh"}, {"id": 4, "company": "SCORR Marketing", "contact": "Marketing Team", "type": "Marketing & Recruitment Agency", "linkedin": "linkedin.com/company/scorr-marketing", "signal": "Running LinkedIn ads for marketing and recruitment services \u2014 active advertising budget signals they value quality creative.", "day1": "Subject: video for your campaigns\n\nSaw SCORR Marketing running LinkedIn ads. Agencies that invest in their own advertising clearly understand the value of strong creative.\n\nWe produce AI cinematic videos in 48 hours, starting at $100 \u2014 built for paid social performance.\n\nIf video isn't already in your mix, it might be time. synthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up quickly.\n\nOne stat you might find useful: video ads average 73% watch-through in our client campaigns vs 42% industry average. Happy to show you a sample concept. \u2014 Vansh"}, {"id": 5, "company": "Adam Young Agency", "contact": "Adam Young, Founder", "type": "Creative Services Agency", "linkedin": "linkedin.com/company/adam-young-agency", "signal": "Running ads for creative and business solutions \u2014 understands creative ROI and likely serves clients needing video.", "day1": "Subject: video production for your clients\n\nAdam \u2014 noticed your agency running LinkedIn ads. Creative agencies that invest in paid are usually the ones whose clients trust them most.\n\nWe do AI video production \u2014 48 hours, $100 to start, cinematic quality. Several creative agencies use us as their production backend.\n\nWorth a look? synthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey Adam \u2014 one add from yesterday.\n\nWe can white-label everything \u2014 your brand on delivery, our production. First video at cost if you want to test quality.\n\n\u2014 Vansh"}, {"id": 6, "company": "Demandii", "contact": "Marketing Team", "type": "Content Marketing Agency", "linkedin": "linkedin.com/company/demandii", "signal": "Running LinkedIn ads for content/marketing services \u2014 content-first company that likely produces or sources video.", "day1": "Subject: AI video for your content pipeline\n\nSaw Demandii running ads around content creation. Content agencies that aren't offering video yet are leaving a significant upsell on the table.\n\nWe deliver cinematic AI videos in 48 hours from $100. Could plug straight into your content delivery.\n\nsynthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up from yesterday.\n\nIf content volume is ever a bottleneck, we can turn around multiple videos per week at $100\u2013$500 each. No overhead. \u2014 Vansh"}, {"id": 7, "company": "CommunicateOnline", "contact": "Creative Team", "type": "Creative/Content Agency", "linkedin": "linkedin.com/company/communicateonline", "signal": "Running ads critiquing luxury brands' Ramadan creativity gap \u2014 high creative standards, likely outsource production.", "day1": "Subject: video production partner?\n\nSaw your Ramadan creative ad \u2014 sharp take. You clearly have high standards for what 'good creative' means.\n\nWe're an AI video studio \u2014 48-hour delivery, cinematic quality, starting at $100. A few agencies use us as their production arm for client video (saves them the studio overhead).\n\nsynthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up quickly.\n\nIf you have a client campaign needing video, we can white-label the production. You pitch, we produce, you deliver under your brand. 48 hours, $100/video.\n\nInterested? \u2014 Vansh"}, {"id": 8, "company": "AidMyAds", "contact": "Founder / Media Buyer", "type": "Advertising Consultancy", "linkedin": "linkedin.com/company/aidmyads", "signal": "Running ads about ad consulting \u2014 a media buyer running their own paid ads understands creative ROI deeply.", "day1": "Subject: video creative angle\n\nSaw AidMyAds running LinkedIn ads. Media buyers who run their own paid know exactly how much creative quality moves the needle.\n\nWe produce AI cinematic videos in 48 hours from $100 \u2014 built specifically to perform on paid social.\n\nWould this be useful for your clients? synthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 quick follow-up.\n\nIf you're testing creative variations for clients anyway, adding video to the mix is low-risk at $100. Happy to do a free concept to show quality.\n\n\u2014 Vansh"}, {"id": 9, "company": "Revenu", "contact": "Joseph Hill, Founder", "type": "LinkedIn & Google Ads Agency", "linkedin": "linkedin.com/company/revenu", "signal": "Running ads for LinkedIn and Google Ads agency services \u2014 directly in the paid media space, their clients need video.", "day1": "Subject: video for your ad clients\n\nJoseph \u2014 saw Revenu running LinkedIn ads. Paid media agencies that add video creative to their offering consistently see better client retention.\n\nWe do AI cinematic video in 48 hours from $100. Happy to be your video production partner \u2014 white-label.\n\nsynthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey Joseph \u2014 one thought.\n\nVideo ads on LinkedIn have ~48% lower CPM than static. If your clients are only running static, there's a clear performance (and upsell) opportunity here.\n\n\u2014 Vansh"}, {"id": 10, "company": "Simple Machines Marketing", "contact": "Marketing Team", "type": "Marketing Agency", "linkedin": "linkedin.com/company/simple-machines-marketing", "signal": "Running ads and hosting events \u2014 active marketing agency with event and content budget.", "day1": "Subject: video for Simple Machines\n\nSaw Simple Machines Marketing running LinkedIn ads. Agencies that invest in their own brand awareness clearly understand long-term creative value.\n\nWe produce AI videos in 48 hours from $100. Could be useful for event promos, client campaigns, or your own brand.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nEvent promo videos are one of our most popular use cases \u2014 30-60 sec hype reels that drive registrations. Happy to do a concept for your next event. \u2014 Vansh"}, {"id": 11, "company": "Plutus Media", "contact": "Mohammed A.D., Co-Founder & CEO", "type": "AI Content/Media", "linkedin": "linkedin.com/company/plutus-media", "signal": "Running ads about building a $100M AI empire \u2014 high budget, high sophistication, AI-native audience.", "day1": "Subject: your LinkedIn ad\n\nSaw your ad about the $100M AI empire \u2014 solid hook.\n\nWe run SYNTH. Media \u2014 cinematic AI videos for brands like yours in 48 hours, starting at $100. 73% avg watch-through (industry avg is 42%).\n\nIf you're running paid campaigns, scroll-stopping video is the #1 lever right now.\nsynthmedia.vercel.app\n\n\u2014 Vansh", "day2": "Hey Mohammed \u2014 following up.\n\nWe're capped at 3 client slots this month \u2014 two are already taken.\n\nIf Plutus Media's content calendar needs a video boost, happy to prioritize you. Just reply 'yes'.\n\n\u2014 Vansh, SYNTH. Media"}, {"id": 12, "company": "Collectly", "contact": "Marketing Team", "type": "Healthcare SaaS", "linkedin": "linkedin.com/company/collectly", "signal": "Running multiple LinkedIn ads for patient financial experience \u2014 complex product that needs video to convert.", "day1": "Subject: explainer video for Collectly\n\nSaw Collectly running LinkedIn ads around patient financial experience \u2014 impressive making a complex topic approachable in ad copy.\n\nA short AI explainer video could do heavy lifting in that funnel \u2014 especially for a product needing 'show don't tell.'\n\n48 hours from $100. synthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor SaaS in regulated industries, video outperforms static because it demonstrates the product without requiring a demo booking.\n\nHappy to mock up a free concept for Collectly. Just say the word. \u2014 Vansh"}, {"id": 13, "company": "Merchynt", "contact": "Justin Silverman, Founder/CEO", "type": "SMB SaaS Platform", "linkedin": "linkedin.com/company/merchynt", "signal": "Running paid ads for Paige platform (SMS + SEO for SMBs) \u2014 SaaS founder actively running paid acquisition.", "day1": "Subject: cut your ad CAC with video\n\nJustin \u2014 noticed you running paid ads for Paige. SMB SaaS acquisition is brutal right now.\n\nSwapping static creative for short-form video consistently drops CAC. We produce AI cinematic videos in 48 hours from $100 \u2014 73% avg watch-through vs 42% industry.\n\nsynthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey Justin \u2014 quick follow-up.\n\nWe can produce a 30-sec Paige explainer for $100, delivered in 48 hours. Run it against your static creative and see what happens to CTR.\n\nWorst case: $100 and a data point. Best case: new acquisition channel. Want to try?\n\n\u2014 Vansh"}, {"id": 14, "company": "RapidCanvas", "contact": "Founder / Marketing Team", "type": "AI/ML Platform", "linkedin": "linkedin.com/company/rapidcanvas", "signal": "Running LinkedIn ads for AI/ML platform \u2014 tech company actively investing in paid marketing needs strong creative.", "day1": "Subject: video for your ad creative\n\nSaw RapidCanvas running LinkedIn ads. AI/ML platforms often have a conversion challenge \u2014 the product is powerful but hard to explain in static ads.\n\nA 30-60 sec explainer video can do what text can't. We deliver in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 one more thought.\n\nDemo-style videos (showing the platform in action) are our highest-converting format for SaaS. $100, 48 hours. Happy to mock up a concept. \u2014 Vansh"}, {"id": 15, "company": "ActivTrak", "contact": "Matthew Finlayson, CTO", "type": "Workplace Analytics SaaS", "linkedin": "linkedin.com/company/activtrak", "signal": "Running LinkedIn ads for workplace analytics \u2014 SaaS with active paid budget targeting HR/ops buyers.", "day1": "Subject: video for ActivTrak's paid campaigns\n\nSaw ActivTrak running LinkedIn ads. Workplace analytics is a nuanced sell \u2014 video makes it tangible in a way static can't.\n\nWe deliver cinematic AI explainer videos in 48 hours from $100. Worth a look?\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor B2B SaaS targeting ops/HR buyers, video ads consistently outperform static on LinkedIn. Happy to produce a test creative at $100. \u2014 Vansh"}, {"id": 16, "company": "Quantum Metric", "contact": "Marketing Team", "type": "Digital Analytics Platform", "linkedin": "linkedin.com/company/quantum-metric", "signal": "Running LinkedIn ads for digital analytics platform \u2014 enterprise SaaS with significant marketing budget.", "day1": "Subject: video creative for Quantum Metric\n\nSaw Quantum Metric running LinkedIn ads. Enterprise analytics platforms have a real challenge conveying value quickly in paid media.\n\nVideo solves that \u2014 show the insight, not just describe it. 48 hours, $100 to start.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 quick add.\n\nWe specialize in making complex technical products feel instantly understandable in 30-60 seconds. Happy to do a free concept for your next campaign. \u2014 Vansh"}, {"id": 17, "company": "Refold AI", "contact": "Founder / Team", "type": "SaaS PS Platform", "linkedin": "linkedin.com/company/refold-ai", "signal": "Running LinkedIn ads for SaaS PS delivery platform \u2014 active paid acquisition means real marketing budget.", "day1": "Subject: video for Refold's campaigns\n\nSaw Refold AI running LinkedIn ads. SaaS companies in professional services automation often struggle to explain their value in 3 seconds of scroll.\n\nAI video makes it stick. 48 hours, from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nProduct walkthrough videos are one of our best formats for PS SaaS. Clear ROI story, 60 seconds. Happy to mock one up for Refold. \u2014 Vansh"}, {"id": 18, "company": "FourKites", "contact": "Amanda Dyson / Marketing Team", "type": "Supply Chain SaaS", "linkedin": "linkedin.com/company/fourkites", "signal": "Running LinkedIn ads for supply chain visibility platform \u2014 enterprise SaaS with active demand gen team.", "day1": "Subject: video for FourKites' demand gen\n\nSaw FourKites running LinkedIn ads. Supply chain tech is a complex sell \u2014 video is the fastest way to show ROI to logistics buyers.\n\nWe deliver cinematic AI videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 quick follow-up.\n\nFor enterprise supply chain deals, a 60-sec 'before and after' style video can dramatically shorten sales cycles. Happy to mock up a concept. \u2014 Vansh"}, {"id": 19, "company": "Cyera", "contact": "Marketing Team", "type": "Data Security SaaS", "linkedin": "linkedin.com/company/cyera", "signal": "Running LinkedIn ads for data security \u2014 cybersecurity SaaS with active paid budget targeting enterprise.", "day1": "Subject: video creative for Cyera\n\nSaw Cyera running LinkedIn ads. Data security is notoriously difficult to communicate quickly \u2014 video bridges that gap better than any static format.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 one thought.\n\nSecurity buyers respond well to scenario-based videos (showing the risk, then the solution). 60 seconds. Happy to mock a concept up at no cost. \u2014 Vansh"}, {"id": 20, "company": "micro1", "contact": "Founder / Marketing Team", "type": "Tech Hiring Platform", "linkedin": "linkedin.com/company/micro1", "signal": "Running LinkedIn ads for tech hiring \u2014 HR tech platform actively running paid acquisition.", "day1": "Subject: video for micro1's campaigns\n\nSaw micro1 running LinkedIn ads. Tech hiring platforms are in a crowded space \u2014 differentiated video creative cuts through faster than any static ad.\n\nWe deliver in 48 hours from $100. synthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nCandidate and client testimonial-style videos are our most effective format for hiring platforms. Fast to produce, high trust signal. $100, 48 hours. \u2014 Vansh"}, {"id": 21, "company": "Golpo (YC S25)", "contact": "Founder / Team", "type": "YC-Backed Startup", "linkedin": "linkedin.com/company/golpo", "signal": "YC S25 startup running LinkedIn ads \u2014 fresh funding, building brand, needs fast high-quality content.", "day1": "Subject: video for Golpo's growth\n\nSaw Golpo running LinkedIn ads \u2014 congrats on YC S25!\n\nPost-YC is the perfect time to nail your video creative before scaling ad spend. We produce cinematic AI videos in 48 hours from $100.\n\nWorth a look? synthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 one add from yesterday.\n\nYC companies that nail their video creative early tend to see dramatically better paid CAC when they scale. Happy to do a first video at $100 as a test. \u2014 Vansh"}, {"id": 22, "company": "Launch Labs AI", "contact": "Founder / Team", "type": "AI Startup", "linkedin": "linkedin.com/company/launch-labs-ai", "signal": "Running LinkedIn ads for AI launch platform \u2014 active marketing budget, AI-native audience.", "day1": "Subject: video for Launch Labs\n\nSaw Launch Labs AI running LinkedIn ads. AI companies that can show (not just tell) their product in a 30-sec video consistently outperform on paid.\n\nWe deliver cinematic AI videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nProduct demo videos are our most popular format for AI companies. Fast, cinematic, conversion-focused. $100, 48 hours. Happy to mock one up. \u2014 Vansh"}, {"id": 23, "company": "Riyalabs.ai", "contact": "Founder / Team", "type": "AI Agents Company", "linkedin": "linkedin.com/company/riyalabs-ai", "signal": "Running LinkedIn ads for AI agents \u2014 early-stage AI company building brand and pipeline.", "day1": "Subject: video for Riyalabs\n\nSaw Riyalabs.ai running LinkedIn ads. AI agent companies have a real challenge \u2014 the product is complex but buyers want to understand it in seconds.\n\nVideo is the solution. We deliver cinematic AI videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 quick follow-up.\n\nA 30-sec 'here's what our AI agent actually does' video can replace a 5-minute demo in many cases. Happy to mock one up. \u2014 Vansh"}, {"id": 24, "company": "Parcle", "contact": "Ming Wu, Founder & CEO", "type": "AI Data Platform", "linkedin": "linkedin.com/company/parcle", "signal": "Running LinkedIn ads for AI data transformation \u2014 startup actively running paid to build pipeline.", "day1": "Subject: video for Parcle's campaigns\n\nMing \u2014 saw Parcle running LinkedIn ads. Data transformation platforms have a visualization problem \u2014 it's hard to show the 'before and after' in static.\n\nVideo solves that in 30 seconds. We deliver cinematic AI videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Ming \u2014 following up.\n\nBefore/after data transformation videos are incredibly compelling for buyers. Fast to produce, high conversion. $100, 48 hours. \u2014 Vansh"}, {"id": 25, "company": "Strong Search Limited", "contact": "Founder / Team", "type": "GTM Recruitment", "linkedin": "linkedin.com/company/strong-search-limited", "signal": "Running LinkedIn ads for GTM recruitment \u2014 actively targeting sales/marketing leaders with paid ads.", "day1": "Subject: video for Strong Search\n\nSaw Strong Search running LinkedIn ads. GTM recruitment is relationship-driven \u2014 video makes your brand memorable in a way text never does.\n\nWe deliver cinematic AI videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nRecruiter brand videos \u2014 30-60 sec stories about why top GTM talent should work with you \u2014 are one of our highest-engagement formats. $100, 48 hours. \u2014 Vansh"}, {"id": 26, "company": "Dorian", "contact": "Marketing Team", "type": "Creator Economy Investment", "linkedin": "linkedin.com/company/dorian", "signal": "Running LinkedIn ads around creator economy \u2014 understands content and creator monetization deeply.", "day1": "Subject: video for Dorian's campaigns\n\nSaw Dorian running ads around the creator economy. A platform in that space that isn't using premium video creative is leaving credibility on the table.\n\nWe produce cinematic AI videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 one more thought.\n\nFor creator economy companies, the ad creative IS the product signal. Video that looks like it belongs in the creator space converts better. $100, 48 hours. \u2014 Vansh"}, {"id": 27, "company": "Sourceful", "contact": "Marketing Team", "type": "CPG Brand Management", "linkedin": "linkedin.com/company/sourceful", "signal": "Running LinkedIn ads for CPG brand management \u2014 platform serving brands that heavily use video.", "day1": "Subject: video for Sourceful\n\nSaw Sourceful running LinkedIn ads. CPG brand management platforms are in a visual-first space \u2014 your own creative should match the brands you help.\n\nWe deliver cinematic AI videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nBrand story videos (30-60 sec) for CPG platforms consistently outperform static on LinkedIn. Happy to mock a concept up for Sourceful. \u2014 Vansh"}, {"id": 28, "company": "Expel", "contact": "Marketing Team", "type": "Cybersecurity SaaS", "linkedin": "linkedin.com/company/expel", "signal": "Running LinkedIn ads for SOC/cybersecurity platform \u2014 enterprise security company with active demand gen budget.", "day1": "Subject: video creative for Expel\n\nSaw Expel running LinkedIn ads around SOC metrics. Security is a tough sell in 2 seconds of scroll \u2014 video makes the threat (and solution) visceral.\n\nWe deliver cinematic AI videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 quick follow-up.\n\nThreat scenario videos that show 'what happens without Expel' are extremely effective for security buyers. Happy to mock one up. \u2014 Vansh"}, {"id": 29, "company": "HeyGen", "contact": "Marketing Team", "type": "AI Video Platform", "linkedin": "linkedin.com/company/heygen", "signal": "Running LinkedIn ads for AI avatar video platform \u2014 they understand video value; could use cinematic content vs. their avatar-style.", "day1": "Subject: cinematic content for HeyGen\n\nSaw HeyGen running LinkedIn ads. You're in the video space so you know what converts \u2014 which is why I'll keep this short.\n\nWe produce cinematic AI video (Sora/Kling/Veo) \u2014 a different aesthetic than avatar-style. Some brands want both.\n\nsynthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 quick follow-up.\n\nCinematic brand films and avatar-style explainers serve different use cases. Happy to show you what our output looks like if you're curious. \u2014 Vansh"}, {"id": 30, "company": "Teikametrics", "contact": "Marketing Team", "type": "Amazon Advertising Platform", "linkedin": "linkedin.com/company/teikametrics", "signal": "Running LinkedIn ads for Amazon ad optimization \u2014 ecommerce/retail platform with active paid marketing.", "day1": "Subject: video for Teikametrics' campaigns\n\nSaw Teikametrics running LinkedIn ads. Amazon advertising platforms sell to e-commerce brands \u2014 and e-commerce brands live and die by video creative.\n\nWe deliver cinematic product videos in 48 hours from $100. Could be a strong partnership angle.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nProduct demo and brand story videos for e-commerce clients is our bread and butter. Happy to show samples. \u2014 Vansh"}, {"id": 31, "company": "BIScience", "contact": "Jacob Tucker (Featured)", "type": "Ad Intelligence Platform", "linkedin": "linkedin.com/company/biscience", "signal": "Running multiple LinkedIn ads about ad intelligence/competitor visibility \u2014 sells to marketers who understand ROI.", "day1": "Subject: video for your ad funnel\n\nNoticed BIScience running several LinkedIn ads around Adclarity \u2014 smart positioning.\n\nStat you'd probably appreciate: video ads have 48% lower CPM than image ads on LinkedIn. If your current creative is static, switching to video could cut your ad spend meaningfully.\n\nWe handle script to final file in 48 hours from $100. synthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 quick add.\n\nSince you're in ad intelligence, you could actually run one of our videos through your own platform as a live test creative. Makes for a useful internal case study too.\n\n\u2014 Vansh"}, {"id": 32, "company": "Alison.ai", "contact": "Marketing Team", "type": "Creative Performance Analytics", "linkedin": "linkedin.com/company/alison-ai", "signal": "Running ads about Meta creative performance \u2014 literally measures what makes video ads work.", "day1": "Subject: video creative for Alison\n\nLove what Alison is doing on creative analytics \u2014 you're probably sitting on more insight about what makes video convert than most agencies.\n\nCurious: is your own ad creative as optimized as the data you surface for clients?\n\nWe produce AI cinematic videos in 48 hours from $100. synthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 one more thought.\n\nYou could use our video as a test creative in your own Alison dashboard \u2014 live proof of what AI-produced content scores. Great internal case study too.\n\n\u2014 Vansh"}, {"id": 33, "company": "Riverside", "contact": "Jonathan Keyson, Co-Founder", "type": "Content Creation Platform", "linkedin": "linkedin.com/company/riverside-fm", "signal": "Running LinkedIn ads for studio-quality content \u2014 directly in the content creation space.", "day1": "Subject: video for Riverside's campaigns\n\nJonathan \u2014 saw Riverside running LinkedIn ads. You're in the content creation space so you know: brands that invest in quality video outperform those that don't.\n\nWe produce cinematic AI videos in 48 hours from $100 \u2014 different category than recording platforms, complementary.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nBrands that use Riverside for recording often still need post-production and cinematic brand films. We could be a downstream partner. Worth exploring? \u2014 Vansh"}, {"id": 34, "company": "Papirfly", "contact": "Marketing Team", "type": "Brand Management Platform", "linkedin": "linkedin.com/company/papirfly", "signal": "Running multiple ads about brand content control \u2014 brand management SaaS that helps companies produce consistent content.", "day1": "Subject: video production for Papirfly's clients\n\nSaw Papirfly running ads about brand content control. Brand management platforms that add video production to their ecosystem give clients one less reason to look elsewhere.\n\nWe do cinematic AI video in 48 hours from $100. Could be a useful integration or partnership.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nBrands managing assets in Papirfly still need net-new video content produced. We could be the production layer you point clients toward. Worth a conversation? \u2014 Vansh"}, {"id": 35, "company": "New to The Street", "contact": "Content Team", "type": "Financial Media/Content", "linkedin": "linkedin.com/company/new-to-the-street", "signal": "Running LinkedIn ads as a content creator/promoter \u2014 financial media company that produces regular video content.", "day1": "Subject: AI video for your content\n\nSaw New to The Street running LinkedIn ads. Financial media that invests in premium video consistently earns more trust than text-only content.\n\nWe produce cinematic AI videos in 48 hours from $100 \u2014 could upgrade the visual quality of your content lineup.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 quick follow-up.\n\nFor financial media, cinematic explainer videos (market trends, company spotlights) are our most popular format. $100, 48 hours. \u2014 Vansh"}, {"id": 36, "company": "Six Five Media", "contact": "Media Team", "type": "Tech Media & Analysis", "linkedin": "linkedin.com/company/six-five-media", "signal": "Running LinkedIn ads for tech media/analysis \u2014 content company producing regular tech commentary.", "day1": "Subject: video upgrade for Six Five\n\nSaw Six Five Media running LinkedIn ads. Tech media companies that upgrade from static/talking-head to cinematic video significantly boost engagement.\n\nWe deliver cinematic AI videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor tech media, a cinematic brand intro or episode trailer drives significantly more clicks than static thumbnails. $100, 48 hours. Happy to show samples. \u2014 Vansh"}, {"id": 37, "company": "CXO Thread", "contact": "Media Team", "type": "B2B Media/Content", "linkedin": "linkedin.com/company/cxo-thread", "signal": "Running LinkedIn ads as a B2B media brand \u2014 content-first company targeting C-suite buyers.", "day1": "Subject: video for CXO Thread\n\nSaw CXO Thread running LinkedIn ads. B2B media brands targeting C-suite need creative that signals authority instantly \u2014 cinematic video does that better than anything else.\n\nWe deliver in 48 hours from $100. synthmedia.vercel.app\n\n\u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nA 30-sec 'why CXO Thread' brand film would be compelling for C-suite recruitment ads. $100, 48 hours. Happy to mock one up. \u2014 Vansh"}, {"id": 38, "company": "Backstage", "contact": "Marketing Team", "type": "Entertainment/Talent Platform", "linkedin": "linkedin.com/company/backstage", "signal": "Running LinkedIn ads for talent platform \u2014 entertainment industry company that understands visual storytelling.", "day1": "Subject: video for Backstage's campaigns\n\nSaw Backstage running LinkedIn ads. An entertainment/talent platform that isn't using premium cinematic video in its own marketing is underselling itself.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor talent platforms, brand story videos showing real success stories convert extremely well. 60 seconds, cinematic quality, $100. \u2014 Vansh"}, {"id": 39, "company": "KYOCERA Global", "contact": "Marketing Team", "type": "Electronics Manufacturer", "linkedin": "linkedin.com/company/kyocera", "signal": "Running LinkedIn ads for their 'Takumi: The Height of Craft' web series \u2014 actively investing in premium video content.", "day1": "Subject: AI video production for KYOCERA\n\nSaw KYOCERA running LinkedIn ads around your Takumi web series \u2014 impressive commitment to video storytelling.\n\nFor brands already investing in premium video, AI production can dramatically expand output without increasing budget.\n\nWe deliver cinematic AI videos in 48 hours from $100. Worth a look?\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nBrands that already have a video content strategy (like KYOCERA) tend to get the most from AI production \u2014 faster turnaround on campaign videos without sacrificing quality. \u2014 Vansh"}, {"id": 40, "company": "TRUNK ARCHIVE", "contact": "Creative Team", "type": "Creative Licensing Agency", "linkedin": "linkedin.com/company/trunk-archive", "signal": "Running LinkedIn ads for creative licensing \u2014 visual-first company that deeply understands creative quality.", "day1": "Subject: AI video for TRUNK ARCHIVE\n\nSaw TRUNK ARCHIVE running LinkedIn ads. A company that lives in premium creative understands better than anyone why video quality matters.\n\nWe produce cinematic AI videos in 48 hours from $100 \u2014 Sora, Kling, Veo quality.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 quick follow-up.\n\nFor creative licensing companies, AI-generated cinematic footage opens up entirely new licensing categories. Might be worth a conversation. \u2014 Vansh"}, {"id": 41, "company": "Wild Geese Media", "contact": "Ivan Tobias, Founder", "type": "YouTube Revenue Consulting", "linkedin": "linkedin.com/in/ivan-tobias", "signal": "Running ads positioning YouTube as a revenue system \u2014 video-first founder who understands distribution deeply.", "day1": "Subject: video production for your clients\n\nIvan \u2014 saw your YouTube revenue system ad. You get something most people don't: distribution without great video is just noise.\n\nWe build scroll-stopping AI videos in 48 hours from $100. If your clients need consistent high-quality video, we might be a useful partner.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Ivan \u2014 one follow-up thought.\n\nIf you're teaching clients to build on YouTube, the #1 friction is usually production speed and cost. We solve both.\n\nCould bundle us into your program as a recommended partner. Happy to offer your clients a discount. \u2014 Vansh"}, {"id": 42, "company": "Sangram Vajre", "contact": "Sangram Vajre", "type": "GTM/Marketing Thought Leader", "linkedin": "linkedin.com/in/sangramvajre", "signal": "Running LinkedIn ads about revenue motion and GTM \u2014 prominent B2B marketing leader building personal brand.", "day1": "Subject: video for your personal brand\n\nSangram \u2014 saw your LinkedIn ads around GTM and revenue motion. Thought leaders at your level who invest in cinematic video content create a distinct authority signal.\n\nWe produce AI cinematic videos in 48 hours from $100 \u2014 built for personal brand and paid social.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Sangram \u2014 following up.\n\nFor GTM thought leaders, a 30-sec 'position statement' video that runs as a paid ad can build more pipeline than 10 text posts. $100, 48 hours. \u2014 Vansh"}, {"id": 43, "company": "Jim Lecinski / Narrative Partners", "contact": "Jim Lecinski", "type": "Marketing Strategy Consulting", "linkedin": "linkedin.com/in/jimlecinski", "signal": "Running LinkedIn ads for marketing strategy consulting \u2014 established marketing expert building consulting brand.", "day1": "Subject: video for Narrative Partners\n\nJim \u2014 saw your LinkedIn ads. Marketing consultants who practice what they preach about video consistently win more credibility.\n\nWe produce AI cinematic videos in 48 hours from $100 \u2014 great for thought leadership content and paid campaigns.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Jim \u2014 quick follow-up.\n\nA 60-sec case study video (before/after format) is one of the most effective formats for consultants running paid ads. $100, 48 hours. \u2014 Vansh"}, {"id": 44, "company": "Benjamin Chimento", "contact": "Benjamin Chimento", "type": "Growth Marketing Consultant", "linkedin": "linkedin.com/in/benjaminchimento", "signal": "Running LinkedIn ads for growth marketing consulting \u2014 solo consultant with active paid ad budget.", "day1": "Subject: video for your consulting brand\n\nBenjamin \u2014 saw your growth marketing ads on LinkedIn. Consultants who add video to their own marketing consistently see better qualified inbound.\n\nWe produce AI cinematic videos in 48 hours from $100. Worth a look?\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 quick follow-up.\n\nA 30-sec 'who I help and how' video running as a LinkedIn ad can significantly improve your lead quality vs. text-only. $100, 48 hours. \u2014 Vansh"}, {"id": 45, "company": "Athens Ramseyer", "contact": "Athens Ramseyer", "type": "DTC Growth Operator", "linkedin": "linkedin.com/in/athensramseyer", "signal": "Running LinkedIn ads as DTC growth operator/consultant \u2014 works with DTC brands that heavily rely on video.", "day1": "Subject: video for DTC clients\n\nAthens \u2014 saw your LinkedIn ads. DTC growth operators who have a go-to video production partner consistently deliver better creative results for clients.\n\nWe produce AI cinematic product videos in 48 hours from $100. Could be a useful add to your toolkit.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor DTC clients specifically, scroll-stopping product videos are the highest-ROI creative format. We produce them for $100\u2013$500, 48-hour turnaround. \u2014 Vansh"}, {"id": 46, "company": "Emily Boschwitz", "contact": "Emily Boschwitz, CMO/Founder", "type": "Marketing Executive", "linkedin": "linkedin.com/in/emilyboschwitz", "signal": "Running LinkedIn ads \u2014 seasoned CMO with experience at POCA, Gossamer, Hims, Vanta, Kindred, Eight Sleep.", "day1": "Subject: video for your brand work\n\nEmily \u2014 saw your LinkedIn ads. CMOs who've built brands at companies like Hims and Vanta know that premium video is non-negotiable for paid performance.\n\nWe produce AI cinematic videos in 48 hours from $100 \u2014 95% cheaper than traditional studios.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Emily \u2014 following up.\n\nFor brand-building campaigns, our cinematic AI video is indistinguishable from studio production at a fraction of the cost. Happy to send samples. \u2014 Vansh"}, {"id": 47, "company": "Giulia Maria Valli", "contact": "Giulia Maria Valli", "type": "Art Director / AI Creative", "linkedin": "linkedin.com/in/giuliamariavalli", "signal": "Running LinkedIn ads for AI-led creative direction \u2014 art director already working in AI creative space.", "day1": "Subject: AI video collaboration?\n\nGiulia \u2014 saw your ads around AI-led creative direction. You're in a rare intersection: traditional craft + AI tools.\n\nWe produce cinematic AI videos (Sora/Kling/Veo) for brands. There might be a creative collaboration angle here.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nArt directors who understand AI tools tend to love what we do \u2014 cinematic quality, 48-hour delivery. Happy to show you our process if you're curious. \u2014 Vansh"}, {"id": 48, "company": "Isaac Joshua / GEMS", "contact": "Isaac Joshua, CEO", "type": "Financial/Investment Platform", "linkedin": "linkedin.com/in/isaacjoshua", "signal": "Running LinkedIn ads for GEMS \u2014 CEO actively building personal brand and company presence on LinkedIn.", "day1": "Subject: video for GEMS' campaigns\n\nIsaac \u2014 saw GEMS running LinkedIn ads. Financial platforms that invest in premium video signal legitimacy in a way static content never does.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Isaac \u2014 following up.\n\nFor financial platforms, a 30-sec trust-building brand video can significantly improve conversion from paid ads. $100, 48 hours. \u2014 Vansh"}, {"id": 49, "company": "Mike Suprovici / Decile Group", "contact": "Mike Suprovici", "type": "Data Analytics", "linkedin": "linkedin.com/in/mikesuprovici", "signal": "Running LinkedIn ads for data analytics \u2014 founder building brand and company pipeline through paid.", "day1": "Subject: video for Decile Group\n\nMike \u2014 saw Decile Group running LinkedIn ads. Data analytics platforms that use video to explain their value see significantly higher demo conversion.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Mike \u2014 following up.\n\nA 30-sec 'what we do' video running alongside your current LinkedIn ads could move your CPL meaningfully. $100 to test. \u2014 Vansh"}, {"id": 50, "company": "Ishan Mukherjee / Rox", "contact": "Ishan Mukherjee", "type": "Startup Founder", "linkedin": "linkedin.com/in/ishanmukherjee", "signal": "Running LinkedIn ads \u2014 startup founder actively building brand and acquisition through paid.", "day1": "Subject: video for Rox\n\nIshan \u2014 saw Rox running LinkedIn ads. Startups in growth mode that nail their video creative early see dramatically better paid performance when they scale.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Ishan \u2014 following up.\n\nFor early-stage startups, a $100 test video against your current static creative is one of the best experiments you can run. 48 hours to results. \u2014 Vansh"}, {"id": 51, "company": "BambooHR", "contact": "Marketing Team", "type": "HR Software", "linkedin": "linkedin.com/company/bamboohr", "signal": "Running multiple LinkedIn ads \u2014 established HR SaaS with serious marketing budget.", "day1": "Subject: video creative for BambooHR\n\nSaw BambooHR running multiple LinkedIn ads. HR software is a highly competitive space \u2014 video creative that shows real workplace moments outperforms static significantly.\n\nWe produce AI cinematic videos in 48 hours from $100. For a company at BambooHR's scale, that's one of the fastest ROI tests available.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor HR platforms, employee story videos and culture films are our most effective formats. 48 hours, $100 to start. Happy to mock a concept up. \u2014 Vansh"}, {"id": 52, "company": "IMG Academy", "contact": "Marketing Team", "type": "Sports Education", "linkedin": "linkedin.com/company/img-academy", "signal": "Running LinkedIn ads \u2014 premium sports education brand with significant marketing investment.", "day1": "Subject: video for IMG Academy\n\nSaw IMG Academy running LinkedIn ads. A premium sports training brand that doesn't lead with cinematic video is leaving its most compelling story on the table.\n\nWe produce AI cinematic videos in 48 hours from $100 \u2014 perfect for recruitment, brand storytelling, and paid campaigns.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nAthlete transformation stories (before/after) are one of our highest-engagement video formats. 60 seconds, cinematic quality, $100. \u2014 Vansh"}, {"id": 53, "company": "Agora", "contact": "Marketing Team", "type": "Real-Time Engagement Platform", "linkedin": "linkedin.com/company/agora", "signal": "Running LinkedIn ads \u2014 developer/enterprise platform with active paid marketing budget.", "day1": "Subject: video creative for Agora\n\nSaw Agora running LinkedIn ads. Real-time engagement platforms have a visualization challenge \u2014 video can show what text-based ads can only hint at.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nProduct demo videos showing real-time use cases (live events, gaming, telehealth) are our most effective format for developer platforms. $100, 48 hours. \u2014 Vansh"}, {"id": 54, "company": "Sagility", "contact": "Marketing Team", "type": "Healthcare Tech/BPO", "linkedin": "linkedin.com/company/sagility", "signal": "Running LinkedIn ads \u2014 healthcare tech company with enterprise marketing budget.", "day1": "Subject: video for Sagility's campaigns\n\nSaw Sagility running LinkedIn ads. Healthcare tech companies that use video to explain complex operational improvements see dramatically higher enterprise buyer engagement.\n\nWe deliver cinematic AI videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor healthcare tech buyers, a 60-sec ROI story video (showing the operational improvement in action) is far more compelling than any case study PDF. $100, 48 hours. \u2014 Vansh"}, {"id": 55, "company": "Catalent", "contact": "Marketing Team", "type": "Pharma/Life Sciences", "linkedin": "linkedin.com/company/catalent", "signal": "Running LinkedIn ads \u2014 pharma/life sciences company with enterprise marketing budget.", "day1": "Subject: video for Catalent's marketing\n\nSaw Catalent running LinkedIn ads. Life sciences companies that invest in cinematic video content signal technical capability and build trust faster than any other format.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor pharma/biotech, facility overview and capability videos are our most requested format for marketing teams. $100, 48 hours. \u2014 Vansh"}, {"id": 56, "company": "ClearBridge Investments", "contact": "Marketing Team", "type": "Investment Management", "linkedin": "linkedin.com/company/clearbridge-investments", "signal": "Running LinkedIn ads \u2014 established asset manager with serious marketing budget.", "day1": "Subject: video for ClearBridge's campaigns\n\nSaw ClearBridge Investments running LinkedIn ads. Asset managers who use video to explain their investment philosophy build significantly more trust with HNW prospects.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nPortfolio manager interview-style videos (60 seconds, cinematic) are our most effective format for investment firms. $100, 48 hours. \u2014 Vansh"}, {"id": 57, "company": "Solidus Ai Tech Ltd", "contact": "Marketing Team", "type": "AI Infrastructure", "linkedin": "linkedin.com/company/solidus-ai-tech", "signal": "Running LinkedIn ads for AI tech infrastructure \u2014 AI company actively building brand and pipeline.", "day1": "Subject: video for Solidus AI\n\nSaw Solidus Ai Tech running LinkedIn ads. AI infrastructure companies that can visualize what their tech does in 30 seconds win deals faster.\n\nWe produce cinematic AI videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor AI infrastructure, a 30-sec 'before and after' showing what your compute enables is our most effective format. $100, 48 hours. \u2014 Vansh"}, {"id": 58, "company": "Chlorophyll Water", "contact": "Matt Levine, Founder", "type": "CPG Beverage Brand", "linkedin": "linkedin.com/company/chlorophyll-water", "signal": "Running LinkedIn ads for CPG beverage \u2014 DTC brand that needs scroll-stopping product video.", "day1": "Subject: product video for Chlorophyll Water\n\nMatt \u2014 saw Chlorophyll Water running LinkedIn ads. For a DTC beverage brand, cinematic product video is the single highest-ROI creative investment.\n\nWe deliver AI cinematic product videos in 48 hours from $100 \u2014 95% cheaper than traditional studio shoots.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Matt \u2014 following up.\n\nCPG product videos in our style average 73% watch-through. Happy to do a 30-sec concept for Chlorophyll Water to show what's possible. $100, 48 hours. \u2014 Vansh"}, {"id": 59, "company": "FrameDraft", "contact": "Founder / Team", "type": "Animation Software", "linkedin": "linkedin.com/company/framedraft", "signal": "Running LinkedIn ads for animation/storyboard software \u2014 visual-first company that understands creative production.", "day1": "Subject: video for FrameDraft's campaigns\n\nSaw FrameDraft running LinkedIn ads. Animation software companies that use premium video in their own marketing consistently attract higher-quality users.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nThere might also be a partnership angle here \u2014 your storyboarding tool + our video production as a recommended workflow. Worth a conversation? \u2014 Vansh"}, {"id": 60, "company": "FourKites", "contact": "Marketing Team", "type": "Supply Chain Visibility", "linkedin": "linkedin.com/company/fourkites", "signal": "Enterprise supply chain platform actively running LinkedIn ads \u2014 significant marketing budget.", "day1": "Subject: video for FourKites' demand gen\n\nSaw FourKites running LinkedIn ads. Supply chain visibility is complex to explain \u2014 a 60-sec 'shipment chaos vs. FourKites clarity' video could dramatically lift your ad performance.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nLogistics and supply chain buyers respond very well to scenario-based videos showing real operational pain. $100, 48 hours. Happy to mock a concept up. \u2014 Vansh"}, {"id": 61, "company": "Influee", "contact": "Sebastian Novinsek / Urban Cvek", "type": "UGC Production Platform", "linkedin": "linkedin.com/company/influee", "signal": "Running multiple LinkedIn ads for UGC platform \u2014 they understand creator content deeply and have marketing budget.", "day1": "Subject: cinematic video to complement your UGC\n\nSaw Influee running LinkedIn ads. UGC platforms and cinematic AI video serve different use cases \u2014 UGC for authenticity, cinematic for brand elevation.\n\nWe produce AI cinematic videos in 48 hours from $100. Could be a complementary partnership for your clients.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nBrands that use both UGC (Influee) and cinematic brand films tend to see the best paid performance. We could be a natural upsell for your clients. \u2014 Vansh"}, {"id": 62, "company": "Human Video", "contact": "Founder / Team", "type": "B2B Video Production", "linkedin": "linkedin.com/company/human-video", "signal": "Running LinkedIn ads for remote video production \u2014 they're in the video space, understands value, different model than us.", "day1": "Subject: AI production partnership?\n\nSaw Human Video running LinkedIn ads. Remote video production and AI-generated cinematic video serve different client needs \u2014 but there might be overflow work we could help with.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nWhen clients need faster turnaround or lower budget than your traditional model, we could be a referral partner. Worth a quick conversation? \u2014 Vansh"}, {"id": 63, "company": "BannerSquad", "contact": "Ad Production Team", "type": "Ad Production Service", "linkedin": "linkedin.com/company/bannersquad", "signal": "Running LinkedIn ads for HTML5/DOOH/social ad production \u2014 in the ad creative space, understands production value.", "day1": "Subject: video creative partnership?\n\nSaw BannerSquad running ads. You handle HTML5 and display \u2014 video is the natural next format your clients will ask for.\n\nWe produce AI cinematic video in 48 hours from $100. A white-label partnership could let you offer video without building the capability yourself.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nSimple model: when a client asks you for video, you hand it to us, white-label. You keep the margin. No overhead. Interested? \u2014 Vansh"}, {"id": 64, "company": "Dealer eProcess", "contact": "Marketing Team", "type": "Automotive Digital Marketing", "linkedin": "linkedin.com/company/dealer-eprocess", "signal": "Running LinkedIn ads for automotive digital marketing \u2014 auto industry heavily relies on video creative.", "day1": "Subject: video for auto dealership clients\n\nSaw Dealer eProcess running LinkedIn ads. Automotive digital marketing without premium video is a significant missed opportunity \u2014 car buyers expect cinematic quality.\n\nWe produce AI cinematic vehicle videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor auto dealerships, cinematic vehicle videos drive dramatically higher test drive bookings vs. static photos. We could be your production partner for dealer clients. \u2014 Vansh"}, {"id": 65, "company": "Krea Business Advisory", "contact": "Consulting Team", "type": "Business Consulting", "linkedin": "linkedin.com/company/krea-business-advisory", "signal": "Running LinkedIn ads for business advisory \u2014 consulting firm building brand and pipeline on LinkedIn.", "day1": "Subject: video for Krea's marketing\n\nSaw Krea Business Advisory running LinkedIn ads. Consulting firms that invest in video case studies consistently close deals faster than those relying on text.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nA 60-sec client success story video (problem \u2192 solution \u2192 result format) is our most effective format for consulting firms. $100, 48 hours. \u2014 Vansh"}, {"id": 66, "company": "Justin Leader / Human Renaissance", "contact": "Justin Leader", "type": "GTM Consulting", "linkedin": "linkedin.com/in/justinleader", "signal": "Running LinkedIn ads for GTM and marketing consulting \u2014 building consulting brand through paid LinkedIn ads.", "day1": "Subject: video for Human Renaissance\n\nJustin \u2014 saw Human Renaissance running LinkedIn ads. GTM consultants who use video to demonstrate their frameworks consistently attract better-fit clients.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Justin \u2014 following up.\n\nA 30-sec 'here's what I believe about GTM' video running as a paid ad can generate more qualified conversations than a dozen text posts. $100, 48 hours. \u2014 Vansh"}, {"id": 67, "company": "Ignition", "contact": "Marketing Team", "type": "Agency Revenue Management", "linkedin": "linkedin.com/company/ignition", "signal": "Running LinkedIn ads for agency revenue management \u2014 SaaS targeting agency owners with real marketing budget.", "day1": "Subject: video for Ignition's campaigns\n\nSaw Ignition running LinkedIn ads. Agency revenue management software sold to agency owners \u2014 a notoriously creative and skeptical audience \u2014 needs creative that earns attention.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nAgency owners respond well to ROI-focused video (show the number, not the feature). $100, 48 hours. Happy to mock a concept up. \u2014 Vansh"}, {"id": 68, "company": "Kulwicki Insights", "contact": "Founder / Analyst", "type": "Financial Market Analysis", "linkedin": "linkedin.com/company/kulwicki-insights", "signal": "Running LinkedIn ads for financial market analysis \u2014 financial content company building audience through paid.", "day1": "Subject: video for Kulwicki Insights\n\nSaw Kulwicki Insights running LinkedIn ads. Financial analysis content that uses video consistently earns higher engagement and more qualified subscribers.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor financial content, a 30-sec 'market insight' style video running as an ad can build an audience much faster than text-based ads. $100, 48 hours. \u2014 Vansh"}, {"id": 69, "company": "ELVTR", "contact": "Marketing Team", "type": "Online Education Platform", "linkedin": "linkedin.com/company/elvtr", "signal": "Running LinkedIn ads for online education \u2014 edtech platform with active paid acquisition strategy.", "day1": "Subject: video for ELVTR's campaigns\n\nSaw ELVTR running LinkedIn ads. Online education platforms that use instructor preview videos in their ads consistently see higher enrollment conversion.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nCourse preview / instructor intro videos are our most effective format for edtech. 30-60 seconds, cinematic quality, $100. \u2014 Vansh"}, {"id": 70, "company": "Wall Street Mastermind", "contact": "Founder / Team", "type": "Finance Education", "linkedin": "linkedin.com/company/wall-street-mastermind", "signal": "Running LinkedIn ads for finance education/coaching \u2014 education company building paid pipeline.", "day1": "Subject: video for Wall Street Mastermind\n\nSaw Wall Street Mastermind running LinkedIn ads. Finance education programs that use cinematic video (not just talking head) in their ads see significantly higher enrollment rates.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nA 'student success story' cinematic video is one of our highest-converting formats for education programs. $100, 48 hours. \u2014 Vansh"}, {"id": 71, "company": "RizakLabs", "contact": "Abdirizak Moalim, Founder", "type": "Web Development Agency", "linkedin": "linkedin.com/company/rizaklabs", "signal": "Running LinkedIn ads for web dev agency \u2014 digital agency that likely serves clients needing video.", "day1": "Subject: video for your agency clients\n\nAbdirizak \u2014 saw RizakLabs running LinkedIn ads. Web agencies that offer video production to clients have a significant upsell opportunity most aren't capturing.\n\nWe do AI cinematic video in 48 hours from $100. White-label, no overhead.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nSimple model: when a client asks for video, you route it to us, white-label. You keep the margin. We handle everything. First video at cost to test. \u2014 Vansh"}, {"id": 72, "company": "iKala", "contact": "Sega Cheng, Founder", "type": "AI/Cloud Platform", "linkedin": "linkedin.com/company/ikala", "signal": "Running LinkedIn ads for AI/cloud platform \u2014 Asia-Pacific tech company building global brand.", "day1": "Subject: video for iKala's campaigns\n\nSega \u2014 saw iKala running LinkedIn ads. AI/cloud platforms expanding globally need video creative that communicates value across language barriers instantly.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Sega \u2014 following up.\n\nFor global expansion campaigns, cinematic product demo videos work better than text in every market. $100, 48 hours. \u2014 Vansh"}, {"id": 73, "company": "Seeing Green", "contact": "Douglas Sabo, Founder", "type": "Cannabis/Sustainability Brand", "linkedin": "linkedin.com/company/seeing-green", "signal": "Running LinkedIn ads for cannabis/green brand \u2014 founder actively building brand through paid LinkedIn.", "day1": "Subject: video for Seeing Green\n\nDouglas \u2014 saw Seeing Green running LinkedIn ads. Cannabis and sustainability brands that invest in cinematic visual storytelling build trust significantly faster than those that don't.\n\nWe produce AI cinematic brand videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Douglas \u2014 following up.\n\nFor brand-stage companies, a cinematic 60-sec 'why we exist' video is the single highest-ROI creative investment. $100, 48 hours. \u2014 Vansh"}, {"id": 74, "company": "Site Sentinel AEOS", "contact": "Glen Downie, Director", "type": "Security Tech", "linkedin": "linkedin.com/company/site-sentinel", "signal": "Running LinkedIn ads for security product \u2014 tech company with active paid marketing building enterprise pipeline.", "day1": "Subject: video for Site Sentinel\n\nGlen \u2014 saw Site Sentinel running LinkedIn ads. Security technology sold to enterprise buyers needs to build trust fast \u2014 cinematic video does that better than any other format.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Glen \u2014 following up.\n\nFor security tech, a 'threat scenario \u2192 solution' video format is extremely compelling for enterprise buyers. $100, 48 hours. \u2014 Vansh"}, {"id": 75, "company": "Remedio", "contact": "Tal Kollender, Co-Founder & CEO", "type": "Health Startup", "linkedin": "linkedin.com/company/remedio", "signal": "Running LinkedIn ads for health startup \u2014 early-stage company actively building brand and pipeline.", "day1": "Subject: video for Remedio\n\nTal \u2014 saw Remedio running LinkedIn ads. Health startups that use video to show patient/provider impact convert significantly better than those using static alone.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Tal \u2014 following up.\n\nFor health startups, a 30-sec 'before Remedio / after Remedio' patient experience video can be incredibly compelling for both investors and customers. $100, 48 hours. \u2014 Vansh"}, {"id": 76, "company": "Metricform.ai", "contact": "Lindsey Aliksanyan, Founder", "type": "AI Analytics", "linkedin": "linkedin.com/company/metricform-ai", "signal": "Running LinkedIn ads for AI analytics platform \u2014 founder-led company building pipeline through paid.", "day1": "Subject: video for Metricform\n\nLindsey \u2014 saw Metricform.ai running LinkedIn ads. AI analytics platforms that show their dashboard in a 30-sec video convert significantly better than those describing it in text.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Lindsey \u2014 following up.\n\nA product walkthrough video (30 seconds, showing the insight clearly) is our most effective format for analytics tools. $100, 48 hours. \u2014 Vansh"}, {"id": 77, "company": "ActivTrak", "contact": "Matthew Finlayson, CTO", "type": "Workforce Analytics", "linkedin": "linkedin.com/company/activtrak", "signal": "Running LinkedIn ads for workplace analytics \u2014 SaaS targeting HR/ops buyers with real paid budget.", "day1": "Subject: video for ActivTrak's campaigns\n\nSaw ActivTrak running LinkedIn ads. Workforce analytics is a nuanced sell \u2014 video showing 'what your team's productivity actually looks like' is far more compelling than any static ad.\n\nWe deliver cinematic AI videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor HR/ops buyers, showing the dashboard in action (not describing it) is the fastest path to a demo. 30 seconds, $100, 48 hours. \u2014 Vansh"}, {"id": 78, "company": "BanQu Inc.", "contact": "Ashish Gadnis, Co-Founder", "type": "Blockchain/Supply Chain", "linkedin": "linkedin.com/company/banqu", "signal": "Running LinkedIn ads for blockchain supply chain platform \u2014 mission-driven startup with active marketing.", "day1": "Subject: video for BanQu\n\nAshish \u2014 saw BanQu running LinkedIn ads. Blockchain platforms with a social impact mission have an incredibly compelling story \u2014 video is the only format that does it justice.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Ashish \u2014 following up.\n\nFor impact-driven tech, a 60-sec 'here's the farmer/worker whose life changed' story video is our most powerful format. $100, 48 hours. \u2014 Vansh"}, {"id": 79, "company": "Morna", "contact": "Founder / Team", "type": "Brand/Product Company", "linkedin": "linkedin.com/company/morna", "signal": "Running LinkedIn ads \u2014 brand actively investing in paid social, real marketing budget.", "day1": "Subject: video for Morna's campaigns\n\nSaw Morna running LinkedIn ads. Brands actively investing in paid deserve creative that converts \u2014 and video consistently outperforms static.\n\nWe produce AI cinematic brand videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor brand-stage companies, a cinematic 30-sec product or story video is the highest-ROI creative investment. $100, 48 hours. \u2014 Vansh"}, {"id": 80, "company": "Buzz 52", "contact": "Marketing Team", "type": "Marketing/Content", "linkedin": "linkedin.com/company/buzz-52", "signal": "Running LinkedIn ads \u2014 marketing/content company with active paid strategy.", "day1": "Subject: AI video for Buzz 52\n\nSaw Buzz 52 running LinkedIn ads. Content companies that invest in AI-powered video production can scale their output dramatically without scaling costs.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor content-first companies, being able to produce 4\u20138 videos/month at $100\u2013$500 each completely changes the content roadmap. Worth a conversation? \u2014 Vansh"}, {"id": 81, "company": "HSE", "contact": "Julia Nimchinski, Founder & CEO", "type": "Startup/GTM", "linkedin": "linkedin.com/company/hse", "signal": "Running LinkedIn ads \u2014 founder-led company building pipeline through paid ads.", "day1": "Subject: video for HSE\n\nJulia \u2014 saw HSE running LinkedIn ads. Founder-led companies that use video to tell their story build trust faster than any other format.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Julia \u2014 following up.\n\nA 30-sec founder story video (why you built this, who it's for) running as a LinkedIn ad is one of our highest-engagement formats. $100, 48 hours. \u2014 Vansh"}, {"id": 82, "company": "PIER59 Studios", "contact": "Production Team", "type": "Production Company", "linkedin": "linkedin.com/company/pier59-studios", "signal": "Running LinkedIn ads \u2014 established production company with active marketing budget.", "day1": "Subject: AI production partnership?\n\nSaw PIER59 Studios running LinkedIn ads. Traditional production studios that add AI video to their offering can serve a much wider client budget range.\n\nWe produce AI cinematic videos in 48 hours from $100 \u2014 could be a useful overflow or lower-budget option to offer clients.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nWhen clients need faster turnaround or tighter budget than traditional production, we can be your referral partner. Keeps the relationship without the capacity stress. \u2014 Vansh"}, {"id": 83, "company": "Cyera", "contact": "Security Marketing Team", "type": "Data Security", "linkedin": "linkedin.com/company/cyera", "signal": "Running LinkedIn ads for data security \u2014 enterprise cybersecurity with serious paid marketing budget.", "day1": "Subject: video creative for Cyera\n\nSaw Cyera running LinkedIn ads. Data security buyers in enterprise need to feel the risk, not just read about it \u2014 video is uniquely suited to that.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor enterprise security, a 30-sec 'what a breach looks like vs. what Cyera prevents' video is an incredibly compelling ad format. $100, 48 hours. \u2014 Vansh"}, {"id": 84, "company": "FrameDraft", "contact": "Founder / Animation Team", "type": "Storyboard/Animation Software", "linkedin": "linkedin.com/company/framedraft", "signal": "Running LinkedIn ads for animation/storyboard tool \u2014 visual production software company.", "day1": "Subject: video for FrameDraft's marketing\n\nSaw FrameDraft running LinkedIn ads. Animation software that uses cinematic video in its own marketing signals quality to exactly the kind of users you want to attract.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nThere's also a potential partnership angle \u2014 FrameDraft for storyboarding + SYNTH for production as a recommended workflow. Worth exploring? \u2014 Vansh"}, {"id": 85, "company": "Dorian", "contact": "Investment/Creator Team", "type": "Creator Economy Investment", "linkedin": "linkedin.com/company/dorian", "signal": "Running LinkedIn ads around creator economy \u2014 platform that deeply understands content and creator monetization.", "day1": "Subject: video for Dorian's brand\n\nSaw Dorian running LinkedIn ads around the creator economy. A platform serving creators that doesn't use premium video in its own marketing is a missed opportunity.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor creator economy platforms, a video that feels native to the creator space (not corporate) converts dramatically better. $100, 48 hours. \u2014 Vansh"}, {"id": 86, "company": "Riyalabs.ai", "contact": "Founder / AI Team", "type": "AI Agents", "linkedin": "linkedin.com/company/riyalabs-ai", "signal": "Running LinkedIn ads for AI agents \u2014 AI-first company building B2B pipeline.", "day1": "Subject: video for Riyalabs\n\nSaw Riyalabs.ai running LinkedIn ads. AI agent companies have a unique challenge: the product is invisible until it works. Video makes it tangible.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nShowing your AI agent handling a real workflow in 30 seconds is 10x more persuasive than any text description. $100, 48 hours. \u2014 Vansh"}, {"id": 87, "company": "CompliSun", "contact": "Founder / Team", "type": "Compliance Tech", "linkedin": "linkedin.com/company/complisun", "signal": "Running LinkedIn ads for compliance technology \u2014 regulatory tech company building enterprise pipeline.", "day1": "Subject: video for CompliSun\n\nSaw CompliSun running LinkedIn ads. Compliance tech is a complex and often dry topic \u2014 video that makes regulatory risk feel real is far more compelling than static.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor compliance tech, a 'what non-compliance actually costs' scenario video is our most effective format for generating enterprise demo requests. $100, 48 hours. \u2014 Vansh"}, {"id": 88, "company": "Joseph Hill / Revenu", "contact": "Joseph Hill, Founder", "type": "Paid Ads Agency", "linkedin": "linkedin.com/in/josephhill", "signal": "Running ads for LinkedIn and Google Ads agency \u2014 paid media agency that serves clients needing better creative.", "day1": "Subject: video for your ad clients\n\nJoseph \u2014 saw Revenu running LinkedIn ads. Paid media agencies that add video creative to their offering see better client retention and higher average retainer value.\n\nWe do AI cinematic video in 48 hours from $100. Happy to be your video production partner.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Joseph \u2014 following up.\n\nVideo ads have ~48% lower CPM than static on LinkedIn. If your clients aren't running video yet, there's a clear upsell opportunity \u2014 and we can produce it for $100. \u2014 Vansh"}, {"id": 89, "company": "Jezlan Moyet", "contact": "Jezlan Moyet", "type": "Entertainment/Georgia Promo", "linkedin": "linkedin.com/in/jezlanmoyet", "signal": "Running LinkedIn ads for Georgia entertainment promotion \u2014 entertainment industry professional building brand.", "day1": "Subject: video for Georgia entertainment\n\nJezlan \u2014 saw your LinkedIn ads around Georgia entertainment. Entertainment promotion without cinematic video is leaving the most powerful storytelling tool unused.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Jezlan \u2014 following up.\n\nFor entertainment and location promotion, a 60-sec cinematic highlight reel is our most effective format. $100, 48 hours. \u2014 Vansh"}, {"id": 90, "company": "Agree.com", "contact": "Marketing Team", "type": "B2B SaaS/Legal Tech", "linkedin": "linkedin.com/company/agree-com", "signal": "Running LinkedIn ads co-hosted with Simple Machines Marketing \u2014 B2B SaaS with active paid marketing.", "day1": "Subject: video for Agree.com\n\nSaw Agree.com running LinkedIn ads. Legal/contract tech that shows (not tells) how it removes friction in a 30-sec video converts dramatically better than text alone.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor legal/contract SaaS, a 'before Agree vs. after Agree' scenario video is our most effective format for converting legal and ops buyers. $100, 48 hours. \u2014 Vansh"}, {"id": 91, "company": "FourKites, Inc.", "contact": "Marketing Team", "type": "Supply Chain Visibility", "linkedin": "linkedin.com/company/fourkites", "signal": "Enterprise SaaS with serious LinkedIn ad budget \u2014 supply chain tech targeting logistics and ops buyers.", "day1": "Subject: video for FourKites\n\nSaw FourKites running LinkedIn ads. Real-time supply chain visibility is hard to communicate in static \u2014 a 30-sec 'shipment in chaos vs. on FourKites' video makes it instantly clear.\n\nWe deliver cinematic AI videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor enterprise logistics buyers, scenario-based videos showing real operational impact are our highest-converting format. $100, 48 hours. Happy to mock a concept. \u2014 Vansh"}, {"id": 92, "company": "AMCP", "contact": "Marketing/Events Team", "type": "Pharma Organization", "linkedin": "linkedin.com/company/amcp", "signal": "Running LinkedIn ads for pharma organization annual meeting \u2014 events marketing with real paid budget.", "day1": "Subject: video for AMCP events\n\nSaw AMCP running LinkedIn ads for your annual meeting. Conference and event promotion that uses cinematic video consistently drives significantly higher registrations.\n\nWe produce AI cinematic event promo videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor pharmaceutical organization events, a 60-sec 'why you can't miss this year's conference' hype video drives registrations better than any static ad. $100, 48 hours. \u2014 Vansh"}, {"id": 93, "company": "Backstage", "contact": "Marketing Team", "type": "Entertainment Talent Platform", "linkedin": "linkedin.com/company/backstage", "signal": "Running LinkedIn ads for talent platform \u2014 entertainment industry platform with active marketing budget.", "day1": "Subject: video for Backstage's marketing\n\nSaw Backstage running LinkedIn ads. A platform for talent and entertainment that doesn't lead with cinematic video in its marketing is underselling its most compelling story.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nActor/creator success story videos are our most effective format for talent platforms. 60 seconds, cinematic, $100. \u2014 Vansh"}, {"id": 94, "company": "Sega Cheng / iKala", "contact": "Sega Cheng", "type": "AI/Cloud", "linkedin": "linkedin.com/in/segacheng", "signal": "Running LinkedIn ads \u2014 AI/cloud founder building global brand.", "day1": "Subject: video for iKala\n\nSega \u2014 saw iKala running LinkedIn ads. AI/cloud platforms expanding globally need video that communicates value instantly, across all markets.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey Sega \u2014 following up.\n\nFor global expansion, cinematic product demo videos work better than text in every market and language. $100, 48 hours. \u2014 Vansh"}, {"id": 95, "company": "Vaquero Advertising", "contact": "Creative Director", "type": "Multicultural Marketing Agency", "linkedin": "linkedin.com/company/vaquero-advertising", "signal": "Running LinkedIn ads for multicultural marketing \u2014 full-service agency that needs video for campaigns.", "day1": "Subject: video production for Vaquero\n\nSaw Vaquero Advertising running LinkedIn ads around multicultural marketing. Agencies serving multicultural audiences need authentic, culturally resonant video \u2014 not generic stock.\n\nWe produce custom AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor multicultural campaigns, we can tailor video aesthetic, styling, and tone to specific cultural contexts. $100, 48 hours. Worth a conversation? \u2014 Vansh"}, {"id": 96, "company": "Quantum Metric", "contact": "Product Marketing Team", "type": "Digital Analytics", "linkedin": "linkedin.com/company/quantum-metric", "signal": "Running LinkedIn ads for digital experience analytics \u2014 enterprise SaaS with active demand gen.", "day1": "Subject: video for Quantum Metric\n\nSaw Quantum Metric running LinkedIn ads. Digital analytics platforms that show their insights in action (vs. describe them) consistently drive more qualified demos.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor analytics platforms, a 30-sec 'here's an insight you'd miss without us' video is our most effective demo-driving format. $100, 48 hours. \u2014 Vansh"}, {"id": 97, "company": "CXO Thread", "contact": "Media Team", "type": "B2B Executive Media", "linkedin": "linkedin.com/company/cxo-thread", "signal": "Running LinkedIn ads targeting C-suite buyers \u2014 B2B media brand with paid distribution strategy.", "day1": "Subject: video for CXO Thread\n\nSaw CXO Thread running LinkedIn ads. B2B media brands targeting C-suite need creative that signals authority in the first second \u2014 cinematic video does that.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nA 30-sec 'why CXO Thread is where senior leaders get their edge' brand film is one of our most effective formats for executive media. $100, 48 hours. \u2014 Vansh"}, {"id": 98, "company": "Dorian (Creator Economy)", "contact": "Investment Team", "type": "Creator Investment Platform", "linkedin": "linkedin.com/company/dorian", "signal": "Running ads about creator economy investment \u2014 platform serving the creator economy.", "day1": "Subject: video for Dorian\n\nSaw Dorian running ads around the creator economy. A company investing in creator platforms needs its own marketing to feel as premium as the creators it supports.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor creator economy companies, a video that feels native to the creator aesthetic (not corporate) performs dramatically better. $100, 48 hours. \u2014 Vansh"}, {"id": 99, "company": "Ignition", "contact": "Revenue Team", "type": "Agency Revenue Platform", "linkedin": "linkedin.com/company/ignition", "signal": "Running LinkedIn ads for agency revenue management \u2014 SaaS targeting agency owners.", "day1": "Subject: video for Ignition's campaigns\n\nSaw Ignition running LinkedIn ads. Agency owners are notoriously hard to impress \u2014 a video that shows the ROI in 30 seconds beats any white paper.\n\nWe produce AI cinematic videos in 48 hours from $100.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor agency-focused SaaS, a 30-sec 'here's what your agency's revenue looks like without/with Ignition' video is our most effective ad format. $100, 48 hours. \u2014 Vansh"}, {"id": 100, "company": "Influee (UGC Platform)", "contact": "Growth Team", "type": "UGC Production", "linkedin": "linkedin.com/company/influee", "signal": "Running multiple LinkedIn ads \u2014 UGC platform actively scaling through paid ads, understands creator content ROI.", "day1": "Subject: cinematic video for Influee's brand\n\nSaw Influee running LinkedIn ads. UGC is powerful for authenticity \u2014 cinematic AI video is powerful for brand elevation. The best brands use both.\n\nWe produce AI cinematic videos in 48 hours from $100. Could be a complementary layer for your clients.\n\nsynthmedia.vercel.app \u2014 Vansh, SYNTH. Media", "day2": "Hey \u2014 following up.\n\nFor Influee's own brand marketing (recruiting creators and clients), a cinematic brand film signals a level of quality that UGC can't. $100, 48 hours. Worth testing? \u2014 Vansh"}];
+let statuses = {};
+DATA.forEach(p => { statuses[p.id] = 'new'; });
+let activeFilter = 'all';
+
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function renderRow(p){
+  const st = statuses[p.id];
+  const stColors = {new:'rgba(29,185,84,0.08)',sent:'rgba(255,193,7,0.08)',replied:'rgba(13,202,240,0.08)',noreply:'rgba(255,80,80,0.08)'};
+  const stLabels = {new:'🟢 New',sent:'🟡 Day 1 Sent',replied:'🔵 Replied',noreply:'🔴 No Reply'};
+  return `<tr data-id="${p.id}" data-status="${st}" data-company="${p.company.toLowerCase()} ${p.type.toLowerCase()}">
+    <td class="num">${p.id}</td>
+    <td style="min-width:160px">
+      <div class="company-name">${esc(p.company)}</div>
+      <div class="company-type">${esc(p.type)}</div>
+      <div class="company-contact">${esc(p.contact)}</div>
+    </td>
+    <td style="min-width:150px">
+      <a href="https://${p.linkedin}" target="_blank" class="li-link">
+        <svg class="li-icon" viewBox="0 0 24 24" fill="#5ba3e0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        ${esc(p.company)}
+      </a>
+    </td>
+    <td><div class="signal-text">${esc(p.signal)}</div></td>
+    <td class="msg-wrap">
+      <div class="msg-label">Day 1</div>
+      <div class="msg-box">${esc(p.day1)}<button class="copy-btn" onclick="copyMsg(this,'${p.id}','day1')">Copy</button></div>
+    </td>
+    <td class="msg-wrap">
+      <div class="msg-label">Day 2</div>
+      <div class="msg-box">${esc(p.day2)}<button class="copy-btn" onclick="copyMsg(this,'${p.id}','day2')">Copy</button></div>
+    </td>
+    <td>
+      <select class="status-select" style="background:${stColors[st]}" onchange="updateStatus(${p.id},this)">
+        <option value="new" ${st==='new'?'selected':''}>🟢 New</option>
+        <option value="sent" ${st==='sent'?'selected':''}>🟡 Day 1 Sent</option>
+        <option value="replied" ${st==='replied'?'selected':''}>🔵 Replied</option>
+        <option value="noreply" ${st==='noreply'?'selected':''}>🔴 No Reply</option>
+      </select>
+    </td>
+  </tr>`;
 }
 
-function copyMsg(btn, idx, field) {
-  navigator.clipboard.writeText(prospects[idx][field]).then(() => {
+function applyFilters(){
+  const q = document.getElementById('search-input').value.toLowerCase();
+  const rows = document.querySelectorAll('#tbody tr');
+  let visible = 0;
+  rows.forEach(r => {
+    const matchFilter = activeFilter === 'all' || r.dataset.status === activeFilter;
+    const matchSearch = !q || r.dataset.company.includes(q);
+    const show = matchFilter && matchSearch;
+    r.style.display = show ? '' : 'none';
+    if(show) visible++;
+  });
+  document.getElementById('count').textContent = visible;
+  document.getElementById('empty').style.display = visible === 0 ? '' : 'none';
+}
+
+function setFilter(f, btn){
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function updateStatus(id, sel){
+  statuses[id] = sel.value;
+  const stColors = {new:'rgba(29,185,84,0.08)',sent:'rgba(255,193,7,0.08)',replied:'rgba(13,202,240,0.08)',noreply:'rgba(255,80,80,0.08)'};
+  sel.style.background = stColors[sel.value];
+  const row = document.querySelector(`tr[data-id="${id}"]`);
+  if(row) row.dataset.status = sel.value;
+  applyFilters();
+}
+
+function copyMsg(btn, id, field){
+  const p = DATA.find(x => x.id == id);
+  navigator.clipboard.writeText(p[field]).then(() => {
     btn.textContent = 'Copied!';
     btn.classList.add('copied');
     setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
   });
 }
 
-function updateStatus(idx, val) {
-  statuses[idx] = val;
-  renderTable(window._activeFilter || null);
-}
-
-function filterAll() {
-  window._activeFilter = null;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.filter-btn')[0].classList.add('active');
-  renderTable(null);
-}
-
-function filterStatus(s) {
-  window._activeFilter = s;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-  renderTable(s);
-}
-
-renderTable();
+// Render all rows
+document.getElementById('tbody').innerHTML = DATA.map(renderRow).join('');
 </script>
 </body>
 </html>
