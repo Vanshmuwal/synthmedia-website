@@ -101,7 +101,8 @@ class MetaAdsSource:
         """Score an ad based on impressions and spend signal."""
         imp = ad.get("impressions_mid", 0)
         spend = ad.get("spend_lower", 0)
-        score = 0
+        # Base score of 25 for any valid ad that appears in search results
+        score = 25
         if imp > 1_000_000:
             score += 50
         elif imp > 100_000:
@@ -191,8 +192,8 @@ class MetaAdsSource:
         themes = self.extract_trending_themes(all_ads)
 
         return {
-            "trending_now": [a for a in all_ads if a["score"] >= 30],
-            "upcoming": [a for a in all_ads if a["score"] < 30],
+            "trending_now": [a for a in all_ads if a["score"] >= 25],
+            "upcoming": [a for a in all_ads if a["score"] < 25],
             "trending_themes": themes,
             "total_ads_analyzed": len(all_ads),
             "source": "meta_ads_library",
