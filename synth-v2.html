@@ -1258,8 +1258,9 @@ footer{
   .nav-cta{display:none}
   .nav-mobile-btn{display:flex}
   .mobile-menu{display:block}
-  .hero-cards{height:auto}
-  .hc-main{position:relative;left:auto;transform:none;width:100%}
+  .hero-cards{height:auto;display:flex;justify-content:center;padding:0 16px}
+  .hc-main{position:relative!important;left:auto!important;width:100%;margin:0 auto;animation:floatMobile 5s ease-in-out infinite}
+  @keyframes floatMobile{0%,100%{transform:translateY(0px)}50%{transform:translateY(-12px)}}
 }
 @media(max-width:500px){
   .footer-links{gap:32px}
@@ -1360,9 +1361,6 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-  <div class="aurora aurora-1"></div>
-  <div class="aurora aurora-2"></div>
-  <div class="aurora aurora-3"></div>
   <div class="hero-planet-wrap">
     <div class="hero-planet"></div>
     <div class="hero-planet-glow"></div>
