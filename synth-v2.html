@@ -236,6 +236,31 @@ nav{
   overflow:hidden;
   background:#000;
 }
+.hero-video-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+}
+.hero-video-bg video{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center;
+  opacity:0.45;
+}
+.hero-video-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.35) 0%,
+    rgba(0,0,0,0.15) 40%,
+    rgba(0,0,0,0.5) 85%,
+    rgba(0,0,0,0.92) 100%
+  );
+  pointer-events:none;
+}
 
 /* ── planet / moon scene ── */
 .hero-planet-wrap{
@@ -306,13 +331,6 @@ nav{
   }
 }
 
-/* star field canvas */
-#stars{
-  position:absolute;inset:0;
-  z-index:0;
-  pointer-events:none;
-  width:100%;height:100%;
-}
 
 /* orbital rings */
 .ring{
@@ -1361,11 +1379,13 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-planet-wrap">
-    <div class="hero-planet"></div>
-    <div class="hero-planet-glow"></div>
+  <!-- Video background -->
+  <div class="hero-video-bg">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="https://synthmedia.pages.dev/hero-reel.mp4" type="video/mp4">
+    </video>
   </div>
-  <canvas id="stars"></canvas>
+  <div class="hero-video-overlay"></div>
   <canvas id="cursor-glow"></canvas>
   <canvas id="cursor-particles"></canvas>
 
@@ -1679,43 +1699,43 @@ footer{
   <div class="port-carousel">
     <!-- Row 1 → left -->
     <div class="port-row port-row-1">
-      <div class="pvc tall"><video src="p_tall1.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="p_wide1.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall2.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall3.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="p_wide2.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall4.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall5.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall6.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="https://synthmedia.pages.dev/p_wide1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall2.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall3.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="https://synthmedia.pages.dev/p_wide2.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall4.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall5.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall6.mp4" muted loop playsinline preload="none"></video></div>
       <!-- duplicate -->
-      <div class="pvc tall"><video src="p_tall1.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="p_wide1.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall2.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall3.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="p_wide2.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall4.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall5.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall6.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="https://synthmedia.pages.dev/p_wide1.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall2.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall3.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="https://synthmedia.pages.dev/p_wide2.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall4.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall5.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall6.mp4" muted loop playsinline preload="none"></video></div>
     </div>
     <!-- Row 2 → right -->
     <div class="port-row port-row-2">
-      <div class="pvc tall"><video src="p_tall7.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="p_wide3.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall8.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall9.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="p_wide4.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall10.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall11.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall12.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall7.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="https://synthmedia.pages.dev/p_wide3.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall8.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall9.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="https://synthmedia.pages.dev/p_wide4.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall10.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall11.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall12.mp4" muted loop playsinline preload="none"></video></div>
       <!-- duplicate -->
-      <div class="pvc tall"><video src="p_tall7.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="p_wide3.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall8.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall9.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc wide"><video src="p_wide4.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall10.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall11.mp4" muted loop playsinline preload="none"></video></div>
-      <div class="pvc tall"><video src="p_tall12.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall7.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="https://synthmedia.pages.dev/p_wide3.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall8.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall9.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc wide"><video src="https://synthmedia.pages.dev/p_wide4.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall10.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall11.mp4" muted loop playsinline preload="none"></video></div>
+      <div class="pvc tall"><video src="https://synthmedia.pages.dev/p_tall12.mp4" muted loop playsinline preload="none"></video></div>
     </div>
   </div>
 </section>
@@ -2036,81 +2056,6 @@ footer{
 
 <script>
 
-/*  AMBIENT STAR FIELD + CURSOR SPOTLIGHT  */
-(function(){
-  const c=document.getElementById('stars'),ctx=c.getContext('2d');
-  let W,H,stars=[];
-  let mx=-9999,my=-9999;
-  const R=250; // spotlight radius px
-
-  function resize(){
-    const hero=c.parentElement;
-    W=c.width=hero.offsetWidth||window.innerWidth;
-    H=c.height=hero.offsetHeight||window.innerHeight;
-    stars=[];
-    const n=Math.floor((W*H)/4000);
-    for(let i=0;i<n;i++){
-      // bias y toward upper 70% (above the planet)
-      const y=Math.random()*H*0.85;
-      const r=Math.random()*1.6+0.2;
-      // ambient brightness — larger stars and those near the bottom glow brighter
-      const ambientBase=Math.random()*0.10+0.02;
-      const nearPlanetBoost=(y/H)*0.12; // brighter closer to planet
-      const sizeBoost=r>1.0 ? 0.08 : 0;
-      stars.push({
-        x:Math.random()*W, y:y,
-        r:r,
-        maxO:Math.random()*.85+.15,
-        ambient:Math.min(ambientBase+nearPlanetBoost+sizeBoost, 0.4),
-        cur:0,
-        speed:Math.random()*.0003+.00008,
-        phase:Math.random()*Math.PI*2
-      });
-    }
-  }
-
-  function draw(t){
-    ctx.clearRect(0,0,W,H);
-    stars.forEach(s=>{
-      // ambient twinkle — always visible
-      const twinkle=Math.sin(t*s.speed*60+s.phase)*0.15+0.85;
-      const ambientO=s.ambient*twinkle;
-
-      // cursor spotlight boost
-      const dx=s.x-mx, dy=s.y-my;
-      const dist=Math.sqrt(dx*dx+dy*dy);
-      const lit=dist<R ? s.maxO*(1-dist/R)*(1-dist/R)*0.3 : 0;
-      s.cur+=(lit-s.cur)*0.25;
-
-      const o=Math.min(ambientO+s.cur, 1);
-
-      if(o>.008){
-        ctx.beginPath();
-        ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-        ctx.fillStyle=`rgba(255,255,255,${o})`;
-        ctx.fill();
-        // soft glow halo on brighter stars
-        if(o>.25&&s.r>0.9){
-          ctx.beginPath();
-          ctx.arc(s.x,s.y,s.r*3,0,Math.PI*2);
-          ctx.fillStyle=`rgba(255,255,255,${o*.06})`;
-          ctx.fill();
-        }
-      }
-    });
-    requestAnimationFrame(draw);
-  }
-
-  document.addEventListener('mousemove',e=>{
-    const rect=c.getBoundingClientRect();
-    mx=e.clientX-rect.left;
-    my=e.clientY-rect.top;
-  });
-  document.addEventListener('mouseleave',()=>{mx=-9999;my=-9999});
-
-  window.addEventListener('load',()=>{resize();requestAnimationFrame(draw)});
-  window.addEventListener('resize',resize);
-})();
 
 /*  SCROLL REVEAL  */
 const obs=new IntersectionObserver(entries=>{
