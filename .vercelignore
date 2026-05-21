@@ -1,0 +1,57 @@
+# Ignore all video files
+*.mp4
+*.webm
+*.mov
+*.avi
+
+# Ignore large binary/media files
+*.xlsx
+*.pdf
+*.zip
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# Ignore dev/tool directories
+.claude/
+.playwright-mcp/
+.netlify/
+node_modules/
+mems-deploy/
+aira-caelum/
+email-outreach/
+marketingskills-main/
+reel-checklist/
+
+# Ignore unrelated project files
+americium-detector.html
+autopilot.html
+cgm-insulin-pump.html
+glucose-graph.html
+membrane-explainer.html
+membrane-reveal.html
+membrane-thickness.html
+mems-explainer.html
+pacemaker-chip.html
+piezo-transducer.html
+quartz-oscillator.html
+sensor-size.html
+smoke-detector.html
+stent-size.html
+ventilator-sensor.html
+video-prompt-builder.skill
+invoice-SM016.html
+invoice-SM017.html
+invoice-SM018.html
+invoice-SM019.html
+
+# Ignore scripts
+record-*.js
+
+# Ignore data files
+*.csv
+synth_media_prospects.csv
+SYNTH_Media_Outreach_Dashboard.xlsx
+influencer_ref.png
